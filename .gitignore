@@ -1,0 +1,97 @@
+ Gradle
+# ------
+.gradle
+/build
+
+# IDEA
+# ----
+.idea
+.idea/
+.idea/sonarlint
+.idea/sonarlint/
+.shelf
+/*.iml
+/*.ipr
+/*.iws
+/out
+
+/out/*.*
+
+
+# Eclipse
+# -------
+*.classpath
+*.project
+*.settings
+
+/bin
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# Eclipse Core
+.project
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Logs
+# ----
+/*.log
+
+# Others
+# ----
+**/*.class
+**/*.bin
+**/*.build
+**/*.out
+build
+build/
+**/*.jar
+*.pb
+
+# Maven specific
+
+target/
+
+#Skip all SVN related
+.svn/
+.svn/entries
+.svn*
+*/.svn/*
+
+#Skip all CVS related
+CVS/
+/CVS/*
+**/CVS/*
+.cvsignore
+*/.cvsignore
+.idea/jpa-buddy.xml
+.idea/jpa-buddy.xml
+/.idea
+/.idea/sonarlint/issuestore
+.idea/sonarlint/issuestore/0/2/02191a46440de9a90843d2c6c608a9842037dd5c
+.idea/sonarlint/issuestore/0/7/077699664cb8670f886f4cef94fb2abb20c76457
+.idea/sonarlint/issuestore/0/c/0cdb9af03ab8579a6b80f21b7447d7c2af2fa1b5
+.idea/sonarlint/issuestore/2/9/2905db2cfd3dd32097b5e6748f098d1b72b4232a
+.idea/sonarlint/securityhotspotstore/f/9/f997f8b760ddf433bb3e4c39f7a573954193e1de
+.idea/workspace.xml
+.idea/sonarlint/securityhotspotstore/f/0/f0d916e1482500fd69fed9bba573902e9cb9f78d
+.idea/sonarlint/securityhotspotstore/f/3/f31136210e81d969f1f106350c83e667295bd0ca
+.idea/sonarlint/securityhotspotstore/f/7/f7513f984dd2efce2a95b0bd685bba452ef704ae
+.idea/sonarlint/securityhotspotstore/f/9/f997f8b760ddf433bb3e4c39f7a573954193e1de
+.idea/jpa-buddy.xml

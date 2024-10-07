@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.4</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.industry.bank</groupId>
+    <artifactId>bank-application</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>BankApplication</name>
+    <description>BankApplication</description>
+
+    <modules>
+        <module>bank-orchestration-api</module>
+        <module>bank-orchestration-controller</module>
+        <module>bank-orchestration-persistence</module>
+        <module>bank-orchestration-service</module>
+        <module>bank-orchestration-application</module>
+    </modules>
+
+    <properties>
+        <java.version>17</java.version>
+        <spring-boot.version>3.2.1</spring-boot.version>
+        <application.version>1.0.0</application.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-api</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-application</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-controller</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-persistence</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-service</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
