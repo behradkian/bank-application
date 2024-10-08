@@ -23,12 +23,19 @@
         <module>bank-orchestration-persistence</module>
         <module>bank-orchestration-service</module>
         <module>bank-orchestration-application</module>
+        <module>bank-orchestration-ui</module>
+        <module>bank-orchestration-common</module>
     </modules>
 
     <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <java.version>17</java.version>
         <spring-boot.version>3.2.1</spring-boot.version>
         <application.version>1.0.0</application.version>
+        <ui.version>1.0.0</ui.version>
     </properties>
 
     <dependencyManagement>
@@ -78,17 +85,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <scope>runtime</scope>
-                <version>2.2.224</version>
-            </dependency>
 
-
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId>
-                <version>1.5.5.Final</version>
             </dependency>
 
         </dependencies>
@@ -114,11 +111,7 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
     </dependencies>
+
 
 </project>
