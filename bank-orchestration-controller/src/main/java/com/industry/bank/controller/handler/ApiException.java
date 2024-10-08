@@ -1,4 +1,4 @@
-package com.industry.bank.common.exception;
+package com.industry.bank.controller.handler;
 
 import org.springframework.http.HttpStatus;
 
