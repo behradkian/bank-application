@@ -12,5 +12,18 @@
     <artifactId>bank-orchestration-api</artifactId>
     <name>bank-orchestration api</name>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>

@@ -68,12 +68,6 @@
 
             <dependency>
                 <groupId>com.industry.bank</groupId>
-                <artifactId>bank-orchestration-service</artifactId>
-                <version>${application.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.industry.bank</groupId>
                 <artifactId>bank-orchestration-common</artifactId>
                 <version>${application.version}</version>
             </dependency>
@@ -82,6 +76,16 @@
                 <groupId>com.industry.bank</groupId>
                 <artifactId>bank-orchestration-ui</artifactId>
                 <version>${ui.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-service</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+            <dependency>
+
             </dependency>
 
         </dependencies>
@@ -105,12 +109,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
     </dependencies>
