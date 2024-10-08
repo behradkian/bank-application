@@ -1,5 +1,6 @@
-package com.industry.bank.controller.handler;
+package com.industry.bank.controller.advice;
 
+import com.industry.bank.api.exception.checked.BankException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -18,38 +19,38 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NullPointerException.class)
     public ResponseEntity<Object> handleNullPointerException(NullPointerException ex) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
-        ApiException apiException = new ApiException(
+        ExceptionDto exceptionDto = new ExceptionDto(
                 ex.getMessage(),
                 ex,
                 status,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
-        return new ResponseEntity<>(apiException, status);
+        return new ResponseEntity<>(exceptionDto, status);
     }
 
     // Handle IllegalArgumentException
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Object> handleIllegalArgumentException(IllegalArgumentException ex) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
-        ApiException apiException = new ApiException(
+        ExceptionDto exceptionDto = new ExceptionDto(
                 ex.getMessage(),
                 ex,
                 status,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
-        return new ResponseEntity<>(apiException, status);
+        return new ResponseEntity<>(exceptionDto, status);
     }
 
-    // Handle any other exceptions (catch-all)
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<Object> handleGlobalException(Exception ex) {
+    // Handle BankException (checked)
+    @ExceptionHandler(BankException.class)
+    public ResponseEntity<Object> handleGlobalException(BankException bankException) {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
-        ApiException apiException = new ApiException(
-                ex.getMessage(),
-                ex,
+        ExceptionDto exceptionDto = new ExceptionDto(
+                bankException.getMessage(),
+                bankException,
                 status,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
-        return new ResponseEntity<>(apiException, status);
+        return new ResponseEntity<>(exceptionDto, status);
     }
 }
