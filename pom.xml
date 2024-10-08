@@ -23,12 +23,19 @@
         <module>bank-orchestration-persistence</module>
         <module>bank-orchestration-service</module>
         <module>bank-orchestration-application</module>
+        <module>bank-orchestration-ui</module>
+        <module>bank-orchestration-common</module>
     </modules>
 
     <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <java.version>17</java.version>
         <spring-boot.version>3.2.1</spring-boot.version>
         <application.version>1.0.0</application.version>
+        <ui.version>1.0.0</ui.version>
     </properties>
 
     <dependencyManagement>
@@ -65,6 +72,18 @@
                 <version>${application.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-common</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-ui</artifactId>
+                <version>${ui.version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
@@ -88,6 +107,13 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
     </dependencies>
+
 
 </project>
