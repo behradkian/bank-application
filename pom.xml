@@ -61,6 +61,18 @@
 
             <dependency>
                 <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-common</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-ui</artifactId>
+                <version>${ui.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
                 <artifactId>bank-orchestration-service</artifactId>
                 <version>${application.version}</version>
             </dependency>
