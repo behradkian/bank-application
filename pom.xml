@@ -23,8 +23,6 @@
         <module>bank-orchestration-persistence</module>
         <module>bank-orchestration-service</module>
         <module>bank-orchestration-application</module>
-        <module>bank-orchestration-ui</module>
-        <module>bank-orchestration-common</module>
     </modules>
 
     <properties>
@@ -85,7 +83,17 @@
             </dependency>
 
             <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <scope>runtime</scope>
+                <version>2.2.224</version>
+            </dependency>
 
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>1.5.5.Final</version>
             </dependency>
 
         </dependencies>
@@ -112,6 +120,5 @@
         </dependency>
 
     </dependencies>
-
 
 </project>

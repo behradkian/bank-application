@@ -19,11 +19,6 @@
             <artifactId>bank-orchestration-api</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.industry.bank</groupId>
-            <artifactId>bank-orchestration-common</artifactId>
-        </dependency>
-
     </dependencies>
 
 </project>
