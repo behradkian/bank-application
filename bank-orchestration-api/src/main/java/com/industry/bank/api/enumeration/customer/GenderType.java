@@ -7,24 +7,24 @@ import lombok.Getter;
 import java.io.Serializable;
 import java.util.Arrays;
 
-@AllArgsConstructor
 @Getter
-public enum CustomerType implements Serializable {
+@AllArgsConstructor
+public enum GenderType implements Serializable {
 
-    REAL(1, "REAL"),
-    CORPORATE(2, "CORPORATE");
+    MALE(1, "MALE"),
+    FEMALE(2, "FEMALE");
 
     private final Integer code;
     private final String value;
 
-    public static CustomerType getByCode(int code) {
+    public static GenderType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
-                .orElseThrow(() -> new InvalidEnumException("code in CustomerType is invalid : " + code));
+                .orElseThrow(() -> new InvalidEnumException("code in GenderType is invalid : " + code));
     }
 
-    public static CustomerType getByValue(String value) {
+    public static GenderType getByValue(String value) {
         return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
-                .orElseThrow(() -> new InvalidEnumException("value in CustomerType is invalid : " + value));
+                .orElseThrow(() -> new InvalidEnumException("value in GenderType is invalid : " + value));
     }
 
 }
