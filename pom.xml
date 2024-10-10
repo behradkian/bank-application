@@ -23,6 +23,7 @@
         <module>bank-orchestration-persistence</module>
         <module>bank-orchestration-service</module>
         <module>bank-orchestration-application</module>
+        <module>bank-orchestration-ui</module>
     </modules>
 
     <properties>
