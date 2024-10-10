@@ -1,5 +1,6 @@
 package com.industry.bank.api.dto.customer;
 
+import com.industry.bank.api.dto.general.*;
 import com.industry.bank.api.dto.general.location.AddressDto;
 import com.industry.bank.api.dto.general.location.CityDto;
 import com.industry.bank.api.enumeration.customer.GenderType;
@@ -8,11 +9,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateRealCustomerRequestDto implements GeneralCustomerRequestDto {
+public class CreateRealCustomerRequestDto extends CreateGeneralCustomerRequestDto{
 
     private String passportNumber;
     private String nationalCode;
@@ -21,6 +23,8 @@ public class CreateRealCustomerRequestDto implements GeneralCustomerRequestDto {
     private GenderType gender;
     private Date birthdate;
     private CityDto birthCity;
-    private AddressDto address;
-
+    private String mobileNumber;
+    private JobDto occupation;
+    private ImageDto customerImage;
+    private List<RelatedCustomerDto> customerRelations;
 }

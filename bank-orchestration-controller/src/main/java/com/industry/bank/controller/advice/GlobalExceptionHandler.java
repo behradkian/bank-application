@@ -1,6 +1,6 @@
 package com.industry.bank.controller.advice;
 
-import com.industry.bank.api.exception.checked.BankException;
+import com.industry.bank.api.exception.checked.GlobalException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -42,12 +42,12 @@ public class GlobalExceptionHandler {
     }
 
     // Handle BankException (checked)
-    @ExceptionHandler(BankException.class)
-    public ResponseEntity<Object> handleGlobalException(BankException bankException) {
+    @ExceptionHandler(GlobalException.class)
+    public ResponseEntity<Object> handleGlobalException(GlobalException globalException) {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
         ExceptionDto exceptionDto = new ExceptionDto(
-                bankException.getMessage(),
-                bankException,
+                globalException.getMessage(),
+                globalException,
                 status,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
