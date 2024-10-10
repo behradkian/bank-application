@@ -14,7 +14,7 @@ public enum AddressType implements Serializable {
     HOME(1),
     WORK(2);
 
-    private final Integer code;
+    private Integer code;
 
     public static AddressType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
