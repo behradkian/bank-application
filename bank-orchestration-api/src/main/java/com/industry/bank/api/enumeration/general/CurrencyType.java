@@ -11,8 +11,6 @@ import java.util.Arrays;
 @AllArgsConstructor
 public enum CurrencyType implements Serializable {
 
-
-
     USD (1, "USD"),
     EUR (2, "EUR"),
     GBP (3, "GBP"),
