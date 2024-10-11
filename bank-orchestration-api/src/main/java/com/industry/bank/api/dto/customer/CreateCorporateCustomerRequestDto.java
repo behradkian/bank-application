@@ -14,5 +14,6 @@ public class CreateCorporateCustomerRequestDto implements GeneralCustomerRequest
     private String name;
     private Date registerDate;
     private String registerCode;
+    private String economicCode;
 
 }

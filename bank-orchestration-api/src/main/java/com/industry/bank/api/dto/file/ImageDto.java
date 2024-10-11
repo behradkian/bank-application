@@ -1,4 +1,4 @@
-package com.industry.bank.api.dto.general.location;
+package com.industry.bank.api.dto.file;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CityDto {
+public class ImageDto {
 
-    private CountryDto country;
-    private String code;
     private String name;
+    private FileDto imageData;
+
 }
