@@ -1,6 +1,6 @@
 package com.industry.bank.api.exception.runtime;
 
-public class InvalidEnumException extends BankRuntimeException {
+public class InvalidEnumException extends GlobalRuntimeException {
 
     public InvalidEnumException() {
     }

@@ -1,4 +1,4 @@
-package com.industry.bank.api.dto.general.location;
+package com.industry.bank.api.dto.location;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
