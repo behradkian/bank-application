@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Schema(name = "CreateGeneralCustomerRequestDto", title = "", description = "")
 public class CreateGeneralCustomerRequestDto extends BaseRequest {
 
+    @Schema(title = "", name = "type", description = "", example = "REAL", required = true)
     private CustomerType type;
     private GeneralCustomerRequestDto customerDetails;
 
