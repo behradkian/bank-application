@@ -1,4 +1,4 @@
-package com.industry.bank.api.dto.customer;
+package com.industry.bank.api.dto.general;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

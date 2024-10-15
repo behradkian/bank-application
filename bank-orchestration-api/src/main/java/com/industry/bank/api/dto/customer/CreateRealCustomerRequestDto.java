@@ -3,6 +3,7 @@ package com.industry.bank.api.dto.customer;
 import com.industry.bank.api.dto.file.ImageDto;
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.location.AddressDto;
+import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.CityDto;
 import com.industry.bank.api.enumeration.customer.GenderType;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -21,6 +22,7 @@ public class CreateRealCustomerRequestDto implements GeneralCustomerRequestDto{
 
 
     private String firstName;
+    @Schema(title = "", name = "lastName", description = "", example = "javadi", required = true)
     private String lastName;
     private String fatherName;
     private String mobileNumber;
@@ -29,6 +31,7 @@ public class CreateRealCustomerRequestDto implements GeneralCustomerRequestDto{
     private NationalityDto nationality;
 
     private Date birthdate;
+    @Schema(title = "", name = "birthCity", description = "", example = "klivland", required = true)
     private CityDto birthCity;
 
     private String phoneNumber;

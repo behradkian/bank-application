@@ -21,13 +21,13 @@ public interface CustomerFacade {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto createRealCustomer(@RequestHeader Map<String, Object> headers, @RequestBody CreateRealCustomerRequestDto realCustomerRequestDto);
+    CreateGeneralCustomerResponseDto createRealCustomer(@RequestHeader com.industry.bank.api.dto.general.RequestHeader<String , Object> headers, @RequestBody CreateRealCustomerRequestDto realCustomerRequestDto);
 
     @PostMapping(
             value = "/create-corporate-customer",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto createCorporateCustomer(@RequestHeader Map<String, Object> headers, @RequestBody CreateCorporateCustomerRequestDto corporateCustomerRequestDto);
+    CreateGeneralCustomerResponseDto createCorporateCustomer(@RequestHeader com.industry.bank.api.dto.general.RequestHeader<String , Object> headers, @RequestBody CreateCorporateCustomerRequestDto corporateCustomerRequestDto);
 
 }

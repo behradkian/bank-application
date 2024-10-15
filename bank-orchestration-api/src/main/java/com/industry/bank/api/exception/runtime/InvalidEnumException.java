@@ -1,6 +1,10 @@
 package com.industry.bank.api.exception.runtime;
 
-public class InvalidEnumException extends GlobalRuntimeException {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value = HttpStatus.BAD_REQUEST , reason = "Invalid Input Data")
+public class InvalidEnumException extends BankRuntimeException {
 
     public InvalidEnumException() {
     }

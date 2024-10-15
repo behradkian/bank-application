@@ -9,6 +9,4 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BaseRequest {
 
-    //todo remove because the header is in restApi and it does not need exist in body
-    RequestHeader requestHeader;
 }
