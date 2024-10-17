@@ -1,6 +1,7 @@
 package com.industry.bank.api.enumeration.customer;
 
 import com.industry.bank.api.exception.runtime.InvalidEnumException;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -9,9 +10,12 @@ import java.util.Arrays;
 
 @Getter
 @AllArgsConstructor
+@Schema(enumAsRef = true, title = "${GenderType.title}", description = "${GenderType.description}")
 public enum GenderType implements Serializable {
 
+    @Schema(name = "MALE", title = "${GenderType.male.title}", description = "${GenderType.male.description}")
     MALE(1, "MALE"),
+    @Schema(name = "MALE", title = "${GenderType.female.title}", description = "${GenderType.female.description}")
     FEMALE(2, "FEMALE");
 
     private final Integer code;

@@ -9,11 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "RelatedCustomerDto", title = "", description = "")
+@Schema(name = "RelatedCustomerDto", title = "${RelatedCustomerDto.title}", description = "${RelatedCustomerDto.description}")
 public class RelatedCustomerDto {
 
+    @Schema(name = "relation", title = "${RelatedCustomerDto.relation.title}", description = "${RelatedCustomerDto.relation.description}")
     private RelationType relation;
-
+    @Schema(name = "customerNumber", title = "${RelatedCustomerDto.customerNumber.title}", description = "${RelatedCustomerDto.customerNumber.description}")
     private String customerNumber;
 
 }
