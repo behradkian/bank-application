@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateUserResponseDto {
-    @Schema(title = "", name = "jwt", description = "", example = "erfan", required = true , accessMode = Schema.AccessMode.WRITE_ONLY)
+    @Schema(title = "", name = "jwt", description = "", example = "erfan", accessMode = Schema.AccessMode.WRITE_ONLY)
     private String jwt;
 }

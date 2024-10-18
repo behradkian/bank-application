@@ -1,4 +1,4 @@
-package com.industry.bank.api.facade;
+package com.industry.bank.api.facade.deposit;
 
 public interface DepositFacade {
 

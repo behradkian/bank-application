@@ -1,7 +1,6 @@
 package com.industry.bank.persistence.entity.user;
 
 import com.industry.bank.persistence.entity.general.DegreeEntity;
-import com.industry.bank.persistence.entity.general.OccupationEntity;
 import com.industry.bank.persistence.entity.location.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Getter;

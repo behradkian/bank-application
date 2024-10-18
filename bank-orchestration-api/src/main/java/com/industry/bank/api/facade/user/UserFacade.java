@@ -1,4 +1,4 @@
-package com.industry.bank.api.facade;
+package com.industry.bank.api.facade.user;
 
 public interface UserFacade {
 
