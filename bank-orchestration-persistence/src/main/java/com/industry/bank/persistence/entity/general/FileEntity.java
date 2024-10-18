@@ -1,11 +1,13 @@
 package com.industry.bank.persistence.entity.general;
 
+import com.industry.bank.persistence.entity.customer.CustomerEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,5 +31,9 @@ public class FileEntity {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "PE005DATE")
     private Date fileDate;
+
+    @ManyToOne
+    @JoinColumn(name = "PE005CUSTOMER_ID" , referencedColumnName = "customerId")
+    private CustomerEntity customer;
 
 }
