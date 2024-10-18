@@ -10,12 +10,12 @@ import java.util.Arrays;
 
 @Getter
 @AllArgsConstructor
-@Schema(enumAsRef = true , title = "${AddressType.title}" , description = "${AddressType.description}")
+@Schema(enumAsRef = true, title = "${AddressType.title}", description = "${AddressType.description}")
 public enum AddressType implements Serializable {
 
-    @Schema(name = "HOME" , title = "${AddressType.home.title}" , description = "${AddressType.home.description}")
+    @Schema(name = "HOME", title = "${AddressType.home.title}", description = "${AddressType.home.description}")
     HOME(1),
-    @Schema(name = "WORK" , title = "${AddressType.work.title}" , description = "${AddressType.work.description}")
+    @Schema(name = "WORK", title = "${AddressType.work.title}", description = "${AddressType.work.description}")
     WORK(2);
 
     private Integer code;

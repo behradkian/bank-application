@@ -17,61 +17,62 @@ public class AddressEntity {
     @Id
     @SequenceGenerator(name = "AddressEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "AddressEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    @Column(name = "PE004ID")
+    @Column(name = "PE005ID")
     private Long addressId;
 
-    @Column(name = "PE006ID")
-    private Long cityId;
+    @ManyToOne
+    @JoinColumn(name = "PE006ID")
+    private CityEntity city;
 
-    @Column(name = "PE004TYP")
+    @Column(name = "PE005TYP")
     private AddressType addressType;
 
-    @Column(name = "PE004POSTCOD")
+    @Column(name = "PE005POSTCOD")
     private String postalCode;
 
-    @Column(name = "PE004PROVINCE")
+    @Column(name = "PE005PROVINCE")
     private String province;
 
-    @Column(name = "PE004TOWN")
+    @Column(name = "PE005TOWN")
     private String townShip;
 
-    @Column(name = "PE004VILLAGE")
+    @Column(name = "PE005VILLAGE")
     private String village;
 
-    @Column(name = "PE004LOCALTYP")
+    @Column(name = "PE005LOCALTYP")
     private String localityType;
 
-    @Column(name = "PE004LOCALNAM")
+    @Column(name = "PE005LOCALNAM")
     private String localityName;
 
-    @Column(name = "PE004LOCALCOD")
+    @Column(name = "PE005LOCALCOD")
     private String localityCode;
 
-    @Column(name = "PE004SUBLOCAL")
+    @Column(name = "PE005SUBLOCAL")
     private String subLocality;
 
-    @Column(name = "PE004ZONE")
+    @Column(name = "PE005ZONE")
     private String zone;
 
-    @Column(name = "PE004STREET1")
+    @Column(name = "PE005STREET1")
     private String firstStreet;
 
-    @Column(name = "PE004STREET2")
+    @Column(name = "PE005STREET2")
     private String secondStreet;
 
-    @Column(name = "PE004BUILDNAM")
+    @Column(name = "PE005BUILDNAM")
     private String buildingName;
 
-    @Column(name = "PE004FLORNUM")
+    @Column(name = "PE005FLORNUM")
     private String floorNumber;
 
-    @Column(name = "PE004FLORSID")
+    @Column(name = "PE005FLORSID")
     private String sideFloor;
 
-    @Column(name = "PE004HOUSENUM")
+    @Column(name = "PE005HOUSENUM")
     private String houseNumber;
 
-    @Column(name = "PE004TOTAL")
+    @Column(name = "PE005TOTAL")
     private String totalAddress;
 
 }
