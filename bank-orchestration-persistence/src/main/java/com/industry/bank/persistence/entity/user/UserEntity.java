@@ -1,5 +1,7 @@
 package com.industry.bank.persistence.entity.user;
 
+import com.industry.bank.persistence.entity.general.DegreeEntity;
+import com.industry.bank.persistence.entity.location.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -67,5 +69,14 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name = "PE001ID")
     )
     private List<RoleEntity> roles;
+
+    @ManyToOne
+    @JoinColumn(name = "PE009ID")
+    private DegreeEntity degree;
+
+
+    @JoinColumn(name = "PE005ID")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<AddressEntity> addresses;
 
 }

@@ -21,15 +21,15 @@ public class FileEntity {
     @Id
     @SequenceGenerator(name = "FileEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "FileEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    @Column(name = "PE005ID")
+    @Column(name = "PE011ID")
     private Long fileId;
 
     @Lob
-    @Column(name = "PE005DATA")
+    @Column(name = "PE011DATA")
     private byte[] fileData;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "PE005DATE")
+    @Column(name = "PE011DATE")
     private Date fileDate;
 
     @ManyToOne

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Schema(name = "CreateGeneralCustomerResponseDto", title = "", description = "")
 public class CreateGeneralCustomerResponseDto {
 
-    @Schema(title = "", name = "customerNumber", description = "", example = "581647895", required = true)
+    @Schema(title = "", name = "customerNumber", description = "", example = "581647895")
     private String customerNumber;
 
 }

@@ -15,15 +15,15 @@ public class DegreeEntity {
     private static final String SEQUENCE_NAME = "NGNQ_DEGREE_ID";
 
     @Id
-    @SequenceGenerator(name = "FileEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
-    @GeneratedValue(generator = "FileEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "DegreeEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
+    @GeneratedValue(generator = "DegreeEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
     @Column(name = "PE009ID")
     private Long degreeId;
 
     @Column(name = "PE009COD")
-    private String jobCode;
+    private String degreeCode;
 
     @Column(name = "PE009NAM")
-    private String jobName;
+    private String degreeName;
 
 }
