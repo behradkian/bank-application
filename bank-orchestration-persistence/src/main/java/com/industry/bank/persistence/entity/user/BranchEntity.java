@@ -1,22 +1,35 @@
 package com.industry.bank.persistence.entity.user;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
-@Table(name = "oc1branch")
+@Table(name = "PEBRANCH")
 public class BranchEntity {
+
+    private static final String SEQUENCE_NAME = "NGNQ_BRANCH_ID";
+
     @Id
-    @SequenceGenerator(
-            name = "branch_sequence",
-            sequenceName = "branch_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "branch_sequence"
-    )
+    @Column(name = "PE004ID")
+    @SequenceGenerator(name = "BranchEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
+    @GeneratedValue(generator = "BranchEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
     private Long id;
-    private int code;
+
+    @Column(name = "PE004COD")
+    private String code;
+
+    @Column(name = "PE004DESC")
     private String description;
-    private String locationAddress;
+
+    @JoinColumn(name = "PE001ID")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<UserEntity> users;
+
 }

@@ -1,32 +1,70 @@
 package com.industry.bank.persistence.entity.user;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
-@Table(name = "of1user")
+@Table(name = "PEUSER")
 public class UserEntity {
+
+    private static final String SEQUENCE_NAME = "NGNQ_USER_ID";
+
     @Id
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
-    )
-    private Long id;
+    @Column(name = "PE001ID")
+    @SequenceGenerator(name = "UserEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
+    @GeneratedValue(generator = "UserEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
+    private Long userId;
+
+    @Column(name = "PE001FIRSNAM")
     private String firstName;
+
+    @Column(name = "PE001LSTNAM")
     private String lastName;
-    private String mobileNumber;
+
+    @Column(name = "PE001BIRTDAT")
+    @Temporal(TemporalType.DATE)
     private Date birthdate;
+
+    @Column(name = "PE001USRNAM")
     private String username;
+
+    @Column(name = "PE001USRPASS")
     private String password;
-    @Temporal(TemporalType.DATE)
+
+    @Column(name = "PE001NATIONALCOD")
+    private String nationalCode;
+
+    @Column(name = "PE001MOBNUM")
+    private String mobileNumber;
+
+    @Column(name = "PE001EMAIL")
+    private String email;
+
+    @Column(name = "PE001ISUDAT")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date issueDate;
-    @Temporal(TemporalType.DATE)
+
+    @Column(name = "PE001EXPDAT")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date expireDate;
-    private String emailAddress;
+
+    @ManyToOne
+    @JoinColumn(name = "PE004ID")
+    private BranchEntity branch;
+
+    @ManyToMany
+    @JoinTable(name = "USER_ROLE",
+            joinColumns = @JoinColumn(name = "PE002ID"),
+            inverseJoinColumns = @JoinColumn(name = "PE001ID")
+    )
+    private List<RoleEntity> roles;
+
 }

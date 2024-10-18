@@ -11,8 +11,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateUserRequestDto {
+
     @Schema(title = "", name = "user", description = "", example = "201-1917", required = true)
     private UserDto user;
+
     @Schema(title = "", name = "role", description = "", example = "admin", required = true)
     private RoleDto role;
 

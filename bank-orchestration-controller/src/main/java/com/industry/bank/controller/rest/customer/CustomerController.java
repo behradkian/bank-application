@@ -1,4 +1,4 @@
-package com.industry.bank.controller.rest;
+package com.industry.bank.controller.rest.customer;
 
 import com.industry.bank.api.dto.customer.CreateCorporateCustomerRequestDto;
 import com.industry.bank.api.dto.customer.CreateGeneralCustomerResponseDto;
@@ -19,11 +19,7 @@ import java.util.Map;
 @RequestMapping(path = CustomerFacade.PATH)
 public class CustomerController implements CustomerFacade {
 
-    CustomerService customerService;
-
-    public void setCustomerService(CustomerService service){
-        this.customerService = service;
-    }
+    private final CustomerService customerService;
 
     @Override
     @Operation(operationId = "createRealCustomer", summary = "تعریف مشتری حقیقی")
