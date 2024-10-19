@@ -7,6 +7,6 @@ import java.util.HashMap;
 
 @Data
 @AllArgsConstructor
-public class RequestHeader<K, V> extends HashMap<K, V> {
+public class BankOrchestrationRequestHeader<K, V> extends HashMap<K, V> {
 
 }

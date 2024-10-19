@@ -50,12 +50,6 @@
 
             <dependency>
                 <groupId>com.industry.bank</groupId>
-                <artifactId>bank-orchestration-application</artifactId>
-                <version>${application.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.industry.bank</groupId>
                 <artifactId>bank-orchestration-controller</artifactId>
                 <version>${application.version}</version>
             </dependency>
@@ -68,7 +62,13 @@
 
             <dependency>
                 <groupId>com.industry.bank</groupId>
-                <artifactId>bank-orchestration-common</artifactId>
+                <artifactId>bank-orchestration-service</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.industry.bank</groupId>
+                <artifactId>bank-orchestration-application</artifactId>
                 <version>${application.version}</version>
             </dependency>
 
@@ -78,11 +78,14 @@
                 <version>${ui.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.industry.bank</groupId>
-                <artifactId>bank-orchestration-service</artifactId>
-                <version>${application.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--                <version>2023.0.0</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+
 
             <dependency>
                 <groupId>com.h2database</groupId>
@@ -118,6 +121,25 @@
             </dependency>
 
 
+            <!--        <dependency>-->
+            <!--            <groupId>io.jsonwebtoken</groupId>-->
+            <!--            <artifactId>jjwt-api</artifactId>-->
+            <!--            <version>${jjwt.version}</version>-->
+            <!--        </dependency>-->
+            <!--        <dependency>-->
+            <!--            <groupId>io.jsonwebtoken</groupId>-->
+            <!--            <artifactId>jjwt-impl</artifactId>-->
+            <!--            <version>${jjwt.version}</version>-->
+            <!--            <scope>runtime</scope>-->
+            <!--        </dependency>-->
+            <!--        <dependency>-->
+            <!--            <groupId>io.jsonwebtoken</groupId>-->
+            <!--            <artifactId>jjwt-jackson</artifactId>-->
+            <!--            <version>${jjwt.version}</version>-->
+            <!--            <scope>runtime</scope>-->
+            <!--        </dependency>-->
+
+
         </dependencies>
 
     </dependencyManagement>
@@ -141,23 +163,6 @@
             <scope>test</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>io.jsonwebtoken</groupId>-->
-<!--            <artifactId>jjwt-api</artifactId>-->
-<!--            <version>0.12.3</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.jsonwebtoken</groupId>-->
-<!--            <artifactId>jjwt-impl</artifactId>-->
-<!--            <version>0.12.3</version>-->
-<!--            <scope>runtime</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.jsonwebtoken</groupId>-->
-<!--            <artifactId>jjwt-jackson</artifactId>-->
-<!--            <version>0.12.3</version>-->
-<!--            <scope>runtime</scope>-->
-<!--        </dependency>-->
 
     </dependencies>
 

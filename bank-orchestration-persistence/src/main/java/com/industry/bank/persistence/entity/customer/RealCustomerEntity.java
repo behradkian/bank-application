@@ -1,9 +1,6 @@
 package com.industry.bank.persistence.entity.customer;
 
-import com.industry.bank.persistence.entity.general.DegreeEntity;
-import com.industry.bank.persistence.entity.general.OccupationEntity;
 import com.industry.bank.persistence.entity.location.AddressEntity;
-import com.industry.bank.persistence.entity.location.CityEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -32,8 +32,4 @@ public class FileEntity {
     @Column(name = "PE011DATE")
     private Date fileDate;
 
-    @ManyToOne
-    @JoinColumn(name = "PE005CUSTOMER_ID" , referencedColumnName = "customerId")
-    private CustomerEntity customer;
-
 }

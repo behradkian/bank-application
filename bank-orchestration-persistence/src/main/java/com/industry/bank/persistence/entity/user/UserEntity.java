@@ -1,6 +1,6 @@
 package com.industry.bank.persistence.entity.user;
 
-import com.industry.bank.persistence.entity.general.DegreeEntity;
+import com.industry.bank.persistence.entity.customer.DegreeEntity;
 import com.industry.bank.persistence.entity.location.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -60,7 +60,7 @@ public class UserEntity {
 
     // use referenced name column input to join another column instead of id
     @ManyToOne
-    @JoinColumn(name = "PE004BRANCH_ID" , referencedColumnName = "branchCode")
+    @JoinColumn(name = "PE004ID" , referencedColumnName = "branchCode")
     private BranchEntity branch;
 
     @ManyToMany

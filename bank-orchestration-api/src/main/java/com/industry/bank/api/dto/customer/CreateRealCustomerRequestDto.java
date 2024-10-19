@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "CreateRealCustomerRequestDto", title = "${CreateRealCustomerRequestDto.title}", description = "${CreateRealCustomerRequestDto.description}")
-public class CreateRealCustomerRequestDto implements GeneralCustomerRequestDto{
+public class CreateRealCustomerRequestDto implements GeneralCustomerRequestDto {
 
 
     @Schema(name = "firstName", title = "${CreateRealCustomerRequestDto.firstName.title}", description = "${CreateRealCustomerRequestDto.firstName.description}")
