@@ -28,8 +28,10 @@ public class BranchEntity {
     @Column(name = "PE004DESC")
     private String description;
 
-    @JoinColumn(name = "PE001ID")
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @Column(name = "PE001ID" , unique = true, nullable = false)
+    private String branchCode;
+
+    @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY, cascade = CascadeType.ALL , orphanRemoval = true)
     private List<UserEntity> users;
 
 }
