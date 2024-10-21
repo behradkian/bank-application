@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.4</version>
+        <version>3.2.7</version>
         <relativePath/>
     </parent>
 
@@ -32,7 +32,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <java.version>17</java.version>
-        <spring-boot.version>3.2.1</spring-boot.version>
+        <spring-boot.version>3.2.7</spring-boot.version>
         <application.version>1.0.0</application.version>
         <ui.version>1.0.0</ui.version>
         <jjwt.version>0.12.3</jjwt.version>
@@ -119,6 +119,13 @@
                 <artifactId>guava</artifactId>
                 <version>33.1.0-jre</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-openfeign-core</artifactId>
+                <version>3.1.9</version>
+            </dependency>
+
 
 
             <!--        <dependency>-->

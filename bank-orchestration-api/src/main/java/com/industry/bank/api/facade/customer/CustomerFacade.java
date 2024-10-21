@@ -4,10 +4,12 @@ import com.industry.bank.api.dto.customer.CreateCorporateCustomerRequestDto;
 import com.industry.bank.api.dto.customer.CreateGeneralCustomerResponseDto;
 import com.industry.bank.api.dto.customer.CreateRealCustomerRequestDto;
 import com.industry.bank.api.dto.general.BankOrchestrationRequestHeader;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+@FeignClient
 public interface CustomerFacade {
 
     String PATH = "/customer";

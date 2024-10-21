@@ -2,13 +2,11 @@ package com.industry.bank.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
-@EnableAsync
-@EnableScheduling
 @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = true)
+@ComponentScan(basePackages = {"com.industry.bank.api", "com.industry.bank.controller", "com.industry.bank.service", "com.industry.bank.application"})
 @SpringBootApplication
 public class BankApplication {
 
