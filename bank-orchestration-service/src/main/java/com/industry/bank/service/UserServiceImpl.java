@@ -2,14 +2,15 @@ package com.industry.bank.service;
 
 import com.industry.bank.service.api.UserService;
 import com.industry.bank.service.repository.UserStorage;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
-    private UserStorage userStorage;
-    @Autowired
-    public void setUserRepository(UserStorage userStorage){
-        this.userStorage = userStorage;
-    }
+
+    //private final UserStorage userStorage;
+
+
 }

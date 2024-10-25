@@ -17,5 +17,5 @@ public class LicenseDto {
 
     private String name;
 
-    private List<RoleDto> roles;
+    private List<RoleRequest> roles;
 }

@@ -4,6 +4,8 @@ import com.industry.bank.api.dto.user.RoleDto;
 import com.industry.bank.api.dto.user.UserDto;
 import com.industry.bank.persistence.mapper.UserMapper;
 import com.industry.bank.service.repository.UserStorage;
+import com.industry.bank.service.repository.dto.RoleRequest;
+import com.industry.bank.service.repository.dto.userRequest;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +25,14 @@ public class UserStorageImpl implements UserStorage {
     }
 
     @Override
-    public com.industry.bank.service.repository.dto.UserDto saveUser(UserDto user) {
+    public userRequest saveUser(UserDto user) {
 
         //userMapper.mapToDto();
         return  null;
     }
 
     @Override
-    public com.industry.bank.service.repository.dto.RoleDto saveRole(RoleDto role) {
+    public RoleRequest saveRole(RoleDto role) {
 //        String queryStr = "SELECT c FROM user c WHERE c.name LIKE :name";
 //        TypedQuery<UserEntity> query = entityManager.createQuery(queryStr, UserEntity.class);
 //        query.setParameter("nameFragment", "%" + nameFragment + "%");
@@ -39,6 +41,6 @@ public class UserStorageImpl implements UserStorage {
     }
 
     @Override
-    public void addRoleToUser(com.industry.bank.service.repository.dto.RoleDto roleName, com.industry.bank.service.repository.dto.UserDto userName) {
+    public void addRoleToUser(RoleRequest roleName, userRequest userName) {
     }
 }

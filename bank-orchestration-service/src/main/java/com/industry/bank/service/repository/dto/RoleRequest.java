@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RoleDto {
+public class RoleRequest {
 
     private Long id;
 
@@ -17,7 +17,7 @@ public class RoleDto {
 
     private String name;
 
-    private List<UserDto> users;
+    private List<userRequest> users;
 
     private List<LicenseDto> licenses;
 }

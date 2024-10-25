@@ -34,7 +34,7 @@ public class SwaggerConfiguration {
     public GroupedOpenApi userApi(){
         return GroupedOpenApi.builder()
                 .group("user")
-                .packagesToScan("com.industry.bank.controller.rest")
+                .packagesToScan("com.industry.bank.controller.rest.user")
                 .pathsToMatch("/user/**")
                 .displayName("user services")
                 .build();
@@ -55,7 +55,7 @@ public class SwaggerConfiguration {
         return GroupedOpenApi.builder()
                 .group("customer")
                 .pathsToMatch("/customer/**")
-                .packagesToScan("com.industry.bank.controller.rest")
+                .packagesToScan("com.industry.bank.controller.rest.customer")
                 .displayName("customer services")
                 .build();
     }
