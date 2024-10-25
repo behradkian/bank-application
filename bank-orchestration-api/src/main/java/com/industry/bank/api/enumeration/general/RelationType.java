@@ -30,6 +30,10 @@ public enum RelationType {
 
     private Integer code;
 
+    RelationType(int code){
+        this.code = code;
+    }
+
     public static RelationType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
                 .orElseThrow(() -> new InvalidEnumException("code in RelationType is invalid : " + code));

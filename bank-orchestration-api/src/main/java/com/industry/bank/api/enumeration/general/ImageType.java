@@ -20,6 +20,10 @@ public enum ImageType {
 
     private Integer code;
 
+    ImageType(int code){
+        this.code = code;
+    }
+
     public static ImageType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
                 .orElseThrow(() -> new InvalidEnumException("code in ImageType is invalid : " + code));

@@ -20,6 +20,10 @@ public enum AddressType implements Serializable {
 
     private Integer code;
 
+    AddressType(int code) {
+        this.code = code;
+    }
+
     public static AddressType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
                 .orElseThrow(() -> new InvalidEnumException("code in AddressType is invalid : " + code));

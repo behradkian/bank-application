@@ -21,6 +21,11 @@ public enum GenderType implements Serializable {
     private final Integer code;
     private final String value;
 
+    GenderType(int code , String value){
+        this.code = code;
+        this.value = value;
+    }
+
     public static GenderType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
                 .orElseThrow(() -> new InvalidEnumException("code in GenderType is invalid : " + code));
