@@ -22,8 +22,8 @@ public class CustomerController implements CustomerFacade {
 
     @Operation(
             operationId = "createRealCustomer", summary = "تعریف مشتری حقیقی", description = "تعریف مشتری حقیقی", responses = {
-            @ApiResponse(responseCode = "200", description = "OK"),
-            @ApiResponse(responseCode = "400", description = "NOK")//"mdFILE"
+            @ApiResponse(responseCode = "200", description = "Successful"),
+            @ApiResponse(responseCode = "400", description = "Failed")//"mdFILE"
     })
     @Override
     public CreateGeneralCustomerResponseDto createRealCustomer(BankOrchestrationRequestHeader<String, Object> headers, CreateRealCustomerRequestDto realCustomerRequestDto) {
@@ -31,8 +31,8 @@ public class CustomerController implements CustomerFacade {
     }
 
     @Operation(operationId = "createCorporateCustomer", summary = "تعریف مشتری حقوقی", description = "تعریف مشتری حقوقی", responses = {
-            @ApiResponse(responseCode = "200", description = "OK"),
-            @ApiResponse(responseCode = "400", description = "NOK")//"mdFILE"
+            @ApiResponse(responseCode = "200", description = "Successful"),
+            @ApiResponse(responseCode = "400", description = "Failed")//"mdFILE"
     })
     @Override
     public CreateGeneralCustomerResponseDto createCorporateCustomer(BankOrchestrationRequestHeader<String, Object> headers, CreateCorporateCustomerRequestDto corporateCustomerRequestDto) {

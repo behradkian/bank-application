@@ -17,6 +17,10 @@ public enum CustomerType implements Serializable {
     private final Integer code;
     private final String value;
 
+    CustomerType(int code , String value){
+        this.code = code;
+        this.value = value;
+    }
     public static CustomerType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
                 .orElseThrow(() -> new InvalidEnumException("code in CustomerType is invalid : " + code));

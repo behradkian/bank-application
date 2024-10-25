@@ -60,6 +60,11 @@ public enum CurrencyType implements Serializable {
     private Integer code;
     private String value;
 
+    CurrencyType(int code , String value){
+        this.code = code;
+        this.value = value;
+    }
+
     public static CurrencyType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
                 .orElseThrow(() -> new InvalidEnumException("code in CurrencyType is invalid : " + code));

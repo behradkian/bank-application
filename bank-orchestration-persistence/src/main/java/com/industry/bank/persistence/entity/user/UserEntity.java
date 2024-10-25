@@ -63,7 +63,7 @@ public class UserEntity {
     @JoinColumn(name = "PE004ID" , referencedColumnName = "branchCode")
     private BranchEntity branch;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "USER_ROLE",
             joinColumns = @JoinColumn(name = "PE002ID"),
             inverseJoinColumns = @JoinColumn(name = "PE001ID")

@@ -23,4 +23,9 @@ public enum FileExtensionType implements Serializable {
     private final Integer code;
     private final String name;
 
+    FileExtensionType(int code , String name){
+        this.code = code;
+        this.name = name;
+    }
+
 }
