@@ -19,5 +19,5 @@ public class BranchDto {
 
     private String branchCode;
 
-    private List<UserDto> users;
+    private List<userRequest> users;
 }

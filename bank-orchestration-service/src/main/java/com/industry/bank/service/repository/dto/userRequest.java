@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
+public class userRequest {
 
     private Long userId;
 
@@ -36,7 +36,7 @@ public class UserDto {
 
     private BranchDto branch;
 
-    private List<RoleDto> roles;
+    private List<RoleRequest> roles;
 
     private DegreeDto degree;
 
