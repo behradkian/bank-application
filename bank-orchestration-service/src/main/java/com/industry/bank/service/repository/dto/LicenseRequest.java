@@ -4,17 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CityDto {
+public class LicenseRequest {
 
-    private Long cityId;
-
-    private String cityCode;
-
-    private String cityName;
-
-    private CountryDto country;
+    private String licenceId;
+    private String licenceCode;
+    private String licenceName;
+    private List<RoleRequest> roles;
 
 }

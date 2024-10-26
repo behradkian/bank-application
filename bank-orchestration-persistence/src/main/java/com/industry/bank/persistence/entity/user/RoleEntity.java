@@ -20,13 +20,13 @@ public class RoleEntity {
     @Column(name = "PE002ID")
     @SequenceGenerator(name = "RoleEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "RoleEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long roleId;
 
     @Column(name = "PE002COD")
-    private String code;
+    private String roleCode;
 
     @Column(name = "PE002NAM")
-    private String name;
+    private String roleName;
 
     @ManyToMany(mappedBy = "roles")
     private List<UserEntity> users;

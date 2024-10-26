@@ -9,15 +9,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BranchDto {
+public class BranchRequest {
 
-    private Long id;
-
-    private String code;
-
-    private String description;
-
+    private String branchId;
     private String branchCode;
-
-    private List<userRequest> users;
+    private String description;
+    private List<UserRequest> users;
+    private AddressRequest address;
 }

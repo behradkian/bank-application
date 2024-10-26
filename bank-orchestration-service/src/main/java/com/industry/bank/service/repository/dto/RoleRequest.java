@@ -11,13 +11,10 @@ import java.util.List;
 @NoArgsConstructor
 public class RoleRequest {
 
-    private Long id;
+    private String roleId;
+    private String roleCode;
+    private String roleName;
+    private List<UserRequest> users;
+    private List<LicenseRequest> licenses;
 
-    private String code;
-
-    private String name;
-
-    private List<userRequest> users;
-
-    private List<LicenseDto> licenses;
 }

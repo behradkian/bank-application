@@ -7,11 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DegreeDto {
+public class DegreeRequest {
 
-    private Long degreeId;
-
+    private String degreeId;
     private String degreeCode;
-
     private String degreeName;
+
 }

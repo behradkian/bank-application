@@ -10,36 +10,22 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class userRequest {
+public class UserRequest {
 
-    private Long userId;
-
+    private String userId;
     private String firstName;
-
     private String lastName;
-
     private Date birthdate;
-
     private String username;
-
     private String password;
-
     private String nationalCode;
-
     private String mobileNumber;
-
     private String email;
-
     private Date issueDate;
-
     private Date expireDate;
-
-    private BranchDto branch;
-
+    private BranchRequest branch;
+    private DegreeRequest degree;
+    private List<AddressRequest> addresses;
     private List<RoleRequest> roles;
-
-    private DegreeDto degree;
-
-    private List<AddressDto> addresses;
 
 }

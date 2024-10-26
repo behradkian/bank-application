@@ -5,7 +5,7 @@ import com.industry.bank.api.dto.user.UserDto;
 import com.industry.bank.persistence.mapper.UserMapper;
 import com.industry.bank.service.repository.UserStorage;
 import com.industry.bank.service.repository.dto.RoleRequest;
-import com.industry.bank.service.repository.dto.userRequest;
+import com.industry.bank.service.repository.dto.UserRequest;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class UserStorageImpl implements UserStorage {
     }
 
     @Override
-    public userRequest saveUser(UserDto user) {
+    public UserRequest saveUser(UserDto user) {
 
         //userMapper.mapToDto();
         return  null;
@@ -41,6 +41,7 @@ public class UserStorageImpl implements UserStorage {
     }
 
     @Override
-    public void addRoleToUser(RoleRequest roleName, userRequest userName) {
+    public void addRoleToUser(RoleRequest roleName, UserRequest userName) {
     }
+
 }

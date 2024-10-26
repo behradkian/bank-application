@@ -1,11 +1,17 @@
 package com.industry.bank.persistence.mapper;
 
 import com.industry.bank.persistence.entity.user.UserEntity;
-import com.industry.bank.service.repository.dto.userRequest;
+import com.industry.bank.service.repository.dto.UserRequest;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UserMapper {
-    userRequest mapToDto(UserEntity user);
-    UserEntity mapToEntity(userRequest userRequest);
+
+    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
+
+    UserRequest toDto(UserEntity user);
+
+    UserEntity toEntity(UserRequest userRequest);
+
 }
