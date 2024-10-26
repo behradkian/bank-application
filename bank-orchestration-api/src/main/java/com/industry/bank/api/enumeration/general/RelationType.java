@@ -1,15 +1,14 @@
 package com.industry.bank.api.enumeration.general;
 
-
 import com.industry.bank.api.exception.runtime.InvalidEnumException;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Schema(enumAsRef = true, title = "${RelationType.title}", description = "${RelationType.description}")
 public enum RelationType {
 
@@ -28,11 +27,7 @@ public enum RelationType {
     @Schema(enumAsRef = true, title = "${RelationType.business_partner.title}", description = "${RelationType.business_partner.description}")
     BUSINESS_PARTNER(6); // شریک تجاری
 
-    private Integer code;
-
-    RelationType(int code){
-        this.code = code;
-    }
+    private final Integer code;
 
     public static RelationType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()

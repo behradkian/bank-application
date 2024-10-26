@@ -2,14 +2,14 @@ package com.industry.bank.api.enumeration.customer;
 
 import com.industry.bank.api.exception.runtime.InvalidEnumException;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Arrays;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Schema(enumAsRef = true, title = "${GenderType.title}", description = "${GenderType.description}")
 public enum GenderType implements Serializable {
 
@@ -20,11 +20,6 @@ public enum GenderType implements Serializable {
 
     private final Integer code;
     private final String value;
-
-    GenderType(int code , String value){
-        this.code = code;
-        this.value = value;
-    }
 
     public static GenderType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
