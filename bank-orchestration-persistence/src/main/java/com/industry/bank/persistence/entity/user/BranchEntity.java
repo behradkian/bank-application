@@ -1,5 +1,6 @@
 package com.industry.bank.persistence.entity.user;
 
+import com.industry.bank.persistence.entity.location.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,18 +21,18 @@ public class BranchEntity {
     @Column(name = "PE004ID")
     @SequenceGenerator(name = "BranchEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "BranchEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long branchId;
 
-    @Column(name = "PE004COD")
-    private String code;
+    @Column(name = "PE004COD", unique = true, nullable = false)
+    private String branchCode;
 
     @Column(name = "PE004DESC")
     private String description;
 
-    @Column(name = "PE001ID" , unique = true, nullable = false)
-    private String branchCode;
+    @OneToOne(mappedBy = "addressId", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private AddressEntity address;
 
-    @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY, cascade = CascadeType.ALL , orphanRemoval = true)
+    @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserEntity> users;
 
 }

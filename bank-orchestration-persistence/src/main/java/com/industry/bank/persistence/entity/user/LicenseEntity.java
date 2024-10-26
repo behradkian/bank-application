@@ -20,13 +20,13 @@ public class LicenseEntity {
     @Column(name = "PE003ID")
     @SequenceGenerator(name = "LicenseEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "LicenseEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long licenceId;
 
     @Column(name = "PE003COD")
-    private int code;
+    private int licenceCode;
 
     @Column(name = "PE003NAM")
-    private String name;
+    private String licenceName;
 
     @ManyToMany(mappedBy = "licenses")
     private List<RoleEntity> roles;

@@ -9,12 +9,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "ImageDto" , title = "${ImageDto.title}" , description = "${ImageDto.description}")
+@Schema(name = "ImageDto", title = "${ImageDto.title}", description = "${ImageDto.description}")
 public class ImageDto {
 
-    @Schema(name = "name" , title = "${ImageDto.imageType.title}" , description = "${ImageDto.imageType.description}")
+    @Schema(name = "name", title = "${ImageDto.imageType.title}", description = "${ImageDto.imageType.description}")
     private ImageType imageType;
-    @Schema(name = "imageData" , title = "${ImageDto.imageDate.title}" , description = "${ImageDto.imageData.description}")
+
+    @Schema(name = "imageData", title = "${ImageDto.imageDate.title}", description = "${ImageDto.imageData.description}")
     private FileDto imageData;
 
 }
