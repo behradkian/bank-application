@@ -1,14 +1,14 @@
 package com.industry.bank.api.enumeration.general;
 
 import com.industry.bank.api.exception.runtime.InvalidEnumException;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Arrays;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public enum CurrencyType implements Serializable {
 
     USD (1, "USD"),
@@ -57,13 +57,8 @@ public enum CurrencyType implements Serializable {
     OMR (44, "OMR"),
     IRR(45,"IRR");
 
-    private Integer code;
-    private String value;
-
-    CurrencyType(int code , String value){
-        this.code = code;
-        this.value = value;
-    }
+    private final Integer code;
+    private final String value;
 
     public static CurrencyType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
