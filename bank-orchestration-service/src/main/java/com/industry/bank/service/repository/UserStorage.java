@@ -5,12 +5,18 @@ import com.industry.bank.api.dto.user.UserDto;
 import com.industry.bank.service.repository.dto.RoleRequest;
 import com.industry.bank.service.repository.dto.UserRequest;
 
+import java.util.List;
+
 public interface UserStorage {
 
-    UserRequest saveUser(UserDto user);
+    void saveUser(UserRequest user);
 
-    RoleRequest saveRole(RoleDto role);
+    void saveRole(RoleRequest role);
 
-    void addRoleToUser(RoleRequest roleName, UserRequest userName);
+    void addRoleToUser(String roleName, String username);
+
+    UserRequest getUser(String username);
+
+    List<UserRequest> getUsers();
 
 }

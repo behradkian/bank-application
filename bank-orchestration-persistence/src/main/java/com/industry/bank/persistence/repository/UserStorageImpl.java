@@ -1,15 +1,17 @@
 package com.industry.bank.persistence.repository;
 
-import com.industry.bank.api.dto.user.RoleDto;
-import com.industry.bank.api.dto.user.UserDto;
+import com.industry.bank.persistence.entity.user.RoleEntity;
+import com.industry.bank.persistence.entity.user.UserEntity;
+import com.industry.bank.persistence.mapper.RoleMapper;
 import com.industry.bank.persistence.mapper.UserMapper;
 import com.industry.bank.service.repository.UserStorage;
 import com.industry.bank.service.repository.dto.RoleRequest;
 import com.industry.bank.service.repository.dto.UserRequest;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class UserStorageImpl implements UserStorage {
@@ -17,31 +19,35 @@ public class UserStorageImpl implements UserStorage {
     @PersistenceContext
     private EntityManager entityManager;
 
-    private UserMapper userMapper;
-
-    @Autowired
-    public void setUserMapper(UserMapper userMapper){
-        this.userMapper = userMapper;
+    @Override
+    public void saveUser(UserRequest user) {
+        UserEntity userEntity = UserMapper.INSTANCE.toEntity(user);
+        entityManager.persist(userEntity);
     }
 
     @Override
-    public UserRequest saveUser(UserDto user) {
-
-        //userMapper.mapToDto();
-        return  null;
+    public void saveRole(RoleRequest role) {
+        RoleEntity roleEntity = RoleMapper.INSTANCE.toEntity(role);
+        entityManager.persist(roleEntity);
     }
 
     @Override
-    public RoleRequest saveRole(RoleDto role) {
-//        String queryStr = "SELECT c FROM user c WHERE c.name LIKE :name";
-//        TypedQuery<UserEntity> query = entityManager.createQuery(queryStr, UserEntity.class);
-//        query.setParameter("nameFragment", "%" + nameFragment + "%");
-//        return query.getResultList();
+    public void addRoleToUser(String roleName, String username) {
+        UserEntity user = entityManager.find(UserEntity.class,username);
+        RoleEntity role = entityManager.find(RoleEntity.class,roleName);
+        user.getRoles().add(role);
+    }
+
+    @Override
+    public UserRequest getUser(String username) {
+        UserRequest user = UserMapper.INSTANCE.toRequest(entityManager.find(UserEntity.class,username));
+        return user;
+    }
+
+    @Override
+    public List<UserRequest> getUsers() {
+        //entityManager.find(UserEntity.class,);
         return null;
-    }
-
-    @Override
-    public void addRoleToUser(RoleRequest roleName, UserRequest userName) {
     }
 
 }

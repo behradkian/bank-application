@@ -21,19 +21,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = UserFacade.PATH)
 public class UserController implements UserFacade {
 
-    UserService userService;
+    private final UserService userService;
 
-    @Autowired
-    public void setUserService(UserService userService) {
+    public UserController(UserService userService){
         this.userService = userService;
     }
-
     @Operation(operationId = "signupUser", summary = "ثبت نام کاربر", description = "ثبت نام کاربر", responses = {
             @ApiResponse(responseCode = "200", description = "Successful"),
             @ApiResponse(responseCode = "400", description = "Failed")
     })
     @Override
     public CreateUserResponseDto signupUser(BankOrchestrationRequestHeader<String, Object> headers, CreateUserRequestDto requestDto) {
+        userService.addUser(requestDto.getUser());
         return null;
     }
 
