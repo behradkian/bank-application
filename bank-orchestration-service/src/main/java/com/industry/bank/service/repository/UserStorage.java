@@ -1,7 +1,5 @@
 package com.industry.bank.service.repository;
 
-import com.industry.bank.api.dto.user.RoleDto;
-import com.industry.bank.api.dto.user.UserDto;
 import com.industry.bank.service.repository.dto.RoleRequest;
 import com.industry.bank.service.repository.dto.UserRequest;
 

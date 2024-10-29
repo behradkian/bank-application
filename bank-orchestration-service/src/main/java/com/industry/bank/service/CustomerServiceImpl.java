@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
+
     @Override
     public CreateGeneralCustomerResponseDto createRealCustomer(CreateRealCustomerRequestDto realCustomerRequestDto) {
         return null;
@@ -19,4 +20,5 @@ public class CustomerServiceImpl implements CustomerService {
     public CreateGeneralCustomerResponseDto createCorporateCustomer(CreateCorporateCustomerRequestDto corporateCustomerRequestDto) {
         return null;
     }
+
 }

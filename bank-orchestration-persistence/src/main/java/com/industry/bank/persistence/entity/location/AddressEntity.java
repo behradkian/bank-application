@@ -1,5 +1,6 @@
 package com.industry.bank.persistence.entity.location;
 
+import com.industry.bank.api.enumeration.general.AddressType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,8 +24,9 @@ public class AddressEntity {
     @JoinColumn(name = "PE006ID")
     private CityEntity city;
 
+    @Enumerated(value = EnumType.STRING)
     @Column(name = "PE005TYP")
-    private Integer addressType;
+    private AddressType addressType;
 
     @Column(name = "PE005POSTCOD")
     private String postalCode;

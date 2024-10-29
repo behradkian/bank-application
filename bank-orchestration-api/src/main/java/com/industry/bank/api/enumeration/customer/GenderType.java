@@ -15,6 +15,7 @@ public enum GenderType implements Serializable {
 
     @Schema(name = "MALE", title = "${GenderType.male.title}", description = "${GenderType.male.description}")
     MALE(1, "MALE"),
+
     @Schema(name = "MALE", title = "${GenderType.female.title}", description = "${GenderType.female.description}")
     FEMALE(2, "FEMALE");
 
@@ -27,8 +28,10 @@ public enum GenderType implements Serializable {
     }
 
     public static GenderType getByValue(String value) {
-        return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
-                .orElseThrow(() -> new InvalidEnumException("value in GenderType is invalid : " + value));
+        if (value != null)
+            return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
+                    .orElseThrow(() -> new InvalidEnumException("value in GenderType is invalid : " + value));
+        return null;
     }
 
 }

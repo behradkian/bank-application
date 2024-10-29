@@ -23,8 +23,10 @@ public enum CustomerType implements Serializable {
     }
 
     public static CustomerType getByValue(String value) {
-        return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
-                .orElseThrow(() -> new InvalidEnumException("value in CustomerType is invalid : " + value));
+        if (value != null)
+            return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
+                    .orElseThrow(() -> new InvalidEnumException("value in CustomerType is invalid : " + value));
+        return null;
     }
 
 }

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
 @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = true)
-@ComponentScan(basePackages = {"com.industry.bank.api", "com.industry.bank.controller", "com.industry.bank.service", "com.industry.bank.application"})
+@ComponentScan(basePackages = {"com.industry.bank.application", "com.industry.bank.api", "com.industry.bank.controller", "com.industry.bank.service"})
 @SpringBootApplication
 public class BankApplication {
 

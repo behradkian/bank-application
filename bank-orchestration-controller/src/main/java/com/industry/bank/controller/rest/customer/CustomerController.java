@@ -5,6 +5,7 @@ import com.industry.bank.api.dto.customer.CreateGeneralCustomerResponseDto;
 import com.industry.bank.api.dto.customer.CreateRealCustomerRequestDto;
 import com.industry.bank.api.dto.general.BankOrchestrationRequestHeader;
 import com.industry.bank.api.facade.customer.CustomerFacade;
+import com.industry.bank.service.api.CustomerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = CustomerFacade.PATH)
 public class CustomerController implements CustomerFacade {
 
-    //private final CustomerService customerService;
+    private final CustomerService customerService;
 
     @Operation(
             operationId = "createRealCustomer", summary = "تعریف مشتری حقیقی", description = "تعریف مشتری حقیقی", responses = {
@@ -27,7 +28,7 @@ public class CustomerController implements CustomerFacade {
     })
     @Override
     public CreateGeneralCustomerResponseDto createRealCustomer(BankOrchestrationRequestHeader<String, Object> headers, CreateRealCustomerRequestDto realCustomerRequestDto) {
-        return null;
+        return customerService.createRealCustomer(realCustomerRequestDto);
     }
 
     @Operation(operationId = "createCorporateCustomer", summary = "تعریف مشتری حقوقی", description = "تعریف مشتری حقوقی", responses = {
@@ -36,7 +37,7 @@ public class CustomerController implements CustomerFacade {
     })
     @Override
     public CreateGeneralCustomerResponseDto createCorporateCustomer(BankOrchestrationRequestHeader<String, Object> headers, CreateCorporateCustomerRequestDto corporateCustomerRequestDto) {
-        return null;
+        return customerService.createCorporateCustomer(corporateCustomerRequestDto);
     }
 
 
