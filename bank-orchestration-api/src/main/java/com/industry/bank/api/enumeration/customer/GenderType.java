@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Map;
 
 @Getter
 @RequiredArgsConstructor
@@ -26,6 +28,7 @@ public enum GenderType implements Serializable {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
                 .orElseThrow(() -> new InvalidEnumException("code in GenderType is invalid : " + code));
     }
+
 
     public static GenderType getByValue(String value) {
         if (value != null)
