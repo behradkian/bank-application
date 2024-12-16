@@ -14,18 +14,30 @@ public interface CustomerFacade {
 
     String PATH = "/customer";
 
+    /**
+     * @param headers                {@link BankOrchestrationRequestHeader}
+     * @param realCustomerRequestDto {@link CreateRealCustomerRequestDto}
+     * @return {@link CreateGeneralCustomerResponseDto}
+     */
     @PostMapping(
             value = "/create-real-customer",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto createRealCustomer(@RequestHeader BankOrchestrationRequestHeader<String , Object> headers, @RequestBody CreateRealCustomerRequestDto realCustomerRequestDto);
+    CreateGeneralCustomerResponseDto createRealCustomer(@RequestHeader BankOrchestrationRequestHeader<String, Object> headers,
+                                                        @RequestBody CreateRealCustomerRequestDto realCustomerRequestDto);
 
+    /**
+     * @param headers                     {@link BankOrchestrationRequestHeader}
+     * @param corporateCustomerRequestDto {@link CreateCorporateCustomerRequestDto}
+     * @return {@link CreateGeneralCustomerResponseDto}
+     */
     @PostMapping(
             value = "/create-corporate-customer",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto createCorporateCustomer(@RequestHeader BankOrchestrationRequestHeader<String , Object> headers, @RequestBody CreateCorporateCustomerRequestDto corporateCustomerRequestDto);
+    CreateGeneralCustomerResponseDto createCorporateCustomer(@RequestHeader BankOrchestrationRequestHeader<String, Object> headers,
+                                                             @RequestBody CreateCorporateCustomerRequestDto corporateCustomerRequestDto);
 
 }

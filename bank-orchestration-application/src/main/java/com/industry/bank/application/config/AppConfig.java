@@ -14,7 +14,6 @@ import java.util.Arrays;
 import java.util.Locale;
 
 @Configuration
-//@EnableJpaRepositories(basePackages = "com.industry.bank.persistence.api")
 public class AppConfig {
 
     @Bean
@@ -37,7 +36,7 @@ public class AppConfig {
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasenames("classpath:documentation/document_${document.lang}.properties");
+        messageSource.setBasenames("classpath:documentation");
         messageSource.setDefaultEncoding("UTF-8");
         messageSource.setUseCodeAsDefaultMessage(true);
         return messageSource;

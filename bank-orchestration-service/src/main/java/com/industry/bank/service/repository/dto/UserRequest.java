@@ -23,7 +23,7 @@ public class UserRequest {
     private String email;
     private Date issueDate;
     private Date expireDate;
-    private BranchRequest branch;
+    //private BranchRequest branch;
     private DegreeRequest degree;
     private List<AddressRequest> addresses;
     private List<RoleRequest> roles;
