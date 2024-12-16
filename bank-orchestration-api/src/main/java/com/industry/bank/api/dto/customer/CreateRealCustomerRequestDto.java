@@ -24,6 +24,10 @@ import java.util.List;
 @Schema(name = "CreateRealCustomerRequestDto", title = "${CreateRealCustomerRequestDto.title}", description = "${CreateRealCustomerRequestDto.description}")
 public class CreateRealCustomerRequestDto {
 
+    @Hidden
+    @Builder.Default
+    @Schema(title = "", name = "type", description = "", defaultValue = "Real")
+    private CustomerType type = CustomerType.REAL;
 
     @Schema(name = "firstName", title = "${CreateRealCustomerRequestDto.firstName.title}", description = "${CreateRealCustomerRequestDto.firstName.description}")
     private String firstName;
@@ -34,14 +38,11 @@ public class CreateRealCustomerRequestDto {
     @Schema(name = "fatherName", title = "${CreateRealCustomerRequestDto.fatherName.title}", description = "${CreateRealCustomerRequestDto.fatherName.description}")
     private String fatherName;
 
-    @Schema(name = "mobileNumber", title = "${CreateRealCustomerRequestDto.mobileNumber.title}", description = "${CreateRealCustomerRequestDto.mobileNumber.description}")
-    private String mobileNumber;
+    @Schema(name = "nationalCode", title = "${CreateRealCustomerRequestDto.nationalCode.title}", description = "${CreateRealCustomerRequestDto.nationalCode.description}")
+    private String nationalCode;
 
     @Schema(name = "passportNumber", title = "${CreateRealCustomerRequestDto.passportNumber.title}", description = "${CreateRealCustomerRequestDto.passportNumber.description}")
     private String passportNumber;
-
-    @Schema(name = "nationalCode", title = "${CreateRealCustomerRequestDto.nationalCode.title}", description = "${CreateRealCustomerRequestDto.nationalCode.description}")
-    private String nationalCode;
 
     @Schema(name = "nationality", title = "${CreateRealCustomerRequestDto.nationality.title}", description = "${CreateRealCustomerRequestDto.nationality.description}")
     private NationalityDto nationality;
@@ -51,6 +52,9 @@ public class CreateRealCustomerRequestDto {
 
     @Schema(name = "birthCity", title = "${CreateRealCustomerRequestDto.birthCity.title}", description = "${CreateRealCustomerRequestDto.birthCity.description}")
     private CityDto birthCity;
+
+    @Schema(name = "mobileNumber", title = "${CreateRealCustomerRequestDto.mobileNumber.title}", description = "${CreateRealCustomerRequestDto.mobileNumber.description}")
+    private String mobileNumber;
 
     @Schema(name = "phoneNumber", title = "${CreateRealCustomerRequestDto.phoneNumber.title}", description = "${CreateRealCustomerRequestDto.phoneNumber.description}")
     private String phoneNumber;
@@ -69,13 +73,5 @@ public class CreateRealCustomerRequestDto {
 
     @Schema(name = "images", title = "${CreateRealCustomerRequestDto.images.title}", description = "${CreateRealCustomerRequestDto.images.description}")
     private List<ImageDto> images;
-
-    @Schema(name = "customerRelations", title = "${CreateRealCustomerRequestDto.customerRelations.title}", description = "${CreateRealCustomerRequestDto.customerRelations.description}")
-    private List<RelatedCustomerDto> customerRelations;
-
-    @Hidden
-    @Builder.Default
-    @Schema(title = "", name = "type", description = "", defaultValue = "Real")
-    private CustomerType type = CustomerType.REAL;
 
 }

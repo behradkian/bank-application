@@ -1,14 +1,11 @@
 package com.industry.bank.api.enumeration.customer;
 
-import com.industry.bank.api.exception.runtime.InvalidEnumException;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Map;
 
 @Getter
 @RequiredArgsConstructor
@@ -26,15 +23,19 @@ public enum GenderType implements Serializable {
 
     public static GenderType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
-                .orElseThrow(() -> new InvalidEnumException("code in GenderType is invalid : " + code));
+                .orElse(null);
     }
 
 
     public static GenderType getByValue(String value) {
         if (value != null)
             return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
-                    .orElseThrow(() -> new InvalidEnumException("value in GenderType is invalid : " + value));
+                    .orElse(null);
         return null;
     }
 
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

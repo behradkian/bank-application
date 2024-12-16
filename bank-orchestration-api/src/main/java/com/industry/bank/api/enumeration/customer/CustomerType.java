@@ -1,6 +1,5 @@
 package com.industry.bank.api.enumeration.customer;
 
-import com.industry.bank.api.exception.runtime.InvalidEnumException;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -19,14 +18,19 @@ public enum CustomerType implements Serializable {
 
     public static CustomerType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
-                .orElseThrow(() -> new InvalidEnumException("code in CustomerType is invalid : " + code));
+                .orElse(null);
     }
 
     public static CustomerType getByValue(String value) {
         if (value != null)
             return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
-                    .orElseThrow(() -> new InvalidEnumException("value in CustomerType is invalid : " + value));
+                    .orElse(null);
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return this.value;
     }
 
 }

@@ -1,15 +1,18 @@
 package com.industry.bank.api.dto.customer;
 
+import com.industry.bank.api.enumeration.customer.CustomerType;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
 @AllArgsConstructor
-@NoArgsConstructor
 @Schema(name = "CreateCorporateCustomerResponseDto", title = "", description = "")
-public class CreateCorporateCustomerResponseDto {
+public class CreateCorporateCustomerResponseDto extends CreateGeneralCustomerResponseDto{
 
-    private String customerNumber;
+    @Hidden
+    @Builder.Default
+    @Schema(title = "", name = "type", description = "", defaultValue = "CORPORATE")
+    private CustomerType type = CustomerType.CORPORATE;
+
 }

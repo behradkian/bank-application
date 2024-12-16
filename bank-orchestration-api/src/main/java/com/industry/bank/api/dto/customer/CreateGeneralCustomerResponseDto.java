@@ -5,13 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "CreateGeneralCustomerResponseDto", title = "", description = "")
+@Schema(name = "CreateGeneralCustomerResponseDto", title = "${CreateGeneralCustomerResponseDto.title}", description = "${CreateGeneralCustomerResponseDto.description}")
 public class CreateGeneralCustomerResponseDto {
 
-    @Schema(title = "", name = "customerNumber", description = "", example = "581647895")
+    @Schema(name = "customerNumber", title = "${customerNumber.title}", description = "${customerNumber.description}")
     private String customerNumber;
+
+    @Schema(name = "customerRegisterDate", title = "${CreateGeneralCustomerResponseDto.customerRegisterDate.title}", description = "${CreateGeneralCustomerResponseDto.customerRegisterDate.description}")
+    private Date customerRegisterDate;
 
 }
