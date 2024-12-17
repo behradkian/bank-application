@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-
+@Builder
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor

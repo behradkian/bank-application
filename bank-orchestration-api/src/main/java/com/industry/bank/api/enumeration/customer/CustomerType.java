@@ -1,5 +1,6 @@
 package com.industry.bank.api.enumeration.customer;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
