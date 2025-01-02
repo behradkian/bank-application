@@ -27,8 +27,6 @@ public class AddressDetailsDto {
     private String localityName;
     @Schema(name = "localityCode" , title = "${AddressDetailsDto.localityCode.title}" , description = "${AddressDetailsDto.localityCode.description}")
     private String localityCode;
-    @Schema(name = "subLocality" , title = "${AddressDetailsDto.subLocality.title}" , description = "${AddressDetailsDto.subLocality.description}")
-    private String subLocality;
     @Schema(name = "zone" , title = "${AddressDetailsDto.zone.title}" , description = "${AddressDetailsDto.zone.description}")
     private String zone;
     @Schema(name = "firstStreet" , title = "${AddressDetailsDto.firstStreet.title}" , description = "${AddressDetailsDto.firstStreet.description}")

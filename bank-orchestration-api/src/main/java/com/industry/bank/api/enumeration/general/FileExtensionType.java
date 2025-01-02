@@ -1,13 +1,14 @@
 package com.industry.bank.api.enumeration.general;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 
 @Getter
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Schema(enumAsRef = true , title = "${FileExtensionType.title}" , description = "${FileExtensionType.description}")
 public enum FileExtensionType implements Serializable {
 

@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
-import org.springframework.core.env.Environment;
+import org.springframework.core.io.Resource;
 
 @RequiredArgsConstructor
 @Configuration
@@ -22,11 +22,8 @@ public class SwaggerConfiguration {
     @Value("${BankOrchestrationApplication_description}")
     private String appDescription;
 
-    private final Environment environment;
-    private final ExceptionFileOperationCustomizer exceptionFileOperationCustomizer;
-
     @Bean
-    public OpenAPI swaggerApi(@Value("${app.version}") String appVersion){
+    public OpenAPI swaggerApi(){
         return new OpenAPI().info(new Info()
                 .title(appTitle)
                 .description(appDescription)
@@ -71,8 +68,5 @@ public class SwaggerConfiguration {
                 .displayName("deposit services")
                 .build();
     }
-
-
-
 
 }

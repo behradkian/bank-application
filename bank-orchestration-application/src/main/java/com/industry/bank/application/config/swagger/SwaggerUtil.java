@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 public class SwaggerUtil {
 
     public static String getMarkDownFileContent(String filePath) {
+
         String content;
         try {
             final URL url = SwaggerUtil.class.getClassLoader().getResource(filePath);
