@@ -3,6 +3,7 @@ package com.industry.bank.application.config;
 import com.industry.bank.persistence.mapper.UserMapper;
 import com.industry.bank.persistence.mapper.UserMapperImpl;
 import com.industry.bank.persistence.repository.UserStorageImpl;
+import com.industry.bank.service.repository.UserStorage;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,11 +14,12 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 import java.util.Arrays;
 import java.util.Locale;
 
+
 @Configuration
 public class ApplicationConfiguration {
 
     @Bean
-    public UserStorageImpl getStorageInstance() {
+    public UserStorage getStorageInstance() {
         return new UserStorageImpl();
     }
 

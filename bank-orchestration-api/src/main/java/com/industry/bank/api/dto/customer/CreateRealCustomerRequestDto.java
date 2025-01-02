@@ -7,6 +7,7 @@ import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.CityDto;
 import com.industry.bank.api.enumeration.customer.CustomerType;
 import com.industry.bank.api.enumeration.customer.GenderType;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -22,11 +23,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "CreateRealCustomerRequestDto", title = "${CreateRealCustomerRequestDto.title}", description = "${CreateRealCustomerRequestDto.description}")
+@JsonFormat(with = JsonFormat.Feature.ACCEPT_CASE_INSENSITIVE_PROPERTIES)
 public class CreateRealCustomerRequestDto {
 
     @Hidden
     @Builder.Default
-    @Schema(name = "type", title = "", description = "", defaultValue = "Real")
+    @Schema(name = "type", title = "OOO", description = "000", defaultValue = "Real")
     private CustomerType type = CustomerType.REAL;
 
     @Schema(name = "firstName", title = "${CreateRealCustomerRequestDto.firstName.title}", description = "${CreateRealCustomerRequestDto.firstName.description}")

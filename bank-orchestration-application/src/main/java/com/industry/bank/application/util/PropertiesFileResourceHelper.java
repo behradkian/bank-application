@@ -1,26 +1,39 @@
 package com.industry.bank.application.util;
 
 import com.industry.bank.api.exception.checked.BankException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 import java.io.IOException;
 import java.util.*;
 
-
+@Slf4j
 public class PropertiesFileResourceHelper {
 
-    private final static Logger logger = LoggerFactory.getLogger(PropertiesFileResourceHelper.class);
     private final List<String> propertiesResources;
-    private HashMap<String, String> validationKeyValueMap = new HashMap<>();
+    private final HashMap<String, String> validationMap = new HashMap<>();
+    private static final List<String> ignoredParameters;
+    private static final List<String> semiIgnoredParameters;
+
+    static {
+        semiIgnoredParameters = Collections.unmodifiableList(Arrays.asList("username", "pan"));
+        ignoredParameters = Collections.unmodifiableList(Arrays.asList("password", "sessionId", "pin", "cvv2", "expDate"));
+    }
+
+    public List<String> getIgnoredParameters() {
+        return ignoredParameters;
+    }
+
+    public List<String> getSemiIgnoredParameters() {
+        return semiIgnoredParameters;
+    }
 
     public PropertiesFileResourceHelper(List<String> propertiesResourceList) {
         this.propertiesResources = propertiesResourceList;
     }
 
     public HashMap<String, String> getParameterMap() throws BankException {
-        if (validationKeyValueMap.isEmpty()) {
+        if (validationMap.isEmpty()) {
             for (String singleResource : propertiesResources) {
                 final Properties properties;
                 try {
@@ -29,39 +42,18 @@ public class PropertiesFileResourceHelper {
                     throw new BankException("error on loading properties file", e);
                 }
                 HashMap<String, String> propertyMap = convertPropertyToMap(properties);
-                validationKeyValueMap.putAll(propertyMap);
+                validationMap.putAll(propertyMap);
             }
         }
-        return validationKeyValueMap;
-    }
-
-    private static final List<String> ignoredParameters;
-
-    static {
-        ignoredParameters=Collections.unmodifiableList(Arrays.asList( "password","sessionId","pin","cvv2","expDate"));
-    }
-
-    public List<String> getIgnoredParameters() {
-        return ignoredParameters;
-    }
-
-    private static final List<String> semiIgnoredParameters;
-
-    static {
-        semiIgnoredParameters = Collections.unmodifiableList(Arrays.asList("username","pan"));
-    }
-
-    public List<String> getSemiIgnoredParameters() {
-
-        return semiIgnoredParameters;
+        return validationMap;
     }
 
     private HashMap<String, String> convertPropertyToMap(Properties properties) {
         HashMap<String, String> valueMap = new HashMap<>();
-        if (properties == null) {
+        if (properties == null)
             return valueMap;
-        }
         properties.keySet().forEach(key -> valueMap.put((String) key, properties.getProperty((String) key)));
         return valueMap;
     }
+
 }

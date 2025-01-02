@@ -11,8 +11,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +32,7 @@ public class UserController implements UserFacade {
         return null;
     }
 
-    @Operation(operationId = "signInUser", summary = "لاگین کاربر", description = "لاگین کاربر", responses = {
+    @Operation(operationId = "logInUser", summary = "لاگین کاربر", description = "لاگین کاربر", responses = {
             @ApiResponse(responseCode = "200", description = "Successful"),
             @ApiResponse(responseCode = "400", description = "Failed")
     })
@@ -43,6 +41,10 @@ public class UserController implements UserFacade {
         return null;
     }
 
+    @Operation(operationId = "logOutUser", summary = "لاگ اوت کاربر", description = "لاگ اوت کاربر", responses = {
+            @ApiResponse(responseCode = "200", description = "Successful"),
+            @ApiResponse(responseCode = "400", description = "Failed")
+    })
     @Override
     public LoginUserResponseDto logOutUser(BankOrchestrationRequestHeader<String, Object> headers, LoginUserRequestDto requestDto) {
         return null;
