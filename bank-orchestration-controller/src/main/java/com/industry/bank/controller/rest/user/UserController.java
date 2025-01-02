@@ -39,7 +39,12 @@ public class UserController implements UserFacade {
             @ApiResponse(responseCode = "400", description = "Failed")
     })
     @Override
-    public LoginUserResponseDto signInUser(BankOrchestrationRequestHeader<String, Object> headers, LoginUserRequestDto requestDto) {
+    public LoginUserResponseDto logInUser(BankOrchestrationRequestHeader<String, Object> headers, LoginUserRequestDto requestDto) {
+        return null;
+    }
+
+    @Override
+    public LoginUserResponseDto logOutUser(BankOrchestrationRequestHeader<String, Object> headers, LoginUserRequestDto requestDto) {
         return null;
     }
 

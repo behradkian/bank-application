@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
-import org.springframework.core.io.Resource;
 
 @RequiredArgsConstructor
 @Configuration
@@ -34,8 +33,8 @@ public class SwaggerConfiguration {
     public GroupedOpenApi userApi(){
         return GroupedOpenApi.builder()
                 .group("user")
-                .packagesToScan("com.industry.bank.controller.rest.user")
                 .pathsToMatch("/user/**")
+                .packagesToScan("com.industry.bank.controller.rest.user")
                 .displayName("user services")
                 .build();
     }
@@ -45,7 +44,8 @@ public class SwaggerConfiguration {
     public GroupedOpenApi generalApi(){
         return GroupedOpenApi.builder()
                 .group("general")
-                .packagesToScan("/general/**")
+                .pathsToMatch("/general/**")
+                .packagesToScan("com.industry.bank.controller.rest.general")
                 .displayName("general services")
                 .build();
     }
@@ -64,7 +64,8 @@ public class SwaggerConfiguration {
     public GroupedOpenApi depositApi(){
         return GroupedOpenApi.builder()
                 .group("deposit")
-                .packagesToScan("/deposit/**")
+                .pathsToMatch("/deposit/**")
+                .packagesToScan("com.industry.bank.controller.rest.deposit")
                 .displayName("deposit services")
                 .build();
     }
