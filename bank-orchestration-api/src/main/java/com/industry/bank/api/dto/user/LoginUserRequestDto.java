@@ -8,11 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "LoginUserRequestDto" , title = "" , description = "")
+@Schema(name = "LoginUserRequestDto")
 public class LoginUserRequestDto {
 
-    @Schema(title = "", name = "username", description = "", example = "201-1917")
+    @Schema(name = "username")
     private String username;
-    @Schema(title = "", name = "password", description = "", example = "*****")
+
+    @Schema(name = "password")
     private String password;
+
 }

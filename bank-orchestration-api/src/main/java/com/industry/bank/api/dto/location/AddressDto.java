@@ -9,14 +9,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "AddressDto" , title = "${AddressDto.title}" , description = "${AddressDto.description}")
+@Schema(name = "AddressDto")
 public class AddressDto {
 
-    @Schema(name = "city" , title = "${AddressDto.city.title}" , description = "${AddressDto.city.description}")
+    @Schema(name = "city")
     private CityDto city;
-    @Schema(name = "addressType" , title = "${AddressDto.addressType.title}" , description = "${AddressDto.addressType.description}")
+
+    @Schema(name = "addressType")
     private AddressType addressType;
-    @Schema(name = "addressDetails" , title = "${AddressDto.addressDetails.title}" , description = "${AddressDto.addressDetails.description}")
+
+    @Schema(name = "addressDetails")
     private AddressDetailsDto addressDetails;
 
 }

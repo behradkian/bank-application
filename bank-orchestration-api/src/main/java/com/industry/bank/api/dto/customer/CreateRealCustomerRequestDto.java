@@ -7,7 +7,6 @@ import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.CityDto;
 import com.industry.bank.api.enumeration.customer.CustomerType;
 import com.industry.bank.api.enumeration.customer.GenderType;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -22,58 +21,57 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "CreateRealCustomerRequestDto", title = "${CreateRealCustomerRequestDto.title}", description = "${CreateRealCustomerRequestDto.description}")
-@JsonFormat(with = JsonFormat.Feature.ACCEPT_CASE_INSENSITIVE_PROPERTIES)
+@Schema(name = "CreateRealCustomerRequestDto")
 public class CreateRealCustomerRequestDto {
 
     @Hidden
     @Builder.Default
-    @Schema(name = "type", title = "OOO", description = "000", defaultValue = "Real")
+    @Schema(name = "type", defaultValue = "Real")
     private CustomerType type = CustomerType.REAL;
 
-    @Schema(name = "firstName", title = "${CreateRealCustomerRequestDto.firstName.title}", description = "${CreateRealCustomerRequestDto.firstName.description}")
+    @Schema(name = "firstName")
     private String firstName;
 
-    @Schema(name = "lastName", title = "${CreateRealCustomerRequestDto.lastName.title}", description = "${CreateRealCustomerRequestDto.lastName.description}")
+    @Schema(name = "lastName")
     private String lastName;
 
-    @Schema(name = "fatherName", title = "${CreateRealCustomerRequestDto.fatherName.title}", description = "${CreateRealCustomerRequestDto.fatherName.description}")
+    @Schema(name = "fatherName")
     private String fatherName;
 
-    @Schema(name = "nationalCode", title = "${CreateRealCustomerRequestDto.nationalCode.title}", description = "${CreateRealCustomerRequestDto.nationalCode.description}")
+    @Schema(name = "nationalCode")
     private String nationalCode;
 
-    @Schema(name = "passportNumber", title = "${CreateRealCustomerRequestDto.passportNumber.title}", description = "${CreateRealCustomerRequestDto.passportNumber.description}")
+    @Schema(name = "passportNumber")
     private String passportNumber;
 
-    @Schema(name = "nationality", title = "${CreateRealCustomerRequestDto.nationality.title}", description = "${CreateRealCustomerRequestDto.nationality.description}")
+    @Schema(name = "nationality")
     private NationalityDto nationality;
 
-    @Schema(name = "birthdate", title = "${CreateRealCustomerRequestDto.birthdate.title}", description = "${CreateRealCustomerRequestDto.birthdate.description}")
+    @Schema(name = "birthdate")
     private Date birthdate;
 
-    @Schema(name = "birthCity", title = "${CreateRealCustomerRequestDto.birthCity.title}", description = "${CreateRealCustomerRequestDto.birthCity.description}")
+    @Schema(name = "birthCity")
     private CityDto birthCity;
 
-    @Schema(name = "mobileNumber", title = "${CreateRealCustomerRequestDto.mobileNumber.title}", description = "${CreateRealCustomerRequestDto.mobileNumber.description}")
+    @Schema(name = "mobileNumber")
     private String mobileNumber;
 
-    @Schema(name = "phoneNumber", title = "${CreateRealCustomerRequestDto.phoneNumber.title}", description = "${CreateRealCustomerRequestDto.phoneNumber.description}")
+    @Schema(name = "phoneNumber")
     private String phoneNumber;
 
-    @Schema(name = "email", title = "${CreateRealCustomerRequestDto.email.title}", description = "${CreateRealCustomerRequestDto.email.description}")
+    @Schema(name = "email")
     private String email;
 
-    @Schema(name = "gender", title = "${CreateRealCustomerRequestDto.gender.title}", description = "${CreateRealCustomerRequestDto.gender.description}")
+    @Schema(name = "gender")
     private GenderType gender;
 
-    @Schema(name = "occupation", title = "${CreateRealCustomerRequestDto.occupation.title}", description = "${CreateRealCustomerRequestDto.occupation.description}")
+    @Schema(name = "occupation")
     private OccupationDto occupation;
 
-    @Schema(name = "addresses", title = "${CreateRealCustomerRequestDto.addresses.title}", description = "${CreateRealCustomerRequestDto.addresses.description}")
+    @Schema(name = "addresses")
     private List<AddressDto> addresses;
 
-    @Schema(name = "images", title = "${CreateRealCustomerRequestDto.images.title}", description = "${CreateRealCustomerRequestDto.images.description}")
+    @Schema(name = "images")
     private List<ImageDto> images;
 
 }

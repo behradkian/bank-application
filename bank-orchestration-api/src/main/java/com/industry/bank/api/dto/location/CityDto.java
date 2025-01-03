@@ -8,16 +8,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "CityDto" , title = "${CityDto.title}" , description = "${CityDto.description}")
+@Schema(name = "CityDto")
 public class CityDto {
 
-    @Schema(name = "country" , title = "${CityDto.country.title}" , description = "${CityDto.country.title}")
+    @Schema(name = "country")
     private CountryDto country;
 
-    @Schema(name = "code" , title = "${CityDto.code.title}" , description = "${CityDto.code.title}")
+    @Schema(name = "code")
     private String code;
 
-    @Schema(name = "name" , title = "${CityDto.name.title}" , description = "${CityDto.name.title}")
+    @Schema(name = "name")
     private String name;
 
 }

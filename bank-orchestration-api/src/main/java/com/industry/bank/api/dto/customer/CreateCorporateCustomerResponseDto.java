@@ -12,12 +12,12 @@ import lombok.EqualsAndHashCode;
 @Builder
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
-@Schema(name = "CreateCorporateCustomerResponseDto", title = "", description = "")
+@Schema(name = "CreateCorporateCustomerResponseDto")
 public class CreateCorporateCustomerResponseDto extends CreateGeneralCustomerResponseDto {
 
     @Hidden
     @Builder.Default
-    @Schema(name = "type", title = "", description = "", defaultValue = "CORPORATE")
+    @Schema(name = "type", defaultValue = "CORPORATE")
     private CustomerType type = CustomerType.CORPORATE;
 
 }

@@ -18,34 +18,39 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "CreateCorporateCustomerRequestDto", title = "", description = "")
+@Schema(name = "CreateCorporateCustomerRequestDto")
 public class CreateCorporateCustomerRequestDto {
 
-    @Schema(title = "", name = "name", description = "", example = "erfan")
+    @Schema(name = "name")
     private String name;
 
-    @Schema(title = "", name = "registerDate", description = "", example = "1403/07/20")
+    @Schema(name = "registerDate")
     private Date registerDate;
 
-    @Schema(title = "", name = "registerCode", description = "", example = "3556813")
+    @Schema(name = "registerCode")
     private String registerCode;
 
-    @Schema(title = "", name = "economicCode", description = "", example = "584318497")
+    @Schema(name = "economicCode")
     private String economicCode;
 
+    @Schema(name = "nationality")
     private NationalityDto nationality;
 
+    @Schema(name = "phoneNumber")
     private String phoneNumber;
 
+    @Schema(name = "email")
     private String email;
 
+    @Schema(name = "addresses")
     private List<AddressDto> addresses;
 
+    @Schema(name = "images")
     private List<ImageDto> images;
 
     @Hidden
     @Builder.Default
-    @Schema(title = "", name = "type", description = "", defaultValue = "CORPORATE")
+    @Schema(name = "type", defaultValue = "CORPORATE")
     private CustomerType type = CustomerType.CORPORATE;
 
 }

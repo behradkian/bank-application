@@ -10,13 +10,13 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "CreateGeneralCustomerResponseDto", title = "${CreateGeneralCustomerResponseDto.title}", description = "${CreateGeneralCustomerResponseDto.description}")
+@Schema(name = "CreateGeneralCustomerResponseDto")
 public class CreateGeneralCustomerResponseDto {
 
-    @Schema(name = "customerNumber", title = "${customerNumber.title}", description = "${customerNumber.description}")
+    @Schema(name = "customerNumber")
     private String customerNumber;
 
-    @Schema(name = "customerRegisterDate", title = "${CreateGeneralCustomerResponseDto.customerRegisterDate.title}", description = "${CreateGeneralCustomerResponseDto.customerRegisterDate.description}")
+    @Schema(name = "customerRegisterDate")
     private Date customerRegisterDate;
 
 }

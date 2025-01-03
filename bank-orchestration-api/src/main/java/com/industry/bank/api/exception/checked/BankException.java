@@ -1,6 +1,6 @@
 package com.industry.bank.api.exception.checked;
 
-public class BankException extends Exception {
+public abstract class BankException extends Exception {
 
     public BankException() {
     }

@@ -1,14 +1,15 @@
 package com.industry.bank.api.enumeration.customer;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Arrays;
 
 @Getter
-@RequiredArgsConstructor
+@AllArgsConstructor
+@Schema(enumAsRef = true)
 public enum CustomerType implements Serializable {
 
     REAL(1, "REAL"),
@@ -23,10 +24,8 @@ public enum CustomerType implements Serializable {
     }
 
     public static CustomerType getByValue(String value) {
-        if (value != null)
-            return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
-                    .orElse(null);
-        return null;
+        return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
+                .orElse(null);
     }
 
     @Override

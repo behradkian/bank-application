@@ -32,14 +32,14 @@ public class PropertiesFileResourceHelper {
         this.propertiesResources = propertiesResourceList;
     }
 
-    public HashMap<String, String> getParameterMap() throws BankException {
+    public HashMap<String, String> getParameterMap() {
         if (validationMap.isEmpty()) {
             for (String singleResource : propertiesResources) {
                 final Properties properties;
                 try {
                     properties = PropertiesLoaderUtils.loadAllProperties(singleResource);
                 } catch (IOException e) {
-                    throw new BankException("error on loading properties file", e);
+                    throw new RuntimeException("error on loading properties file", e);
                 }
                 HashMap<String, String> propertyMap = convertPropertyToMap(properties);
                 validationMap.putAll(propertyMap);

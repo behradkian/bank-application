@@ -8,8 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "LoginUserResponseDto" , title = "" , description = "")
+@Schema(name = "LoginUserResponseDto")
 public class LoginUserResponseDto {
-    @Schema(name = "jwt" , title = "" , description = "")
+
+    @Schema(name = "jwt")
     private String jwt;
 }

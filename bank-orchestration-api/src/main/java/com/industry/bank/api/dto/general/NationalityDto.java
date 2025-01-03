@@ -8,10 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "NationalityDto", title = "", description = "")
+@Schema(name = "NationalityDto")
 public class NationalityDto {
-    @Schema(name = "code", title = "${NationalityDto.code.title}", description = "${NationalityDto.code.description}")
+
+    @Schema(name = "code")
     private String code;
-    @Schema(name = "name", title = "${NationalityDto.name.title}", description = "${NationalityDto.name.description}")
+
+    @Schema(name = "name")
     private String name;
+
 }

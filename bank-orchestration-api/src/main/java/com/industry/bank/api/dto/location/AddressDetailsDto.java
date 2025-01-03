@@ -8,39 +8,54 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(name = "AddressDetailsDto" , title = "${AddressDetailsDto.title}" , description = "${AddressDetailsDto.description}")
+@Schema(name = "AddressDetailsDto")
 public class AddressDetailsDto {
 
-    @Schema(name = "postalCode" , title = "${AddressDetailsDto.postalCode.title}" , description = "${AddressDetailsDto.postalCode.description}")
+    @Schema(name = "postalCode")
     private String postalCode;
-    @Schema(name = "province" , title = "${AddressDetailsDto.province.title}" , description = "${AddressDetailsDto.province.description}")
+
+    @Schema(name = "province")
     private String province;
-    @Schema(name = "townShip" , title = "${AddressDetailsDto.townShip.title}" , description = "${AddressDetailsDto.townShip.description}")
+
+    @Schema(name = "townShip")
     private String townShip;
-    @Schema(name = "village" , title = "${AddressDetailsDto.village.title}" , description = "${AddressDetailsDto.village.description}")
+
+    @Schema(name = "village")
     private String village;
-    @Schema(name = "city" , title = "${AddressDetailsDto.city.title}" , description = "${AddressDetailsDto.city.description}")
+
+    @Schema(name = "city")
     private String city;
-    @Schema(name = "localityType" , title = "${AddressDetailsDto.localityType.title}" , description = "${AddressDetailsDto.localityType.description}")
+
+    @Schema(name = "localityType")
     private String localityType;
-    @Schema(name = "localityName" , title = "${AddressDetailsDto.localityName.title}" , description = "${AddressDetailsDto.localityName.description}")
+
+    @Schema(name = "localityName")
     private String localityName;
-    @Schema(name = "localityCode" , title = "${AddressDetailsDto.localityCode.title}" , description = "${AddressDetailsDto.localityCode.description}")
+
+    @Schema(name = "localityCode")
     private String localityCode;
-    @Schema(name = "zone" , title = "${AddressDetailsDto.zone.title}" , description = "${AddressDetailsDto.zone.description}")
+
+    @Schema(name = "zone")
     private String zone;
-    @Schema(name = "firstStreet" , title = "${AddressDetailsDto.firstStreet.title}" , description = "${AddressDetailsDto.firstStreet.description}")
+
+    @Schema(name = "firstStreet")
     private String firstStreet;
-    @Schema(name = "secondStreet" , title = "${AddressDetailsDto.secondStreet.title}" , description = "${AddressDetailsDto.secondStreet.description}")
+
+    @Schema(name = "secondStreet")
     private String secondStreet;
-    @Schema(name = "buildingName" , title = "${AddressDetailsDto.buildingName.title}" , description = "${AddressDetailsDto.buildingName.description}")
+
+    @Schema(name = "buildingName")
     private String buildingName;
-    @Schema(name = "floorNumber" , title = "${AddressDetailsDto.floorNumber.title}" , description = "${AddressDetailsDto.floorNumber.description}")
+
+    @Schema(name = "floorNumber")
     private String floorNumber;
-    @Schema(name = "sideFloor" , title = "${AddressDetailsDto.sideFloor.title}" , description = "${AddressDetailsDto.sideFloor.description}")
+
+    @Schema(name = "sideFloor")
     private String sideFloor;
-    @Schema(name = "houseNumber" , title = "${AddressDetailsDto.houseNumber.title}" , description = "${AddressDetailsDto.houseNumber.description}")
+
+    @Schema(name = "houseNumber")
     private String houseNumber;
-    @Schema(name = "totalAddress" , title = "${AddressDetailsDto.totalAddress.title}" , description = "${AddressDetailsDto.totalAddress.description}")
+
+    @Schema(name = "totalAddress")
     private String totalAddress;
 }

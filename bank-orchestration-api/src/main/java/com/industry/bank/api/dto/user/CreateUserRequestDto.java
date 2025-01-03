@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateUserRequestDto {
 
-    @Schema(title = "", name = "user", description = "", example = "201-1917")
+    @Schema(name = "user")
     private UserDto user;
 
-    @Schema(title = "", name = "role", description = "", example = "admin")
+    @Schema(name = "role")
     private RoleDto role;
 
 }
