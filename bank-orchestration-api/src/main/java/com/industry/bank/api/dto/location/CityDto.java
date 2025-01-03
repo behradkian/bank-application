@@ -11,13 +11,13 @@ import lombok.NoArgsConstructor;
 @Schema(name = "CityDto")
 public class CityDto {
 
-    @Schema(name = "country")
-    private CountryDto country;
-
     @Schema(name = "code")
     private String code;
 
     @Schema(name = "name")
     private String name;
+
+    @Schema(name = "country")
+    private CountryDto country;
 
 }
