@@ -8,9 +8,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+@Data
 @Builder
 @EqualsAndHashCode(callSuper = true)
-@Data
 @AllArgsConstructor
 @Schema(name = "CreateCorporateCustomerResponseDto", title = "", description = "")
 public class CreateCorporateCustomerResponseDto extends CreateGeneralCustomerResponseDto {
