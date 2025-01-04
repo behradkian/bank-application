@@ -11,8 +11,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CreateRealCustomerResponseDto createRealCustomer(CreateRealCustomerRequestDto realCustomerRequestDto) {
+
         return null;
     }
+
 
     @Override
     public CreateCorporateCustomerResponseDto createCorporateCustomer(CreateCorporateCustomerRequestDto corporateCustomerRequestDto) {
