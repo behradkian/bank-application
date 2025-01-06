@@ -1,6 +1,6 @@
 //package com.industry.bank.persistence.entity.user;
 //
-//import com.industry.bank.persistence.entity.location.AddressEntity;
+//import com.industry.bank.persistence.entity.general.AddressEntity;
 //import jakarta.persistence.*;
 //import lombok.Getter;
 //import lombok.NoArgsConstructor;
@@ -12,7 +12,7 @@
 //@Setter
 //@NoArgsConstructor
 //@Entity
-//@Table(name = "PEBRANCH")
+//@Table(name = "PEB4BRANCH")
 //public class BranchEntity {
 //
 //    private static final String SEQUENCE_NAME = "NGNQ_BRANCH_ID";

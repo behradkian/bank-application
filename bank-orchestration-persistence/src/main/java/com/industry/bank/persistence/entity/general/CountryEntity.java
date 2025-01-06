@@ -1,4 +1,4 @@
-package com.industry.bank.persistence.entity.location;
+package com.industry.bank.persistence.entity.general;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PBCOUNTRY")
+@Table(name = "PEG1COUNTRY")
 public class CountryEntity {
     private static final String SEQUENCE_NAME = "NGNQ_COUNTRY_ID";
 

@@ -1,4 +1,4 @@
-package com.industry.bank.persistence.entity.location;
+package com.industry.bank.persistence.entity.general;
 
 import com.industry.bank.api.enumeration.general.AddressType;
 import jakarta.persistence.*;
@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PBADDRESS")
+@Table(name = "PEG3ADDRESS")
 public class AddressEntity {
     private static final String SEQUENCE_NAME = "NGNQ_ADDRESS_ID";
 

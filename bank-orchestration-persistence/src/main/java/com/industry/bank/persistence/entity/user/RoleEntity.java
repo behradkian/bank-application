@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PEROLE")
+@Table(name = "PEB2ROLE")
 public class RoleEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_ROLE_ID";

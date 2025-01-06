@@ -10,7 +10,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PBFILE")
+@Table(name = "PEG4ILE")
 public class FileEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_FILE_ID";

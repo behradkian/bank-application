@@ -1,7 +1,8 @@
 package com.industry.bank.persistence.entity.customer;
 
-import com.industry.bank.persistence.entity.location.AddressEntity;
+import com.industry.bank.persistence.entity.general.AddressEntity;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PBREALCUSTOMER")
+@Table(name = "PEC1REALCUSTOMER")
 public class RealCustomerEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_REAL_CUSTOMER_ID";
@@ -27,7 +28,7 @@ public class RealCustomerEntity {
     @Column(name = "PE010CIF")
     private String customerCode;
 
-    @Column(name = "PE010NATCOD")
+    @Column(name = "PE010NATCOD", nullable = false)
     private String nationalCode;
 
     @Column(name = "PE010FIRSNAM")
@@ -37,6 +38,7 @@ public class RealCustomerEntity {
     private String lastName;
 
     @Column(name = "PE010BIRTDAT")
+    @EqualsAndHashCode.Include
     @Temporal(TemporalType.DATE)
     private Date birthdate;
 

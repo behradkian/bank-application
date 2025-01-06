@@ -1,6 +1,6 @@
 //package com.industry.bank.persistence.mapper;
 //
-//import com.industry.bank.persistence.entity.location.AddressEntity;
+//import com.industry.bank.persistence.entity.general.AddressEntity;
 //import com.industry.bank.persistence.entity.user.BranchEntity;
 //import com.industry.bank.service.repository.dto.AddressRequest;
 //import com.industry.bank.service.repository.dto.BranchRequest;

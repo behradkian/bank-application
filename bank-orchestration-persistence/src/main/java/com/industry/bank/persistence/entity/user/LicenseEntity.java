@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PELICENSE")
+@Table(name = "PEB3LICENSE")
 public class LicenseEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_LICENSE_ID";
