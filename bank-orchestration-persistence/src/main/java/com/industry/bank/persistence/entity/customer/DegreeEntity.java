@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PBDEGREE")
+@Table(name = "PEC3DEGREE")
 public class DegreeEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_DEGREE_ID";

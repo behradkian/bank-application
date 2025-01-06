@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PBOCCUPATION")
+@Table(name = "PEC2OCCUPATION")
 public class OccupationEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_OCCUPATION_ID";
