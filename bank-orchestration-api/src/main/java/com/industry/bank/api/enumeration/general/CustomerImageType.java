@@ -12,7 +12,14 @@ import java.util.Arrays;
 @Schema(enumAsRef = true)
 public enum CustomerImageType implements Serializable {
 
+    /**
+     * امضای مشتری
+     */
     SIGNATURE(1, "SIGNATURE"),
+
+    /**
+     * عکس مشتری
+     */
     PHOTO(2, "PHOTO");
 
     private final Integer code;

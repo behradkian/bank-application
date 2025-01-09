@@ -11,51 +11,82 @@ import lombok.NoArgsConstructor;
 @Schema(name = "AddressDetailsDto")
 public class AddressDetailsDto {
 
+    /**
+     * کدپستی
+     */
     @Schema(name = "postalCode")
     private String postalCode;
 
+    /**
+     * استان
+     */
     @Schema(name = "province")
     private String province;
 
+    /**
+     * شهرستان
+     */
     @Schema(name = "townShip")
     private String townShip;
 
-    @Schema(name = "village")
-    private String village;
-
+    /**
+     * شهر
+     */
     @Schema(name = "city")
     private String city;
 
-    @Schema(name = "localityType")
-    private String localityType;
-
+    /**
+     * نام محله
+     */
     @Schema(name = "localityName")
     private String localityName;
 
+    /**
+     * کد محله
+     */
     @Schema(name = "localityCode")
     private String localityCode;
 
+    /**
+     * منطقه
+     */
     @Schema(name = "zone")
     private String zone;
 
+    /**
+     * خیابان اصلی
+     */
     @Schema(name = "firstStreet")
     private String firstStreet;
 
+    /**
+     * خیابان فرعی
+     */
     @Schema(name = "secondStreet")
     private String secondStreet;
 
-    @Schema(name = "buildingName")
-    private String buildingName;
-
-    @Schema(name = "floorNumber")
-    private String floorNumber;
-
-    @Schema(name = "sideFloor")
-    private String sideFloor;
-
+    /**
+     * پلاک
+     */
     @Schema(name = "houseNumber")
     private String houseNumber;
 
-    @Schema(name = "totalAddress")
-    private String totalAddress;
+    /**
+     * نام ساختمان
+     */
+    @Schema(name = "buildingName")
+    private String buildingName;
+
+    /**
+     * شماره طبقه
+     */
+    @Schema(name = "floorNumber")
+    private String floorNumber;
+
+    /**
+     * واحد
+     */
+    @Schema(name = "sideFloor")
+    private String sideFloor;
+
 }

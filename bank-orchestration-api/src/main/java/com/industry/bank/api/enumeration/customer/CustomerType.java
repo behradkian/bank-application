@@ -12,7 +12,14 @@ import java.util.Arrays;
 @Schema(enumAsRef = true)
 public enum CustomerType implements Serializable {
 
+    /**
+     * مشتری حقیقی
+     */
     REAL(1, "REAL"),
+
+    /**
+     * مشتری حقوقی
+     */
     CORPORATE(2, "CORPORATE");
 
     private final Integer code;

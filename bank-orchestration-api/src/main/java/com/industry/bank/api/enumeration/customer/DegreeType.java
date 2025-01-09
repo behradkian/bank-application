@@ -12,15 +12,50 @@ import java.util.Arrays;
 @Schema(enumAsRef = true)
 public enum DegreeType implements Serializable {
 
-    ILLITERATE(0, "ILLITERATE"), // بی‌سواد
-    LITERATE(1, "LITERATE"), // سواد ابتدایی یا خواندن و نوشتن
-    CYCLE(2, "CYCLE"),//سیکل (متوسطه اول)
-    HIGH_SCHOOL_DIPLOMA(3, "HIGH_SCHOOL_DIPLOMA"),//دیپلم متوسطه
-    ASSOCIATE(4, "ASSOCIATE"),//کاردانی
-    BACHELOR(5, "BACHELOR"),//کارشناسی
-    MASTER(6, "MASTER"),//کارشناسی ارشد
-    DOCTORATE(7, "DOCTORATE"),//دکترا
-    POST_DOCTORATE(8, "POST_DOCTORATE");//پسادکترا
+    /**
+     *  بی‌سواد
+     */
+    ILLITERATE(0, "ILLITERATE"),
+
+    /**
+     * سواد ابتدایی یا خواندن و نوشتن
+     */
+    LITERATE(1, "LITERATE"),
+
+    /**
+     * سیکل (متوسطه اول)
+     */
+    CYCLE(2, "CYCLE"),
+
+    /**
+     * دیپلم متوسطه
+     */
+    HIGH_SCHOOL_DIPLOMA(3, "HIGH_SCHOOL_DIPLOMA"),
+
+    /**
+     * کاردانی
+     */
+    ASSOCIATE(4, "ASSOCIATE"),
+
+    /**
+     * کارشناسی
+     */
+    BACHELOR(5, "BACHELOR"),
+
+    /**
+     * کارشناسی ارشد
+     */
+    MASTER(6, "MASTER"),
+
+    /**
+     * دکترا
+     */
+    DOCTORATE(7, "DOCTORATE"),
+
+    /**
+     * پسادکترا
+     */
+    POST_DOCTORATE(8, "POST_DOCTORATE");
 
     private final Integer code;
     private final String value;

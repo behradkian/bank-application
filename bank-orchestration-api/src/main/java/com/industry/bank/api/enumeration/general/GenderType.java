@@ -12,7 +12,14 @@ import java.util.Arrays;
 @Schema(enumAsRef = true)
 public enum GenderType implements Serializable {
 
+    /**
+     * مرد
+     */
     MALE(1, "MALE"),
+
+    /**
+     * زن
+     */
     FEMALE(2, "FEMALE");
 
     private final Integer code;

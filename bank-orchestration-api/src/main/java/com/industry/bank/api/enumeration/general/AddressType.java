@@ -12,7 +12,14 @@ import java.util.Arrays;
 @Schema(enumAsRef = true)
 public enum AddressType implements Serializable {
 
+    /**
+     * آدرس منزل
+     */
     HOME(1, "HOME"),
+
+    /**
+     * آدرس محل کار
+     */
     WORK(2, "WORK");
 
     private final Integer code;
