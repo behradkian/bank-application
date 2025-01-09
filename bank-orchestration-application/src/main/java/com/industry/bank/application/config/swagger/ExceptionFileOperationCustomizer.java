@@ -25,7 +25,6 @@ public class ExceptionFileOperationCustomizer implements OperationCustomizer {
     private static final String ERROR_FILE_PATH = "documentation/md/error";
     private static final String HTTP_SERVER_EXCEPTION_REF = "#/components/schemas/HttpServerException";
 
-
     @Override
     public Operation customize(Operation operation, HandlerMethod handlerMethod) {
         ApiResponses responses = operation.getResponses();

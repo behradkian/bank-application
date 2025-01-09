@@ -39,7 +39,6 @@ public class SwaggerConfiguration {
                 .build();
     }
 
-
     @Bean
     public GroupedOpenApi generalApi(){
         return GroupedOpenApi.builder()
@@ -69,5 +68,4 @@ public class SwaggerConfiguration {
                 .displayName("deposit services")
                 .build();
     }
-
 }

@@ -14,7 +14,6 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 import java.util.Arrays;
 import java.util.Locale;
 
-
 @Configuration
 public class ApplicationConfiguration {
 
