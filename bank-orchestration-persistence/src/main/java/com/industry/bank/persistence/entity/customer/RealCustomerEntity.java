@@ -25,9 +25,6 @@ public class RealCustomerEntity {
     @Column(name = "BA002ID")
     private Long realCustomerId;
 
-    @Column(name = "PE010CIF")
-    private String customerCode;
-
     @Column(name = "PE010NATCOD", nullable = false)
     private String nationalCode;
 

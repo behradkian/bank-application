@@ -21,6 +21,11 @@ import java.util.List;
 @Schema(name = "CreateCorporateCustomerRequestDto")
 public class CreateCorporateCustomerRequestDto {
 
+    @Hidden
+    @Builder.Default
+    @Schema(name = "type", defaultValue = "CORPORATE")
+    private CustomerType type = CustomerType.CORPORATE;
+
     @Schema(name = "name")
     private String name;
 
@@ -47,10 +52,5 @@ public class CreateCorporateCustomerRequestDto {
 
     @Schema(name = "images")
     private List<ImageDto> images;
-
-    @Hidden
-    @Builder.Default
-    @Schema(name = "type", defaultValue = "CORPORATE")
-    private CustomerType type = CustomerType.CORPORATE;
 
 }
