@@ -1,6 +1,6 @@
 package com.industry.bank.api.dto.file;
 
-import com.industry.bank.api.enumeration.general.ImageType;
+import com.industry.bank.api.enumeration.general.CustomerImageType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class ImageDto {
 
     @Schema(name = "imageType")
-    private ImageType imageType;
+    private CustomerImageType customerImageType;
 
     @Schema(name = "imageData")
     private FileDto imageData;

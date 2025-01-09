@@ -16,15 +16,11 @@ public interface AddressMapper {
     AddressEntity toEntity(AddressRequest requestDto);
 
     default Integer mapAddressType(AddressType type) {
-        if (type != null)
-            return type.getCode();
-        return null;
+        return type.getCode();
     }
 
     default AddressType mapAddressType(Integer type) {
-        if (type != null)
-            return AddressType.getByCode(type);
-        return null;
+        return AddressType.getByCode(type);
     }
 
 }

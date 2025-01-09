@@ -15,11 +15,11 @@ public class SwaggerConfiguration {
     @Value("${BankOrchestrationApplication}")
     private String appTitle;
 
-    @Value("${app.version}")
-    private String appVersion;
-
     @Value("${BankOrchestrationApplication_description}")
     private String appDescription;
+
+    @Value("${app.version}")
+    private String appVersion;
 
     @Bean
     public OpenAPI swaggerApi(){

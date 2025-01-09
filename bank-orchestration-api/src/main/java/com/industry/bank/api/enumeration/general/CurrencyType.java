@@ -66,6 +66,11 @@ public enum CurrencyType implements Serializable {
                 .orElse(null);
     }
 
+    public static CurrencyType getByValue(String value) {
+        return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
+                .orElse(null);
+    }
+
     @Override
     public String toString() {
         return this.value;

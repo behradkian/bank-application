@@ -22,7 +22,7 @@ public class RealCustomerEntity {
     @Id
     @SequenceGenerator(name = "REALCustomerEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "REALCustomerEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    @Column(name = "PE010ID")
+    @Column(name = "BA002ID")
     private Long realCustomerId;
 
     @Column(name = "PE010CIF")
@@ -37,8 +37,8 @@ public class RealCustomerEntity {
     @Column(name = "PE010LSTNAM")
     private String lastName;
 
-    @Column(name = "PE010BIRTDAT")
     @EqualsAndHashCode.Include
+    @Column(name = "PE010BIRTDAT")
     @Temporal(TemporalType.DATE)
     private Date birthdate;
 
@@ -48,10 +48,6 @@ public class RealCustomerEntity {
     @Column(name = "PE010EMAIL")
     private String email;
 
-    @Column(name = "PE010ISUDAT")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date issueDate;
-
     @ManyToOne
     @JoinColumn(name = "PE008ID")
     private OccupationEntity occupation;
@@ -59,7 +55,6 @@ public class RealCustomerEntity {
     @ManyToOne
     @JoinColumn(name = "PE009ID")
     private DegreeEntity degree;
-
 
     @JoinColumn(name = "PE005ID")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

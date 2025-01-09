@@ -58,10 +58,6 @@ public class UserEntity {
     @Temporal(TemporalType.TIMESTAMP)
     private Date expireDate;
 
-    // use referenced name column input to join another column instead of id
-//    @ManyToOne
-//    @JoinColumn(name = "PE004ID" , referencedColumnName = "branchCode")
-//    private BranchEntity branch;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "USER_ROLE",

@@ -6,7 +6,7 @@ import com.industry.bank.api.dto.location.AddressDto;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.CityDto;
 import com.industry.bank.api.enumeration.customer.CustomerType;
-import com.industry.bank.api.enumeration.customer.GenderType;
+import com.industry.bank.api.enumeration.general.GenderType;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

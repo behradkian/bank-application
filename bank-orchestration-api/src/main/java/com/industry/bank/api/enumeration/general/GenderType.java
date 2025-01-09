@@ -10,22 +10,22 @@ import java.util.Arrays;
 @Getter
 @AllArgsConstructor
 @Schema(enumAsRef = true)
-public enum AddressType implements Serializable {
+public enum GenderType implements Serializable {
 
-    HOME(1, "HOME"),
-    WORK(2, "WORK");
+    MALE(1, "MALE"),
+    FEMALE(2, "FEMALE");
 
     private final Integer code;
     private final String value;
 
-    public static AddressType getByCode(int code) {
+    public static GenderType getByCode(int code) {
         return Arrays.stream(values()).filter(v -> v.code.equals(code)).findFirst()
                 .orElse(null);
     }
 
-    public static AddressType getByValue(String value) {
-        return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
-                .orElse(null);
+    public static GenderType getByValue(String value) {
+            return Arrays.stream(values()).filter(v -> v.value.equals(value)).findFirst()
+                    .orElse(null);
     }
 
     @Override
