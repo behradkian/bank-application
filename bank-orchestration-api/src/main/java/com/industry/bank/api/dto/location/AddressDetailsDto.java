@@ -35,17 +35,6 @@ public class AddressDetailsDto {
     @Schema(name = "city")
     private String city;
 
-    /**
-     * نام محله
-     */
-    @Schema(name = "localityName")
-    private String localityName;
-
-    /**
-     * کد محله
-     */
-    @Schema(name = "localityCode")
-    private String localityCode;
 
     /**
      * منطقه
@@ -70,12 +59,6 @@ public class AddressDetailsDto {
      */
     @Schema(name = "houseNumber")
     private String houseNumber;
-
-    /**
-     * نام ساختمان
-     */
-    @Schema(name = "buildingName")
-    private String buildingName;
 
     /**
      * شماره طبقه

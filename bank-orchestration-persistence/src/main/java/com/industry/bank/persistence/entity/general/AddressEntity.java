@@ -38,31 +38,22 @@ public class AddressEntity {
     @Column(name = "BA008TOWN")
     private String townShip;
 
-    @Column(name = "PE005LOCALCOD")
-    private String localityCode;
-
-    @Column(name = "PE005LOCALNAM")
-    private String localityName;
-
-    @Column(name = "PE005ZONE")
+    @Column(name = "BA008ZONE")
     private String zone;
 
-    @Column(name = "PE005STREET1")
+    @Column(name = "BA008STREET1")
     private String firstStreet;
 
-    @Column(name = "PE005STREET2")
+    @Column(name = "BA008STREET2")
     private String secondStreet;
 
-    @Column(name = "PE005HOUSENUM")
+    @Column(name = "BA008HOUSENUM")
     private String houseNumber;
 
-    @Column(name = "PE005BUILDNAM")
-    private String buildingName;
-
-    @Column(name = "PE005FLORNUM")
+    @Column(name = "BA008FLOOR")
     private String floorNumber;
 
-    @Column(name = "PE005FLORSID")
+    @Column(name = "BA008SIDFLOOR")
     private String sideFloor;
 
 }
