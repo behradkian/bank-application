@@ -17,17 +17,17 @@ public class CityEntity {
     @Id
     @SequenceGenerator(name = "CityEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "CityEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    @Column(name = "PE006ID")
+    @Column(name = "BA007ID")
     private Long cityId;
 
-    @Column(name = "PE006COD")
+    @Column(name = "BA007CODE")
     private String cityCode;
 
-    @Column(name = "PE006NAME")
+    @Column(name = "BA007NAME")
     private String cityName;
 
     @ManyToOne
-    @JoinColumn(name = "PE007ID")
+    @JoinColumn(name = "BA006ID")
     private CountryEntity country;
 
 }

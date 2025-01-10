@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PEC2OCCUPATION")
+@Table(name = "BA01C1OCCUPATION")
 public class OccupationEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_OCCUPATION_ID";
@@ -17,13 +17,13 @@ public class OccupationEntity {
     @Id
     @SequenceGenerator(name = "OccupationEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "OccupationEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    @Column(name = "PE008ID")
+    @Column(name = "BA005ID")
     private Long occupationId;
 
-    @Column(name = "PE008COD")
+    @Column(name = "BA005CODE")
     private String occupationCode;
 
-    @Column(name = "PE008NAM")
+    @Column(name = "BA005NAME")
     private String occupationName;
 
 }

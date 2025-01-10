@@ -14,44 +14,45 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PEC1REALCUSTOMER")
+@Table(name = "BA01C1REALCUSTOMER")
 public class RealCustomerEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_REAL_CUSTOMER_ID";
 
     @Id
-    @SequenceGenerator(name = "REALCustomerEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
-    @GeneratedValue(generator = "REALCustomerEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "RealCustomerEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
+    @GeneratedValue(generator = "RealCustomerEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
     @Column(name = "BA002ID")
     private Long realCustomerId;
 
-    @Column(name = "PE010NATCOD", nullable = false)
+    @Column(name = "BA002NATCOD", nullable = false)
     private String nationalCode;
 
-    @Column(name = "PE010FIRSNAM")
+    @Column(name = "BA002FRSTNAM")
     private String firstName;
 
-    @Column(name = "PE010LSTNAM")
+    @Column(name = "BA002LSTNAM")
     private String lastName;
 
     @EqualsAndHashCode.Include
-    @Column(name = "PE010BIRTDAT")
+    @Column(name = "BA002BIRTDAT")
     @Temporal(TemporalType.DATE)
     private Date birthdate;
 
-    @Column(name = "PE010MOBNUM")
+    @Column(name = "BA002MOBNUM")
     private String mobileNumber;
 
-    @Column(name = "PE010EMAIL")
+    @Column(name = "BA002EMAIL")
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "PE008ID")
-    private OccupationEntity occupation;
+    @JoinColumn(name = "BA004ID")
+    private DegreeEntity degree;
 
     @ManyToOne
-    @JoinColumn(name = "PE009ID")
-    private DegreeEntity degree;
+    @JoinColumn(name = "BA005ID")
+    private OccupationEntity occupation;
+
 
     @JoinColumn(name = "PE005ID")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

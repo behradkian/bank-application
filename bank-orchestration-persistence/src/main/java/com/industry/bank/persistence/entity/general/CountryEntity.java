@@ -18,13 +18,13 @@ public class CountryEntity {
     @Id
     @SequenceGenerator(name = "CountryEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "CountryEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    @Column(name = "PE007ID")
+    @Column(name = "BA006ID")
     private Long countryId;
 
-    @Column(name = "PE007COD")
+    @Column(name = "BA006CODE")
     private String countryCode;
 
-    @Column(name = "PE007NAM")
+    @Column(name = "BA006NAME")
     private String countryName;
 
     @JoinColumn(name = "PE006ID")

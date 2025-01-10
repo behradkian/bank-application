@@ -13,7 +13,7 @@ import java.util.Date;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "BA1D1CUSTOMER")
+@Table(name = "BA01C1CUSTOMER")
 public abstract class CustomerEntity {
 
     private static final String SEQUENCE_NAME = "NGNQ_CUSTOMER_ID";
@@ -32,7 +32,7 @@ public abstract class CustomerEntity {
     private String customerNumber;
 
     @EqualsAndHashCode.Include
-    @Column(name = "BA001CUSREGDAT")
+    @Column(name = "BA001CUSDATE")
     @Temporal(TemporalType.TIMESTAMP)
     private Date customerRegisterDate;
 

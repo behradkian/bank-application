@@ -10,47 +10,39 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PEG3ADDRESS")
+@Table(name = "BA01C1ADDRESS")
 public class AddressEntity {
+
     private static final String SEQUENCE_NAME = "NGNQ_ADDRESS_ID";
 
     @Id
     @SequenceGenerator(name = "AddressEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "AddressEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    @Column(name = "PE005ID")
+    @Column(name = "BA008ID")
     private Long addressId;
 
     @ManyToOne
-    @JoinColumn(name = "PE006ID")
+    @JoinColumn(name = "BA007ID")
     private CityEntity city;
 
     @Enumerated(value = EnumType.STRING)
-    @Column(name = "PE005TYP")
+    @Column(name = "BA008TYPE")
     private AddressType addressType;
 
-    @Column(name = "PE005POSTCOD")
+    @Column(name = "BA008POSTCOD")
     private String postalCode;
 
-    @Column(name = "PE005PROVINCE")
+    @Column(name = "BA008PROVINCE")
     private String province;
 
-    @Column(name = "PE005TOWN")
+    @Column(name = "BA008TOWN")
     private String townShip;
-
-    @Column(name = "PE005VILLAGE")
-    private String village;
-
-    @Column(name = "PE005LOCALTYP")
-    private String localityType;
-
-    @Column(name = "PE005LOCALNAM")
-    private String localityName;
 
     @Column(name = "PE005LOCALCOD")
     private String localityCode;
 
-    @Column(name = "PE005SUBLOCAL")
-    private String subLocality;
+    @Column(name = "PE005LOCALNAM")
+    private String localityName;
 
     @Column(name = "PE005ZONE")
     private String zone;
@@ -61,6 +53,9 @@ public class AddressEntity {
     @Column(name = "PE005STREET2")
     private String secondStreet;
 
+    @Column(name = "PE005HOUSENUM")
+    private String houseNumber;
+
     @Column(name = "PE005BUILDNAM")
     private String buildingName;
 
@@ -69,11 +64,5 @@ public class AddressEntity {
 
     @Column(name = "PE005FLORSID")
     private String sideFloor;
-
-    @Column(name = "PE005HOUSENUM")
-    private String houseNumber;
-
-    @Column(name = "PE005TOTAL")
-    private String totalAddress;
 
 }
