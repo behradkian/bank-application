@@ -14,8 +14,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CreateRealCustomerResponseDto createRealCustomer(CreateRealCustomerRequestDto realCustomerRequestDto) {
 
-        var createRealCustomerResponseDto = new CreateGeneralCustomerResponseDto();
-
         return null;
     }
 
@@ -23,6 +21,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CreateCorporateCustomerResponseDto createCorporateCustomer(CreateCorporateCustomerRequestDto corporateCustomerRequestDto) {
         return null;
+    }
+
+    private void validateRealCustomerRequestDto(CreateRealCustomerRequestDto createRealCustomerRequestDto) {
+
+
     }
 
 }

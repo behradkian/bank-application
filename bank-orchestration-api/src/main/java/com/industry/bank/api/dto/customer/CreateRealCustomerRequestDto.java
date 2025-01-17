@@ -9,6 +9,7 @@ import com.industry.bank.api.enumeration.customer.CustomerType;
 import com.industry.bank.api.enumeration.general.GenderType;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,15 +30,18 @@ public class CreateRealCustomerRequestDto {
     @Schema(name = "type", defaultValue = "Real")
     private CustomerType type = CustomerType.REAL;
 
+    @NotBlank
     @Schema(name = "firstName")
     private String firstName;
 
+    @NotBlank
     @Schema(name = "lastName")
     private String lastName;
 
     @Schema(name = "fatherName")
     private String fatherName;
 
+    @NotBlank
     @Schema(name = "nationalCode")
     private String nationalCode;
 
@@ -47,6 +51,7 @@ public class CreateRealCustomerRequestDto {
     @Schema(name = "nationality")
     private NationalityDto nationality;
 
+    @NotBlank
     @Schema(name = "birthdate")
     private Date birthdate;
 
