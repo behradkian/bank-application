@@ -18,7 +18,6 @@ public class CustomerServiceImpl implements CustomerService {
         return null;
     }
 
-
     @Override
     public CreateCorporateCustomerResponseDto createCorporateCustomer(CreateCorporateCustomerRequestDto requestDto) {
         throw new NotImplementedException();
