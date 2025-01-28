@@ -9,6 +9,7 @@ import java.util.List;
  * @author : Pedram Behradkian
  * @date : 2025/01/28
  */
+@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
