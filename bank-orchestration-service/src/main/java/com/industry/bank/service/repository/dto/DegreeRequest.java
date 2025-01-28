@@ -1,5 +1,6 @@
 package com.industry.bank.service.repository.dto;
 
+import com.industry.bank.api.enumeration.customer.DegreeType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,6 @@ public class DegreeRequest {
 
     private String degreeId;
     private String degreeCode;
-    private String degreeName;
+    private DegreeType degreeName;
 
 }

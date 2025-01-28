@@ -1,4 +1,4 @@
-﻿package com.industry.bank.persistence.entity.customer;
+package com.industry.bank.persistence.entity.customer;
 
 import jakarta.persistence.*;
 import lombok.Getter;

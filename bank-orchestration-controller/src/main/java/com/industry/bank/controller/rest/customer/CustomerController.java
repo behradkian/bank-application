@@ -4,6 +4,7 @@ import com.industry.bank.api.dto.customer.CreateCorporateCustomerRequestDto;
 import com.industry.bank.api.dto.customer.CreateGeneralCustomerResponseDto;
 import com.industry.bank.api.dto.customer.CreateRealCustomerRequestDto;
 import com.industry.bank.api.dto.general.BankOrchestrationRequestHeader;
+import com.industry.bank.api.exception.checked.CustomerExistedException;
 import com.industry.bank.api.facade.customer.CustomerFacade;
 import com.industry.bank.service.api.CustomerService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -31,7 +32,7 @@ public class CustomerController implements CustomerFacade {
             })
     @Override
     public CreateGeneralCustomerResponseDto createRealCustomer(BankOrchestrationRequestHeader<String, Object> headers,
-                                                               CreateRealCustomerRequestDto realCustomerRequestDto) {
+                                                               CreateRealCustomerRequestDto realCustomerRequestDto) throws CustomerExistedException {
         return customerService.createRealCustomer(realCustomerRequestDto);
     }
 
