@@ -1,5 +1,6 @@
 package com.industry.bank.service.repository.dto;
 
+import com.industry.bank.api.enumeration.general.GenderType;
 import lombok.*;
 
 import java.util.Date;
@@ -22,6 +23,7 @@ public class RealCustomerRequest {
     private Date birthdate;
     private String mobileNumber;
     private String email;
+    private GenderType gender;
     private DegreeRequest degree;
     private OccupationRequest occupation;
     private List<AddressRequest> addresses;

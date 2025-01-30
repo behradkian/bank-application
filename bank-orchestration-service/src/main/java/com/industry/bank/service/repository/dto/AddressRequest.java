@@ -2,9 +2,11 @@ package com.industry.bank.service.repository.dto;
 
 import com.industry.bank.api.enumeration.general.AddressType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

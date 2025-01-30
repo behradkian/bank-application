@@ -3,18 +3,19 @@ package com.industry.bank.service;
 import com.industry.bank.api.dto.customer.*;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.AddressDto;
+import com.industry.bank.api.dto.location.CityDto;
+import com.industry.bank.api.enumeration.customer.DegreeType;
 import com.industry.bank.api.exception.checked.CustomerExistedException;
 import com.industry.bank.api.exception.runtime.NotImplementedException;
 import com.industry.bank.service.api.CustomerService;
 import com.industry.bank.service.repository.CustomerStorage;
-import com.industry.bank.service.repository.dto.AddressRequest;
-import com.industry.bank.service.repository.dto.OccupationRequest;
-import com.industry.bank.service.repository.dto.RealCustomerRequest;
+import com.industry.bank.service.repository.dto.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -45,7 +46,8 @@ public class CustomerServiceImpl implements CustomerService {
                 .birthdate(requestDto.getBirthdate())
                 .mobileNumber(requestDto.getMobileNumber())
                 .email(requestDto.getEmail())
-                .degree(null)
+                .gender(requestDto.getGender())
+                .degree(getDegreeRequest(requestDto.getDegree()))
                 .addresses(getAddressRequestList(requestDto.getAddresses()))
                 .occupation(getOccupationRequest(requestDto.getOccupation()))
                 .build();
@@ -60,11 +62,45 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     private List<AddressRequest> getAddressRequestList(List<AddressDto> addresses){
+
+        if(addresses == null || addresses.isEmpty()){
+
+        }
+
+        List<AddressRequest> addressRequests = new ArrayList<>();
+        for(AddressDto addressDto : addresses){
+
+        }
+
         return null;
     }
 
     private OccupationRequest getOccupationRequest(OccupationDto occupation){
         return null;
+    }
+
+    private DegreeRequest getDegreeRequest(DegreeType degreeType){
+        return null;
+    }
+
+    private CityRequest getCityRequest(CityDto city){
+        return null;
+    }
+
+    private AddressRequest getAddressRequest(AddressDto addressDto){
+        return AddressRequest.builder()
+//                .addressType(addressDto.getAddressType())
+//                .postalCode(addressDto.getAddressDetails().getPostalCode())
+//                .city(getCityRequest(addressDto.getCity()))
+//                .province()
+//                .townShip()
+//                .zone()
+//                .firstStreet()
+//                .secondStreet()
+//                .houseNumber()
+//                .floorNumber()
+//                .sideFloor()
+                .build();
     }
 
 }

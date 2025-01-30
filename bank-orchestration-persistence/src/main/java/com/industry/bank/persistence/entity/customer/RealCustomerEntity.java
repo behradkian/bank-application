@@ -1,5 +1,6 @@
 package com.industry.bank.persistence.entity.customer;
 
+import com.industry.bank.api.enumeration.general.GenderType;
 import com.industry.bank.persistence.entity.general.AddressEntity;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
@@ -38,6 +39,10 @@ public class RealCustomerEntity {
     @Column(name = "BA002BIRTDAT")
     @Temporal(TemporalType.DATE)
     private Date birthdate;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "BA002GENDER")
+    private GenderType gender;
 
     @Column(name = "BA002MOBNUM")
     private String mobileNumber;

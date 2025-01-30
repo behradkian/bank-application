@@ -6,6 +6,7 @@ import com.industry.bank.api.dto.location.AddressDto;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.CityDto;
 import com.industry.bank.api.enumeration.customer.CustomerType;
+import com.industry.bank.api.enumeration.customer.DegreeType;
 import com.industry.bank.api.enumeration.general.GenderType;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -72,6 +73,9 @@ public class CreateRealCustomerRequestDto {
 
     @Schema(name = "occupation")
     private OccupationDto occupation;
+
+    @Schema(name = "degree")
+    private DegreeType degree;
 
     @Schema(name = "addresses")
     private List<AddressDto> addresses;
