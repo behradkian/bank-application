@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "PEB3LICENSE")
 public class LicenseEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_LICENSE_ID";
+    private static final String SEQUENCE_NAME = "SEQ_LICENSE_ID";
 
     @Id
     @Column(name = "PE003ID")

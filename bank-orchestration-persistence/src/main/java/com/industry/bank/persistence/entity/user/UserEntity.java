@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name = "PEB1USER")
 public class UserEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_USER_ID";
+    private static final String SEQUENCE_NAME = "SEQ_USER_ID";
 
     @Id
     @Column(name = "PE001ID")

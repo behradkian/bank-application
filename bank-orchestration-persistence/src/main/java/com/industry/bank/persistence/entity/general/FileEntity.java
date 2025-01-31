@@ -1,4 +1,5 @@
 package com.industry.bank.persistence.entity.general;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,10 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PEG4ILE")
+@Table(name = "PEG4FILE")
 public class FileEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_FILE_ID";
+    private static final String SEQUENCE_NAME = "SEQ_FILE_ID";
 
     @Id
     @SequenceGenerator(name = "FileEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)

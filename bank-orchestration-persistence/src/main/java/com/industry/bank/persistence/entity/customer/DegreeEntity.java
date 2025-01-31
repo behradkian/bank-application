@@ -4,16 +4,14 @@ import com.industry.bank.api.enumeration.customer.DegreeType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "BA01C1DEGREE")
 public class DegreeEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_DEGREE_ID";
+    private static final String SEQUENCE_NAME = "SEQ_DEGREE_ID";
 
     @Id
     @SequenceGenerator(name = "DegreeEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)

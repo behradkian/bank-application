@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Table(name = "PEG1COUNTRY")
 public class CountryEntity {
-    private static final String SEQUENCE_NAME = "NGNQ_COUNTRY_ID";
+    private static final String SEQUENCE_NAME = "SEQ_COUNTRY_ID";
 
     @Id
     @SequenceGenerator(name = "CountryEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
@@ -26,6 +26,9 @@ public class CountryEntity {
 
     @Column(name = "BA006NAME")
     private String countryName;
+
+    @OneToOne(mappedBy = "nationalityId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private NationalityEntity nationality;
 
     @JoinColumn(name = "PE006ID")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

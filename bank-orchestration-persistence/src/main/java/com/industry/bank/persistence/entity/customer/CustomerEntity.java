@@ -16,7 +16,7 @@ import java.util.Date;
 @Table(name = "BA01C1CUSTOMER")
 public abstract class CustomerEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_CUSTOMER_ID";
+    private static final String SEQUENCE_NAME = "SEQ_CUSTOMER_ID";
 
     @Id
     @SequenceGenerator(name = "CustomerEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)

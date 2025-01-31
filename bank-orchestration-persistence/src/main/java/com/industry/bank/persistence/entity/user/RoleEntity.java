@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "PEB2ROLE")
 public class RoleEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_ROLE_ID";
+    private static final String SEQUENCE_NAME = "SEQ_ROLE_ID";
 
     @Id
     @Column(name = "PE002ID")

@@ -18,7 +18,7 @@ import java.util.List;
 @Table(name = "BA01C1REALCUSTOMER")
 public class RealCustomerEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_REAL_CUSTOMER_ID";
+    private static final String SEQUENCE_NAME = "SEQ_REAL_CUSTOMER_ID";
 
     @Id
     @SequenceGenerator(name = "RealCustomerEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)

@@ -12,7 +12,7 @@ import lombok.Setter;
 @Table(name = "BA01C1OCCUPATION")
 public class OccupationEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_OCCUPATION_ID";
+    private static final String SEQUENCE_NAME = "SEQ_OCCUPATION_ID";
 
     @Id
     @SequenceGenerator(name = "OccupationEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)

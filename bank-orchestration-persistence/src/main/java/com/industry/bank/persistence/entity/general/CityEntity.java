@@ -12,7 +12,7 @@ import lombok.Setter;
 @Table(name = "PEG2CITY")
 public class CityEntity {
 
-    private static final String SEQUENCE_NAME = "NGNQ_CITY_ID";
+    private static final String SEQUENCE_NAME = "SEQ_CITY_ID";
 
     @Id
     @SequenceGenerator(name = "CityEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
