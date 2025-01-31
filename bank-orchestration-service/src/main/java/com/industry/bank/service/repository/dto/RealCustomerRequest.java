@@ -10,11 +10,12 @@ import java.util.List;
  * @author : Pedram Behradkian
  * @date : 2025/01/28
  */
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RealCustomerRequest {
+public class RealCustomerRequest extends CustomerRequest{
 
     private String realCustomerId;
     private String nationalCode;

@@ -25,21 +25,28 @@ public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerStorage customerStorage;
 
-    @Transactional
     @Override
+    @Transactional
     public CreateRealCustomerResponseDto createRealCustomer(CreateRealCustomerRequestDto requestDto) throws CustomerExistedException {
 
+        validateRealCustomerRequestDto(requestDto);
         RealCustomerRequest realCustomerRequest = customerStorage.getRealCustomerRequestByNationalCode(requestDto.getNationalCode());
-
-        final String message;
-
         if (realCustomerRequest != null) {
-            message = String.format("customer existed with nationalCode : %s, with customerNumber : %s", realCustomerRequest.getNationalCode(), null);
+            String message = String.format("customer existed with nationalCode : %s, with customerNumber : %s", realCustomerRequest.getNationalCode(), realCustomerRequest.getCustomerNumber());
             log.error(message);
             throw new CustomerExistedException(message);
         }
+        realCustomerRequest = customerStorage.saveRealCustomerRequest(getRealCustomerRequest(requestDto));
+        return getRealCustomerResponse(realCustomerRequest);
+    }
 
-        realCustomerRequest = RealCustomerRequest.builder()
+    @Override
+    public CreateCorporateCustomerResponseDto createCorporateCustomer(CreateCorporateCustomerRequestDto requestDto) {
+        throw new NotImplementedException();
+    }
+
+    private RealCustomerRequest getRealCustomerRequest(CreateRealCustomerRequestDto requestDto) {
+        return RealCustomerRequest.builder()
                 .nationalCode(requestDto.getNationalCode())
                 .firstName(requestDto.getFirstName())
                 .lastName(requestDto.getLastName())
@@ -51,56 +58,61 @@ public class CustomerServiceImpl implements CustomerService {
                 .addresses(getAddressRequestList(requestDto.getAddresses()))
                 .occupation(getOccupationRequest(requestDto.getOccupation()))
                 .build();
-
-        customerStorage.saveRealCustomerRequest(realCustomerRequest);
-        return null;
     }
 
-    @Override
-    public CreateCorporateCustomerResponseDto createCorporateCustomer(CreateCorporateCustomerRequestDto requestDto) {
-        throw new NotImplementedException();
+    private CreateRealCustomerResponseDto getRealCustomerResponse(RealCustomerRequest realCustomerRequest) {
+        CreateRealCustomerResponseDto createRealCustomerResponseDto = new CreateRealCustomerResponseDto();
+        createRealCustomerResponseDto.setCustomerNumber(realCustomerRequest.getCustomerNumber());
+        createRealCustomerResponseDto.setCustomerRegisterDate(realCustomerRequest.getCustomerRegisterDate());
+        return createRealCustomerResponseDto;
     }
 
-    private List<AddressRequest> getAddressRequestList(List<AddressDto> addresses){
+    private List<AddressRequest> getAddressRequestList(List<AddressDto> addresses) {
 
-        if(addresses == null || addresses.isEmpty()){
-
-        }
+        if (addresses == null || addresses.isEmpty())
+            return null;
 
         List<AddressRequest> addressRequests = new ArrayList<>();
-        for(AddressDto addressDto : addresses){
 
-        }
+        for (AddressDto addressDto : addresses)
+            if (addressDto != null)
+                addressRequests.add(getAddressRequest(addressDto));
 
-        return null;
+        return addressRequests;
     }
 
-    private OccupationRequest getOccupationRequest(OccupationDto occupation){
-        return null;
-    }
-
-    private DegreeRequest getDegreeRequest(DegreeType degreeType){
-        return null;
-    }
-
-    private CityRequest getCityRequest(CityDto city){
-        return null;
-    }
-
-    private AddressRequest getAddressRequest(AddressDto addressDto){
+    private AddressRequest getAddressRequest(AddressDto addressDto) {
+        if (addressDto == null || addressDto.getAddressDetails() == null)
+            return null;
         return AddressRequest.builder()
-//                .addressType(addressDto.getAddressType())
-//                .postalCode(addressDto.getAddressDetails().getPostalCode())
-//                .city(getCityRequest(addressDto.getCity()))
-//                .province()
-//                .townShip()
-//                .zone()
-//                .firstStreet()
-//                .secondStreet()
-//                .houseNumber()
-//                .floorNumber()
-//                .sideFloor()
+                .addressType(addressDto.getAddressType())
+                .postalCode(addressDto.getAddressDetails().getPostalCode())
+                .city(getCityRequest(addressDto.getCity()))
+                .province(addressDto.getAddressDetails().getProvince())
+                .townShip(addressDto.getAddressDetails().getTownShip())
+                .zone(addressDto.getAddressDetails().getZone())
+                .firstStreet(addressDto.getAddressDetails().getFirstStreet())
+                .secondStreet(addressDto.getAddressDetails().getSecondStreet())
+                .houseNumber(addressDto.getAddressDetails().getHouseNumber())
+                .floorNumber(addressDto.getAddressDetails().getFloorNumber())
+                .sideFloor(addressDto.getAddressDetails().getSideFloor())
                 .build();
+    }
+
+    private OccupationRequest getOccupationRequest(OccupationDto occupation) {
+        return null;
+    }
+
+    private DegreeRequest getDegreeRequest(DegreeType degreeType) {
+        return null;
+    }
+
+    private CityRequest getCityRequest(CityDto city) {
+        return null;
+    }
+
+    private void validateRealCustomerRequestDto(CreateRealCustomerRequestDto createRealCustomerRequestDto) {
+
     }
 
 }
