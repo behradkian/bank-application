@@ -6,6 +6,7 @@ import lombok.*;
  * @author : Pedram Behradkian
  * @date : 2025/01/28
  */
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
