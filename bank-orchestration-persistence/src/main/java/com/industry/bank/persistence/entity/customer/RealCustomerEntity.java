@@ -2,6 +2,7 @@ package com.industry.bank.persistence.entity.customer;
 
 import com.industry.bank.api.enumeration.general.GenderType;
 import com.industry.bank.persistence.entity.general.AddressEntity;
+import com.industry.bank.persistence.entity.general.NationalityEntity;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -50,6 +51,10 @@ public class RealCustomerEntity {
     @Column(name = "BA002EMAIL")
     private String email;
 
+    @JoinColumn(name = "BA002NATNLTY")
+    @OneToOne(cascade = CascadeType.ALL)
+    private NationalityEntity nationality;
+
     @ManyToOne
     @JoinColumn(name = "BA004ID")
     private DegreeEntity degree;
@@ -57,7 +62,6 @@ public class RealCustomerEntity {
     @ManyToOne
     @JoinColumn(name = "BA005ID")
     private OccupationEntity occupation;
-
 
     @JoinColumn(name = "PE005ID")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

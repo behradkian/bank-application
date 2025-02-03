@@ -10,12 +10,13 @@ import java.util.List;
  * @author : Pedram Behradkian
  * @date : 2025/01/28
  */
-@EqualsAndHashCode(callSuper = true)
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RealCustomerRequest extends CustomerRequest{
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class RealCustomerRequest extends CustomerRequest {
 
     private String realCustomerId;
     private String nationalCode;
@@ -25,6 +26,7 @@ public class RealCustomerRequest extends CustomerRequest{
     private String mobileNumber;
     private String email;
     private GenderType gender;
+    private NationalityRequest nationality;
     private DegreeRequest degree;
     private OccupationRequest occupation;
     private List<AddressRequest> addresses;

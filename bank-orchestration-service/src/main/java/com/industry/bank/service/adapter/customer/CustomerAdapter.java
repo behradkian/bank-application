@@ -5,6 +5,7 @@ import com.industry.bank.api.dto.customer.CreateRealCustomerResponseDto;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.enumeration.customer.DegreeType;
 import com.industry.bank.service.adapter.general.AddressAdapter;
+import com.industry.bank.service.adapter.general.NationalityAdaptor;
 import com.industry.bank.service.repository.dto.DegreeRequest;
 import com.industry.bank.service.repository.dto.OccupationRequest;
 import com.industry.bank.service.repository.dto.RealCustomerRequest;
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Component;
 public class CustomerAdapter {
 
     private final AddressAdapter addressAdapter;
+    private final NationalityAdaptor nationalityAdaptor;
 
     public RealCustomerRequest adaptRealCustomerRequest(CreateRealCustomerRequestDto requestDto) {
         return RealCustomerRequest.builder()
@@ -30,6 +32,7 @@ public class CustomerAdapter {
                 .mobileNumber(requestDto.getMobileNumber())
                 .email(requestDto.getEmail())
                 .gender(requestDto.getGender())
+                .nationality(nationalityAdaptor.adaptNationalityRequest(requestDto.getNationality()))
                 .degree(adaptDegreeRequest(requestDto.getDegree()))
                 .addresses(addressAdapter.adaptAddressRequestList(requestDto.getAddresses()))
                 .occupation(adaptOccupationRequest(requestDto.getOccupation()))

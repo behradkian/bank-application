@@ -27,9 +27,6 @@ public class CountryEntity {
     @Column(name = "BA006NAME")
     private String countryName;
 
-    @OneToOne(mappedBy = "nationalityId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private NationalityEntity nationality;
-
     @JoinColumn(name = "PE006ID")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<CityEntity> cities;

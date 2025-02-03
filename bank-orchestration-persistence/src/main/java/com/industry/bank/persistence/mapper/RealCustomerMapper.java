@@ -1,9 +1,12 @@
 package com.industry.bank.persistence.mapper;
 
+import com.industry.bank.persistence.entity.customer.DegreeEntity;
 import com.industry.bank.persistence.entity.customer.RealCustomerEntity;
+import com.industry.bank.persistence.entity.general.AddressEntity;
+import com.industry.bank.service.repository.dto.AddressRequest;
+import com.industry.bank.service.repository.dto.DegreeRequest;
 import com.industry.bank.service.repository.dto.RealCustomerRequest;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
 /**
  * @author : Pedram Behradkian
@@ -12,10 +15,31 @@ import org.mapstruct.factory.Mappers;
 @Mapper(componentModel = "spring")
 public interface RealCustomerMapper {
 
-    RealCustomerMapper INSTANCE = Mappers.getMapper(RealCustomerMapper.class);
-
     RealCustomerEntity toEntity(RealCustomerRequest requestDto);
 
     RealCustomerRequest toDto(RealCustomerEntity requestEntity);
 
+    default AddressRequest toDto(AddressEntity entity) {
+        if (entity != null)
+            return AddressMapper.INSTANCE.toDto(entity);
+        return null;
+    }
+
+    default AddressEntity toEntity(AddressRequest request) {
+        if (request != null)
+            return AddressMapper.INSTANCE.toEntity(request);
+        return null;
+    }
+
+    default DegreeRequest toDto(DegreeEntity entity) {
+        if (entity != null)
+            return DegreeMapper.INSTANCE.toDto(entity);
+        return null;
+    }
+
+    default DegreeEntity toEntity(DegreeRequest request) {
+        if (request != null)
+            return DegreeMapper.INSTANCE.toEntity(request);
+        return null;
+    }
 }
