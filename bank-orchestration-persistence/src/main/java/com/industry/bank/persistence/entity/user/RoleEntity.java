@@ -36,6 +36,6 @@ public class RoleEntity {
             joinColumns = @JoinColumn(name = "PE003ID"),
             inverseJoinColumns = @JoinColumn(name = "PE002ID")
     )
-    private List<LicenseEntity> licenses;
+    private List<PermissionEntity> licenses;
 
 }

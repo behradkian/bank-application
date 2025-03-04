@@ -1,4 +1,4 @@
-package com.industry.bank.persistence.entity.customer;
+package com.industry.bank.persistence.entity.general;
 
 import com.industry.bank.api.enumeration.customer.DegreeType;
 import jakarta.persistence.*;

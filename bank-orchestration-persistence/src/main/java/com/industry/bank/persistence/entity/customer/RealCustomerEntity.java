@@ -2,56 +2,55 @@ package com.industry.bank.persistence.entity.customer;
 
 import com.industry.bank.api.enumeration.general.GenderType;
 import com.industry.bank.persistence.entity.general.AddressEntity;
+import com.industry.bank.persistence.entity.general.DegreeEntity;
 import com.industry.bank.persistence.entity.general.NationalityEntity;
+import com.industry.bank.persistence.entity.general.OccupationEntity;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 import java.util.List;
 
-@Getter
+/**
+ * @author : Pedram Behradkian
+ * @date : 2025/03/03
+ */
 @Setter
+@Getter
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "BA01C1REALCUSTOMER")
-public class RealCustomerEntity {
+@Table(name = "BA1REALCUSTOMER")
+@DiscriminatorValue("REAL")
+public class RealCustomerEntity extends CustomerEntity {
 
-    private static final String SEQUENCE_NAME = "SEQ_REAL_CUSTOMER_ID";
-
-    @Id
-    @SequenceGenerator(name = "RealCustomerEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
-    @GeneratedValue(generator = "RealCustomerEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
-    @Column(name = "BA002ID")
-    private Long realCustomerId;
-
-    @Column(name = "BA002NATCOD", nullable = false)
+    @Column(name = "BA1001NATCOD", nullable = false)
     private String nationalCode;
 
-    @Column(name = "BA002FRSTNAM")
+    @Column(name = "BA1001FRSTNAM")
     private String firstName;
 
-    @Column(name = "BA002LSTNAM")
+    @Column(name = "BA1001LSTNAM")
     private String lastName;
 
     @EqualsAndHashCode.Include
-    @Column(name = "BA002BIRTDAT")
+    @Column(name = "BA1001BIRTDAT")
     @Temporal(TemporalType.DATE)
     private Date birthdate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "BA002GENDER")
+    @Column(name = "BA1001GENDER")
     private GenderType gender;
 
-    @Column(name = "BA002MOBNUM")
+    @Column(name = "BA1001MOBNUM")
     private String mobileNumber;
 
-    @Column(name = "BA002EMAIL")
+    @Column(name = "BA1001MAIL")
     private String email;
 
-    @JoinColumn(name = "BA002NATNLTY")
+    @JoinColumn(name = "BA1001NATNLTY")
     @OneToOne(cascade = CascadeType.ALL)
     private NationalityEntity nationality;
 
@@ -64,7 +63,7 @@ public class RealCustomerEntity {
     private OccupationEntity occupation;
 
     @JoinColumn(name = "PE005ID")
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<AddressEntity> addresses;
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private AddressEntity address;
 
 }

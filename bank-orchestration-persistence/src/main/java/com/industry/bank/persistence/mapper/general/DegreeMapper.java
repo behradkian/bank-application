@@ -1,6 +1,6 @@
-package com.industry.bank.persistence.mapper;
+package com.industry.bank.persistence.mapper.general;
 
-import com.industry.bank.persistence.entity.customer.DegreeEntity;
+import com.industry.bank.persistence.entity.general.DegreeEntity;
 import com.industry.bank.service.repository.dto.DegreeRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

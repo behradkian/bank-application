@@ -1,6 +1,6 @@
-package com.industry.bank.persistence.mapper;
+package com.industry.bank.persistence.mapper.user;
 
-import com.industry.bank.persistence.entity.user.LicenseEntity;
+import com.industry.bank.persistence.entity.user.PermissionEntity;
 import com.industry.bank.persistence.entity.user.RoleEntity;
 import com.industry.bank.persistence.entity.user.UserEntity;
 import com.industry.bank.service.repository.dto.LicenseRequest;
@@ -30,13 +30,13 @@ public interface RoleMapper {
         return null;
     }
 
-    default LicenseRequest toDto(LicenseEntity requestEntity){
+    default LicenseRequest toDto(PermissionEntity requestEntity){
         if(requestEntity != null)
             return LicenceMapper.INSTANCE.toDto(requestEntity);
         return null;
     }
 
-    default LicenseEntity toEntity(LicenseRequest requestDto){
+    default PermissionEntity toEntity(LicenseRequest requestDto){
         if(requestDto != null)
             return LicenceMapper.INSTANCE.toEntity(requestDto);
         return null;

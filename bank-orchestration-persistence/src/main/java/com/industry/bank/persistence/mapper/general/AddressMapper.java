@@ -1,4 +1,4 @@
-package com.industry.bank.persistence.mapper;
+package com.industry.bank.persistence.mapper.general;
 
 import com.industry.bank.api.enumeration.general.AddressType;
 import com.industry.bank.persistence.entity.general.AddressEntity;

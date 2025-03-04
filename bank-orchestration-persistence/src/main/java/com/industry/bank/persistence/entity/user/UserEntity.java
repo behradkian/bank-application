@@ -1,6 +1,6 @@
 package com.industry.bank.persistence.entity.user;
 
-import com.industry.bank.persistence.entity.customer.DegreeEntity;
+import com.industry.bank.persistence.entity.general.DegreeEntity;
 import com.industry.bank.persistence.entity.general.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,50 +14,56 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PEB1USER")
+@Table(name = "BA1USER")
 public class UserEntity {
 
-    private static final String SEQUENCE_NAME = "SEQ_USER_ID";
+    private static final String SEQUENCE_NAME = "BA1USER_SEQ";
 
     @Id
-    @Column(name = "PE001ID")
+    @Column(name = "BA1010ID")
     @SequenceGenerator(name = "UserEntitySequenceGenerator", sequenceName = SEQUENCE_NAME, allocationSize = 1)
     @GeneratedValue(generator = "UserEntitySequenceGenerator", strategy = GenerationType.SEQUENCE)
     private Long userId;
 
-    @Column(name = "PE001FIRSNAM")
+    @Column(name = "BA1010FIRSNAM")
     private String firstName;
 
-    @Column(name = "PE001LSTNAM")
+    @Column(name = "BA1010LSTNAM")
     private String lastName;
 
-    @Column(name = "PE001BIRTDAT")
+    @Column(name = "BA1010BIRTDAT")
     @Temporal(TemporalType.DATE)
     private Date birthdate;
 
-    @Column(name = "PE001USRNAM")
+    @Column(name = "BA1010USRNAM")
     private String username;
 
-    @Column(name = "PE001USRPASS")
+    @Column(name = "BA1010USRPASS")
     private String password;
 
-    @Column(name = "PE001NATIONALCOD")
+    @Column(name = "BA1010NATIONALCOD")
     private String nationalCode;
 
-    @Column(name = "PE001MOBNUM")
+    @Column(name = "BA1010MOBNUM")
     private String mobileNumber;
 
-    @Column(name = "PE001EMAIL")
+    @Column(name = "BA1010MAIL")
     private String email;
 
-    @Column(name = "PE001ISUDAT")
+    @Column(name = "BA1010ISUDAT")
     @Temporal(TemporalType.TIMESTAMP)
     private Date issueDate;
 
-    @Column(name = "PE001EXPDAT")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date expireDate;
+    @Column(name = "BA1010ISACT")
+    private boolean isActive;
 
+    @ManyToOne
+    @JoinColumn(name = "PE009ID")
+    private DegreeEntity degree;
+
+    @JoinColumn(name = "PE005ID")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private AddressEntity address;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "USER_ROLE",
@@ -65,14 +71,5 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name = "PE001ID")
     )
     private List<RoleEntity> roles;
-
-    @ManyToOne
-    @JoinColumn(name = "PE009ID")
-    private DegreeEntity degree;
-
-
-    @JoinColumn(name = "PE005ID")
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<AddressEntity> addresses;
 
 }

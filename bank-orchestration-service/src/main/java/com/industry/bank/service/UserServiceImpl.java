@@ -6,7 +6,6 @@ import com.industry.bank.api.dto.user.UserDto;
 import com.industry.bank.service.api.UserService;
 import com.industry.bank.service.mapper.RoleRequestMapper;
 import com.industry.bank.service.mapper.UserRequestMapper;
-import com.industry.bank.service.repository.UserStorage;
 import com.industry.bank.service.repository.dto.RoleRequest;
 import com.industry.bank.service.repository.dto.UserRequest;
 import lombok.AllArgsConstructor;

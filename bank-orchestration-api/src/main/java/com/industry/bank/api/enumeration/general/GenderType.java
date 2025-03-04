@@ -7,6 +7,9 @@ import lombok.Getter;
 import java.io.Serializable;
 import java.util.Arrays;
 
+/**
+ *
+ */
 @Getter
 @AllArgsConstructor
 @Schema(enumAsRef = true)

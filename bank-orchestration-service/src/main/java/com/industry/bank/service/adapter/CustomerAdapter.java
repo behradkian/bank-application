@@ -1,11 +1,9 @@
-package com.industry.bank.service.adapter.customer;
+package com.industry.bank.service.adapter;
 
 import com.industry.bank.api.dto.customer.CreateRealCustomerRequestDto;
 import com.industry.bank.api.dto.customer.CreateRealCustomerResponseDto;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.enumeration.customer.DegreeType;
-import com.industry.bank.service.adapter.general.AddressAdapter;
-import com.industry.bank.service.adapter.general.NationalityAdaptor;
 import com.industry.bank.service.repository.dto.DegreeRequest;
 import com.industry.bank.service.repository.dto.OccupationRequest;
 import com.industry.bank.service.repository.dto.RealCustomerRequest;
@@ -20,8 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomerAdapter {
 
-    private final AddressAdapter addressAdapter;
-    private final NationalityAdaptor nationalityAdaptor;
+    private final GeneralAdapter generalAdapter;
 
     public RealCustomerRequest adaptRealCustomerRequest(CreateRealCustomerRequestDto requestDto) {
         return RealCustomerRequest.builder()
@@ -32,9 +29,9 @@ public class CustomerAdapter {
                 .mobileNumber(requestDto.getMobileNumber())
                 .email(requestDto.getEmail())
                 .gender(requestDto.getGender())
-                .nationality(nationalityAdaptor.adaptNationalityRequest(requestDto.getNationality()))
+                .nationality(generalAdapter.adaptNationalityRequest(requestDto.getNationality()))
                 .degree(adaptDegreeRequest(requestDto.getDegree()))
-                .addresses(addressAdapter.adaptAddressRequestList(requestDto.getAddresses()))
+                .addresses(generalAdapter.adaptAddressRequestList(requestDto.getAddresses()))
                 .occupation(adaptOccupationRequest(requestDto.getOccupation()))
                 .build();
     }
@@ -46,7 +43,7 @@ public class CustomerAdapter {
         return createRealCustomerResponseDto;
     }
 
-    private OccupationRequest adaptOccupationRequest(OccupationDto occupation) {
+    public OccupationRequest adaptOccupationRequest(OccupationDto occupation) {
         if (occupation == null)
             return null;
         return OccupationRequest.builder()
@@ -55,7 +52,7 @@ public class CustomerAdapter {
                 .build();
     }
 
-    private DegreeRequest adaptDegreeRequest(DegreeType degreeType) {
+    public DegreeRequest adaptDegreeRequest(DegreeType degreeType) {
         if (degreeType == null)
             return null;
         return DegreeRequest.builder()

@@ -12,9 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "PEB3LICENSE")
-public class LicenseEntity {
+public class PermissionEntity {
 
-    private static final String SEQUENCE_NAME = "SEQ_LICENSE_ID";
+    private static final String SEQUENCE_NAME = "SEQ_LICENSE";
 
     @Id
     @Column(name = "PE003ID")
