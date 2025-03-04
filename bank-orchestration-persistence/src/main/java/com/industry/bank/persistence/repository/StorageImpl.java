@@ -16,7 +16,7 @@ public class StorageImpl implements Storage {
     public RealCustomerRequest getRealCustomerRequest(String customerId) {
         if(customerId == null)
             return null;
-        realCustomerRepository.findByRealCustomerId(Long.parseLong(customerId));
+       // realCustomerRepository.findByRealCustomerId(Long.parseLong(customerId));
         return null;
     }
 

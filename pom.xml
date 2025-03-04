@@ -78,6 +78,12 @@
                 <version>${ui.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa-parent</artifactId>
+                <version>3.3.4</version>
+            </dependency>
+
 <!--            <dependency>-->
 <!--                <groupId>org.springframework.cloud</groupId>-->
 <!--                <artifactId>spring-cloud-dependencies</artifactId>-->
@@ -131,26 +137,6 @@
                 <artifactId>spring-security-bom</artifactId>
                 <version>6.3.3</version>
             </dependency>
-
-            <!--        <dependency>-->
-            <!--            <groupId>io.jsonwebtoken</groupId>-->
-            <!--            <artifactId>jjwt-api</artifactId>-->
-            <!--            <version>${jjwt.version}</version>-->
-            <!--        </dependency>-->
-            <!--        <dependency>-->
-            <!--            <groupId>io.jsonwebtoken</groupId>-->
-            <!--            <artifactId>jjwt-impl</artifactId>-->
-            <!--            <version>${jjwt.version}</version>-->
-            <!--            <scope>runtime</scope>-->
-            <!--        </dependency>-->
-            <!--        <dependency>-->
-            <!--            <groupId>io.jsonwebtoken</groupId>-->
-            <!--            <artifactId>jjwt-jackson</artifactId>-->
-            <!--            <version>${jjwt.version}</version>-->
-            <!--            <scope>runtime</scope>-->
-            <!--        </dependency>-->
-            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-
 
         </dependencies>
 

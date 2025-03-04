@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RealCustomerRepository extends JpaRepository<RealCustomerEntity, Long> {
 
-    RealCustomerEntity findByRealCustomerId(Long realCustomerId);
+    //RealCustomerEntity findByRealCustomerId(Long realCustomerId);
 
 }

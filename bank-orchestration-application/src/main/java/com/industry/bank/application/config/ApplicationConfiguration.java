@@ -1,7 +1,5 @@
 package com.industry.bank.application.config;
 
-import com.industry.bank.persistence.mapper.user.UserMapper;
-import com.industry.bank.persistence.mapper.UserMapperImpl;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,16 +12,6 @@ import java.util.Locale;
 
 @Configuration
 public class ApplicationConfiguration {
-
-    @Bean
-    public UserStorage getStorageInstance() {
-        return new UserStorageImpl();
-    }
-
-    @Bean
-    public UserMapper getUserMapperInstance() {
-        return new UserMapperImpl();
-    }
 
     @Bean
     public LocaleResolver localeResolver() {

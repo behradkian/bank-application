@@ -15,7 +15,7 @@ import org.mapstruct.Mapper;
  * @date : 2025/01/28
  */
 @Mapper(componentModel = "spring")
-public interface RealCustomerMapper extends CustomerMapper {
+public interface RealCustomerMapper {
 
     RealCustomerEntity toEntity(RealCustomerRequest requestDto);
 

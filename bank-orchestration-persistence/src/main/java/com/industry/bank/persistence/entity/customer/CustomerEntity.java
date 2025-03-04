@@ -1,6 +1,5 @@
 package com.industry.bank.persistence.entity.customer;
 
-import com.industry.bank.api.enumeration.customer.CustomerType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,10 +25,6 @@ public abstract class CustomerEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "BA1001ID")
     private Long customerId;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "BA1001TYPE", nullable = false)
-    private CustomerType customerType;
 
     @Column(name = "BA1001CIF", unique = true, nullable = false)
     private String customerNumber;
