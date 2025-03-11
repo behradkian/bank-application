@@ -19,5 +19,4 @@ public class CustomerRequest {
     private String customerId;
     private CustomerType customerType;
     private String customerNumber;
-    private Date customerRegisterDate;
 }

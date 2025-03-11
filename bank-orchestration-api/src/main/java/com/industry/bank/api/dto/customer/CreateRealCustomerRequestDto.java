@@ -28,7 +28,7 @@ public class CreateRealCustomerRequestDto {
 
     @Hidden
     @Builder.Default
-    @Schema(name = "type", defaultValue = "Real")
+    @Schema(name = "type", defaultValue = "REAL")
     private CustomerType type = CustomerType.REAL;
 
     @NotBlank

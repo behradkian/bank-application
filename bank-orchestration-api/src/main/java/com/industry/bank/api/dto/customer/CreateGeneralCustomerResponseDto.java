@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,8 +13,5 @@ public class CreateGeneralCustomerResponseDto {
 
     @Schema(name = "customerNumber")
     private String customerNumber;
-
-    @Schema(name = "customerRegisterDate")
-    private Date customerRegisterDate;
 
 }
