@@ -6,16 +6,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "ImageDto")
-public class ImageDto {
-
+public class ImageDto implements Serializable {
     @Schema(name = "imageType")
     private CustomerImageType customerImageType;
 
     @Schema(name = "imageData")
     private FileDto imageData;
-
 }

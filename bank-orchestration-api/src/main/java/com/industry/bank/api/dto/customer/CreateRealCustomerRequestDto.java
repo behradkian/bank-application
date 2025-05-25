@@ -1,8 +1,5 @@
 package com.industry.bank.api.dto.customer;
 
-import com.industry.bank.api.dto.file.ImageDto;
-import com.industry.bank.api.dto.general.NationalityDto;
-import com.industry.bank.api.dto.location.AddressDto;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.CityDto;
 import com.industry.bank.api.enumeration.customer.CustomerType;
@@ -11,23 +8,21 @@ import com.industry.bank.api.enumeration.general.GenderType;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
-@Builder
-@Data
+
+@Setter
+@Getter
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "CreateRealCustomerRequestDto")
-public class CreateRealCustomerRequestDto {
-
+public class CreateRealCustomerRequestDto extends CreateGeneralCustomerRequestDto implements Serializable {
     @Hidden
-    @Builder.Default
     @Schema(name = "type", defaultValue = "REAL")
     private CustomerType type = CustomerType.REAL;
 
@@ -42,15 +37,8 @@ public class CreateRealCustomerRequestDto {
     @Schema(name = "fatherName")
     private String fatherName;
 
-    @NotBlank
-    @Schema(name = "nationalCode")
-    private String nationalCode;
-
     @Schema(name = "passportNumber")
     private String passportNumber;
-
-    @Schema(name = "nationality")
-    private NationalityDto nationality;
 
     @NotBlank
     @Schema(name = "birthdate")
@@ -62,12 +50,6 @@ public class CreateRealCustomerRequestDto {
     @Schema(name = "mobileNumber")
     private String mobileNumber;
 
-    @Schema(name = "phoneNumber")
-    private String phoneNumber;
-
-    @Schema(name = "email")
-    private String email;
-
     @Schema(name = "gender")
     private GenderType gender;
 
@@ -76,11 +58,4 @@ public class CreateRealCustomerRequestDto {
 
     @Schema(name = "degree")
     private DegreeType degree;
-
-    @Schema(name = "addresses")
-    private List<AddressDto> addresses;
-
-    @Schema(name = "images")
-    private List<ImageDto> images;
-
 }

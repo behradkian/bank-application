@@ -2,7 +2,8 @@ package com.industry.bank.api.dto.general;
 
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-public class BaseRequest {
+import java.io.Serializable;
 
+@NoArgsConstructor
+public class BaseRequest implements Serializable {
 }

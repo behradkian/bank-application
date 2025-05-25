@@ -6,7 +6,6 @@ import com.industry.bank.api.exception.runtime.NotImplementedException;
 import com.industry.bank.service.adapter.CustomerAdapter;
 import com.industry.bank.service.api.CustomerService;
 import com.industry.bank.service.repository.Storage;
-import com.industry.bank.service.repository.dto.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,17 +22,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public CreateRealCustomerResponseDto createRealCustomer(CreateRealCustomerRequestDto requestDto) throws CustomerExistedException {
-
-        RealCustomerRequest realCustomerRequest = storage.getRealCustomerRequestByNationalCode(requestDto.getNationalCode());
-
+        var realCustomerRequest = storage.getRealCustomerRequestByNationalCode(requestDto.getNationalityCode());
         if (realCustomerRequest != null) {
             String message = String.format("customer existed with nationalCode : %s, with customerNumber : %s", realCustomerRequest.getNationalCode(), realCustomerRequest.getCustomerNumber());
             log.error(message);
             throw new CustomerExistedException(message);
         }
-
-        realCustomerRequest = storage.saveRealCustomerRequest(customerAdapter.adaptRealCustomerRequest(requestDto));
-        return customerAdapter.adaptRealCustomerResponse(realCustomerRequest);
+        var newCustomerRequest = customerAdapter.adaptRealCustomerRequest(requestDto);
+        var newRealCustomerRequest = storage.saveRealCustomerRequest(newCustomerRequest);
+        return customerAdapter.adaptRealCustomerResponse(newRealCustomerRequest);
     }
 
     @Override

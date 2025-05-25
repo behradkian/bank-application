@@ -5,13 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "CreateGeneralCustomerResponseDto")
-public class CreateGeneralCustomerResponseDto {
-
+public abstract class CreateGeneralCustomerResponseDto implements Serializable {
     @Schema(name = "customerNumber")
     private String customerNumber;
-
 }

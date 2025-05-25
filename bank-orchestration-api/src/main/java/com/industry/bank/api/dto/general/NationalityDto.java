@@ -5,16 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "NationalityDto")
-public class NationalityDto {
-
+public class NationalityDto implements Serializable {
     @Schema(name = "code")
     private String code;
 
     @Schema(name = "name")
     private String name;
-
 }

@@ -5,11 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "AddressDetailsDto")
-public class AddressDetailsDto {
+public class AddressDetailsDto implements Serializable {
 
     /**
      * کدپستی

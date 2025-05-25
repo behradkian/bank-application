@@ -6,13 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
-
+public class UserDto implements Serializable {
     @Schema(name = "firstName")
     private String firstName;
 
@@ -33,5 +33,4 @@ public class UserDto {
 
     @Schema(name = "email")
     private String email;
-
 }

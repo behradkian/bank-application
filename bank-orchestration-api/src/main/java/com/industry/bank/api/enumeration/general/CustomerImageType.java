@@ -11,16 +11,18 @@ import java.util.Arrays;
 @AllArgsConstructor
 @Schema(enumAsRef = true)
 public enum CustomerImageType implements Serializable {
-
     /**
      * امضای مشتری
      */
     SIGNATURE(1, "SIGNATURE"),
-
     /**
      * عکس مشتری
      */
-    PHOTO(2, "PHOTO");
+    PHOTO(2, "PHOTO"),
+    /**
+     * اثر_انگشت
+     */
+    FINGER_PRINT(3,"FINGER_PRINT");
 
     private final Integer code;
     private final String value;

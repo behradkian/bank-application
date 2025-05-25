@@ -1,4 +1,6 @@
 package com.industry.bank.api.dto.deposit;
 
-public class CreateDepositResponseDto {
+import java.io.Serializable;
+
+public class CreateDepositResponseDto implements Serializable {
 }

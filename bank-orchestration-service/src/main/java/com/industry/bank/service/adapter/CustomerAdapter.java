@@ -22,7 +22,7 @@ public class CustomerAdapter {
 
     public RealCustomerRequest adaptRealCustomerRequest(CreateRealCustomerRequestDto requestDto) {
         return RealCustomerRequest.builder()
-                .nationalCode(requestDto.getNationalCode())
+                .nationalCode(requestDto.getNationalityCode())
                 .firstName(requestDto.getFirstName())
                 .lastName(requestDto.getLastName())
                 .birthdate(requestDto.getBirthdate())
@@ -37,9 +37,8 @@ public class CustomerAdapter {
     }
 
     public CreateRealCustomerResponseDto adaptRealCustomerResponse(RealCustomerRequest realCustomerRequest) {
-        CreateRealCustomerResponseDto createRealCustomerResponseDto = new CreateRealCustomerResponseDto();
+        var createRealCustomerResponseDto = new CreateRealCustomerResponseDto();
         createRealCustomerResponseDto.setCustomerNumber(realCustomerRequest.getCustomerNumber());
-        createRealCustomerResponseDto.setCustomerRegisterDate(realCustomerRequest.getCustomerRegisterDate());
         return createRealCustomerResponseDto;
     }
 

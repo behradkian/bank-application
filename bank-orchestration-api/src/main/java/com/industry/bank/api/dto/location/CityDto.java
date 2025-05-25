@@ -5,12 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "CityDto")
-public class CityDto {
-
+public class CityDto implements Serializable {
     @Schema(name = "code")
     private String code;
 
@@ -19,5 +20,4 @@ public class CityDto {
 
     @Schema(name = "country")
     private CountryDto country;
-
 }

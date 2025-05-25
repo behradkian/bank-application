@@ -5,16 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "LoginUserRequestDto")
-public class LoginUserRequestDto {
-
+public class LoginUserRequestDto implements Serializable {
     @Schema(name = "username")
     private String username;
 
     @Schema(name = "password")
     private String password;
-
 }

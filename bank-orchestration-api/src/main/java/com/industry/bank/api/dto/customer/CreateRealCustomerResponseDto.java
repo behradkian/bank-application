@@ -5,17 +5,17 @@ import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
-@Data
-@Builder
+import java.io.Serializable;
+
+@Setter
+@Getter
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "CreateRealCustomerResponseDto")
-public class CreateRealCustomerResponseDto extends CreateGeneralCustomerResponseDto {
-
+public class CreateRealCustomerResponseDto extends CreateGeneralCustomerResponseDto implements Serializable {
     @Hidden
-    @Builder.Default
     @Schema(name = "type", defaultValue = "REAL")
     private CustomerType type = CustomerType.REAL;
-
 }
