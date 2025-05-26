@@ -28,9 +28,9 @@ public class CustomerServiceImpl implements CustomerService {
             log.error(message);
             throw new CustomerExistedException(message);
         }
-        var newCustomerRequest = customerAdapter.adaptRealCustomerRequest(requestDto);
+        var newCustomerRequest = customerAdapter.adaptCreateRealCustomerRequest(requestDto);
         var newRealCustomerRequest = storage.saveRealCustomerRequest(newCustomerRequest);
-        return customerAdapter.adaptRealCustomerResponse(newRealCustomerRequest);
+        return customerAdapter.adaptCreateRealCustomerResponse(newRealCustomerRequest);
     }
 
     @Override
