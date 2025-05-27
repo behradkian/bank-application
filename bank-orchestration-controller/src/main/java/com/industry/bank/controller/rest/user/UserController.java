@@ -5,7 +5,7 @@ import com.industry.bank.api.dto.user.CreateUserRequestDto;
 import com.industry.bank.api.dto.user.CreateUserResponseDto;
 import com.industry.bank.api.dto.user.LoginUserRequestDto;
 import com.industry.bank.api.dto.user.LoginUserResponseDto;
-import com.industry.bank.api.facade.user.UserFacade;
+import com.industry.bank.api.facade.user.UserApi;
 import com.industry.bank.service.api.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @Tag(name = "user services")
-@RequestMapping(path = UserFacade.PATH)
-public class UserController implements UserFacade {
+@RequestMapping(path = UserApi.PATH)
+public class UserController implements UserApi {
 
     private final UserService userService;
 

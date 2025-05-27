@@ -16,7 +16,7 @@ import java.util.List;
 
 @FeignClient
 
-public interface GeneralFacade {
+public interface GeneralApi {
 
     String PATH = "/general";
 

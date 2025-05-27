@@ -4,13 +4,15 @@ import com.industry.bank.api.dto.customer.CreateGeneralCustomerResponseDto;
 import com.industry.bank.api.dto.customer.CreateRealCustomerRequestDto;
 import com.industry.bank.api.dto.general.BankOrchestrationRequestHeader;
 import com.industry.bank.api.exception.checked.CustomerExistedException;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @FeignClient
-public interface RealCustomerFacade {
+public interface RealCustomerApi {
 
     String PATH = "/customer/real";
 
@@ -19,6 +21,14 @@ public interface RealCustomerFacade {
      * @param realCustomerRequestDto {@link CreateRealCustomerRequestDto}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
+    @Operation(
+            operationId = "createRealCustomer",
+            summary = "تعریف مشتری حقیقی",
+            description = "تعریف مشتری حقیقی",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")//"mdFILE"
+            })
     @PostMapping(
             value = "/create-customer",
             consumes = MediaType.APPLICATION_JSON_VALUE,

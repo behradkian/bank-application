@@ -5,7 +5,7 @@ import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.CityDto;
 import com.industry.bank.api.dto.location.CountryDto;
-import com.industry.bank.api.facade.general.GeneralFacade;
+import com.industry.bank.api.facade.general.GeneralApi;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +16,8 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @Tag(name = "general services")
-@RequestMapping(path = GeneralFacade.PATH)
-public class GeneralController implements GeneralFacade {
+@RequestMapping(path = GeneralApi.PATH)
+public class GeneralController implements GeneralApi {
 
     @Override
     public List<NationalityDto> getNationalities(BankOrchestrationRequestHeader<String, Object> headers) {
