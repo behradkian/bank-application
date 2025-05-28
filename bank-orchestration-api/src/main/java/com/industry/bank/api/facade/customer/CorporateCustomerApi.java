@@ -27,7 +27,7 @@ public interface CorporateCustomerApi {
             summary = "تعریف مشتری حقوقی",
             description = "تعریف مشتری حقوقی",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "201", description = "Successful"),
                     @ApiResponse(responseCode = "400", description = "Failed")//"mdFILE"
             })
     @PostMapping(
@@ -44,6 +44,14 @@ public interface CorporateCustomerApi {
      * @param customerNumber {@link String}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
+    @Operation(
+            operationId = "getCorporateCustomer",
+            summary = "دریافت اطلاعات مشتری حقوقی",
+            description = "دریافت اطلاعات مشتری حقوقی",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")//"mdFILE"
+            })
     @GetMapping(
             value = "/get-customer",
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -56,6 +64,14 @@ public interface CorporateCustomerApi {
      * @param realCustomerRequestDto {@link CreateRealCustomerRequestDto}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
+    @Operation(
+            operationId = "getCorporateCustomer",
+            summary = "اصلاح اطلاعات مشتری حقوقی",
+            description = "اصلاح اطلاعات مشتری حقوقی",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")//"mdFILE"
+            })
     @PutMapping(
             value = "/update-customer",
             consumes = MediaType.APPLICATION_JSON_VALUE,
@@ -69,6 +85,14 @@ public interface CorporateCustomerApi {
      * @param customerNumber {@link String}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
+    @Operation(
+            operationId = "getCorporateCustomer",
+            summary = "حذف مشتری حقوقی",
+            description = "حذف مشتری حقوقی",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")//"mdFILE"
+            })
     @DeleteMapping(
             value = "/delete-customer",
             produces = MediaType.APPLICATION_JSON_VALUE)
