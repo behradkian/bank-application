@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@Tag(name = "سرویس های مشتری حقوقی")
+@Tag(name = "${CorporateCustomer.Services}")
 @RequestMapping(CorporateCustomerApi.PATH)
 public class CorporateCustomerController implements CorporateCustomerApi {
 

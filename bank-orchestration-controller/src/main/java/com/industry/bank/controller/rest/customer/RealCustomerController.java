@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@Tag(name = "${Customer.Services}")
+@Tag(name = "${RealCustomer.Services}")
 @RequestMapping(path = RealCustomerApi.PATH)
 public class RealCustomerController implements RealCustomerApi {
 
