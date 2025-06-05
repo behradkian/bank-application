@@ -3,7 +3,7 @@ package com.industry.bank.api.facade.customer;
 import com.industry.bank.api.dto.customer.CreateCorporateCustomerRequestDto;
 import com.industry.bank.api.dto.customer.CreateGeneralCustomerResponseDto;
 import com.industry.bank.api.dto.customer.CreateRealCustomerRequestDto;
-import com.industry.bank.api.dto.general.BankOrchestrationRequestHeader;
+import com.industry.bank.api.dto.general.BankRequestHeader;
 import com.industry.bank.api.exception.checked.CustomerExistedException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -18,7 +18,7 @@ public interface CorporateCustomerApi {
     String PATH = "/customer/corporate";
 
     /**
-     * @param headers                     {@link BankOrchestrationRequestHeader}
+     * @param headers                     {@link BankRequestHeader}
      * @param corporateCustomerRequestDto {@link CreateCorporateCustomerRequestDto}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
@@ -35,12 +35,12 @@ public interface CorporateCustomerApi {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto createCorporateCustomer(@RequestHeader BankOrchestrationRequestHeader<String, Object> headers,
+    CreateGeneralCustomerResponseDto createCorporateCustomer(@RequestHeader BankRequestHeader<String, Object> headers,
                                                              @RequestBody CreateCorporateCustomerRequestDto corporateCustomerRequestDto);
 
 
     /**
-     * @param headers        {@link BankOrchestrationRequestHeader}
+     * @param headers        {@link BankRequestHeader}
      * @param customerNumber {@link String}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
@@ -56,11 +56,11 @@ public interface CorporateCustomerApi {
             value = "/get-customer",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto getCorporateCustomer(@RequestHeader BankOrchestrationRequestHeader<String, Object> headers,
+    CreateGeneralCustomerResponseDto getCorporateCustomer(@RequestHeader BankRequestHeader<String, Object> headers,
                                                           @RequestParam String customerNumber);
 
     /**
-     * @param headers                {@link BankOrchestrationRequestHeader}
+     * @param headers                {@link BankRequestHeader}
      * @param realCustomerRequestDto {@link CreateRealCustomerRequestDto}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
@@ -77,11 +77,11 @@ public interface CorporateCustomerApi {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto updateCorporateCustomer(@RequestHeader BankOrchestrationRequestHeader<String, Object> headers,
+    CreateGeneralCustomerResponseDto updateCorporateCustomer(@RequestHeader BankRequestHeader<String, Object> headers,
                                                              @RequestBody CreateRealCustomerRequestDto realCustomerRequestDto) throws CustomerExistedException;
 
     /**
-     * @param headers        {@link BankOrchestrationRequestHeader}
+     * @param headers        {@link BankRequestHeader}
      * @param customerNumber {@link String}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
@@ -97,7 +97,7 @@ public interface CorporateCustomerApi {
             value = "/delete-customer",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto deleteCorporateCustomer(@RequestHeader BankOrchestrationRequestHeader<String, Object> headers,
+    CreateGeneralCustomerResponseDto deleteCorporateCustomer(@RequestHeader BankRequestHeader<String, Object> headers,
                                                              @RequestParam String customerNumber);
 
 }

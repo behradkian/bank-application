@@ -38,4 +38,19 @@ public class CustomerServiceImpl implements CustomerService {
         throw new NotImplementedException();
     }
 
+    @Override
+    public GetRealCustomerResponseDto getRealCustomer(String customerNumber) {
+        return null;
+    }
+
+    @Override
+    public DeleteRealCustomerResponseDto deleteRealCustomer(String customerNumber) {
+        return null;
+    }
+
+    @Override
+    public UpdateRealCustomerResponseDto updateRealCustomer(UpdateRealCustomerRequestDto updateRealCustomerRequestDto) {
+        return null;
+    }
+
 }

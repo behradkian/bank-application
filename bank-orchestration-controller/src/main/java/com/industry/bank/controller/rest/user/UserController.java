@@ -1,6 +1,6 @@
 package com.industry.bank.controller.rest.user;
 
-import com.industry.bank.api.dto.general.BankOrchestrationRequestHeader;
+import com.industry.bank.api.dto.general.BankRequestHeader;
 import com.industry.bank.api.dto.user.CreateUserRequestDto;
 import com.industry.bank.api.dto.user.CreateUserResponseDto;
 import com.industry.bank.api.dto.user.LoginUserRequestDto;
@@ -27,7 +27,7 @@ public class UserController implements UserApi {
             @ApiResponse(responseCode = "400", description = "Failed")
     })
     @Override
-    public CreateUserResponseDto signupUser(BankOrchestrationRequestHeader<String, Object> headers, CreateUserRequestDto requestDto) {
+    public CreateUserResponseDto signupUser(BankRequestHeader<String, Object> headers, CreateUserRequestDto requestDto) {
         userService.addUser(requestDto.getUser());
         return null;
     }
@@ -37,7 +37,7 @@ public class UserController implements UserApi {
             @ApiResponse(responseCode = "400", description = "Failed")
     })
     @Override
-    public LoginUserResponseDto logInUser(BankOrchestrationRequestHeader<String, Object> headers, LoginUserRequestDto requestDto) {
+    public LoginUserResponseDto logInUser(BankRequestHeader<String, Object> headers, LoginUserRequestDto requestDto) {
         return null;
     }
 
@@ -46,7 +46,7 @@ public class UserController implements UserApi {
             @ApiResponse(responseCode = "400", description = "Failed")
     })
     @Override
-    public LoginUserResponseDto logOutUser(BankOrchestrationRequestHeader<String, Object> headers, LoginUserRequestDto requestDto) {
+    public LoginUserResponseDto logOutUser(BankRequestHeader<String, Object> headers, LoginUserRequestDto requestDto) {
         return null;
     }
 

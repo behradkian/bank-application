@@ -5,6 +5,7 @@ package com.industry.bank.api.dto.customer;
  * @date : 2025/05/25
  */
 
+import com.industry.bank.api.dto.Requester;
 import com.industry.bank.api.dto.file.ImageDto;
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.location.AddressDto;
@@ -21,7 +22,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "CreateGeneralCustomerRequestDto")
-public abstract class CreateGeneralCustomerRequestDto implements Serializable {
+public abstract class CreateGeneralCustomerRequestDto extends Requester implements Serializable {
 
     @NotBlank
     @Schema(name = "nationalityCode")
