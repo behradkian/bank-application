@@ -3,7 +3,6 @@ package com.industry.bank.api.facade.customer;
 import com.industry.bank.api.dto.customer.CreateCorporateCustomerRequestDto;
 import com.industry.bank.api.dto.customer.CreateGeneralCustomerResponseDto;
 import com.industry.bank.api.dto.customer.CreateRealCustomerRequestDto;
-import com.industry.bank.api.dto.general.BankRequestHeader;
 import com.industry.bank.api.exception.checked.CustomerExistedException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -12,13 +11,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @FeignClient
 public interface CorporateCustomerApi {
 
     String PATH = "/customer/corporate";
 
     /**
-     * @param headers                     {@link BankRequestHeader}
+     * @param headers                     {@link Map}
      * @param corporateCustomerRequestDto {@link CreateCorporateCustomerRequestDto}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
@@ -34,13 +35,13 @@ public interface CorporateCustomerApi {
             value = "/create-customer",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto createCorporateCustomer(@RequestHeader BankRequestHeader<String, Object> headers,
+    @ResponseStatus(HttpStatus.CREATED)
+    CreateGeneralCustomerResponseDto createCorporateCustomer(@RequestHeader Map<String, Object> headers,
                                                              @RequestBody CreateCorporateCustomerRequestDto corporateCustomerRequestDto);
 
 
     /**
-     * @param headers        {@link BankRequestHeader}
+     * @param headers        {@link Map}
      * @param customerNumber {@link String}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
@@ -56,11 +57,11 @@ public interface CorporateCustomerApi {
             value = "/get-customer",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto getCorporateCustomer(@RequestHeader BankRequestHeader<String, Object> headers,
+    CreateGeneralCustomerResponseDto getCorporateCustomer(@RequestHeader Map<String, Object> headers,
                                                           @RequestParam String customerNumber);
 
     /**
-     * @param headers                {@link BankRequestHeader}
+     * @param headers                {@link Map}
      * @param realCustomerRequestDto {@link CreateRealCustomerRequestDto}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
@@ -77,11 +78,11 @@ public interface CorporateCustomerApi {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto updateCorporateCustomer(@RequestHeader BankRequestHeader<String, Object> headers,
+    CreateGeneralCustomerResponseDto updateCorporateCustomer(@RequestHeader Map<String, Object> headers,
                                                              @RequestBody CreateRealCustomerRequestDto realCustomerRequestDto) throws CustomerExistedException;
 
     /**
-     * @param headers        {@link BankRequestHeader}
+     * @param headers        {@link Map}
      * @param customerNumber {@link String}
      * @return {@link CreateGeneralCustomerResponseDto}
      */
@@ -97,7 +98,7 @@ public interface CorporateCustomerApi {
             value = "/delete-customer",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    CreateGeneralCustomerResponseDto deleteCorporateCustomer(@RequestHeader BankRequestHeader<String, Object> headers,
+    CreateGeneralCustomerResponseDto deleteCorporateCustomer(@RequestHeader Map<String, Object> headers,
                                                              @RequestParam String customerNumber);
 
 }

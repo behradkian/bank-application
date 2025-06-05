@@ -3,6 +3,7 @@ package com.industry.bank.api.facade.general;
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.location.*;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
@@ -48,7 +49,7 @@ public interface LocationApi {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     NationalityDto getNationality(@RequestHeader Map<String, Object> headers,
-                                  @RequestParam String nationalityCode);
+                                  @Parameter(description = "${}") @RequestParam("nationalityCode") String nationalityCode);
 
     @Operation(
             operationId = "getAllCountries",
@@ -77,7 +78,7 @@ public interface LocationApi {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     CountryDto getCountry(@RequestHeader Map<String, Object> headers,
-                          @RequestParam String countryCode);
+                          @Parameter(description = "${}") @RequestParam("countryCode") String countryCode);
 
     @Operation(
             operationId = "getAllCities",
@@ -106,7 +107,7 @@ public interface LocationApi {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     List<CityDto> getCountryCities(@RequestHeader Map<String, Object> headers,
-                                   @RequestParam String countryCode);
+                                   @Parameter(description = "${}") @RequestParam("countryCode") String countryCode);
 
     @Operation(
             operationId = "getCity",
@@ -121,7 +122,7 @@ public interface LocationApi {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     CityDto getCity(@RequestHeader Map<String, Object> headers,
-                    @RequestParam String cityCode);
+                    @Parameter(description = "${}") @RequestParam("cityCode") String cityCode);
 
     @Operation(
             operationId = "getAddress",
@@ -136,7 +137,7 @@ public interface LocationApi {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     AddressDto getAddress(@RequestHeader Map<String, Object> headers,
-                          @RequestParam String postalCode);
+                          @Parameter(description = "${}") @RequestParam("postalCode") String postalCode);
 
     @Operation(
             operationId = "addAddress",
