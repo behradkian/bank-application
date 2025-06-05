@@ -17,4 +17,5 @@ import java.io.Serializable;
 @Schema(name = "AddAddressResponseDto")
 public class AddAddressResponseDto implements Serializable {
     private String postalCode;
+    private String addressCode;
 }

@@ -2,10 +2,7 @@ package com.industry.bank.service.api;
 
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.general.OccupationDto;
-import com.industry.bank.api.dto.location.AddAddressResponseDto;
-import com.industry.bank.api.dto.location.AddressDto;
-import com.industry.bank.api.dto.location.CityDto;
-import com.industry.bank.api.dto.location.CountryDto;
+import com.industry.bank.api.dto.location.*;
 
 import java.util.List;
 
@@ -31,6 +28,6 @@ public interface GeneralService {
 
     AddressDto getAddress(String addressCode);
 
-    AddAddressResponseDto addAddress(AddressDto addressDto);
+    AddAddressResponseDto addAddress(AddAddressRequestDto addressDto);
 
 }

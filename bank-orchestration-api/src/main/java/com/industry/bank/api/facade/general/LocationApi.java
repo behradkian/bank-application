@@ -1,10 +1,9 @@
 package com.industry.bank.api.facade.general;
 
 import com.industry.bank.api.dto.general.NationalityDto;
-import com.industry.bank.api.dto.location.AddAddressResponseDto;
-import com.industry.bank.api.dto.location.AddressDto;
-import com.industry.bank.api.dto.location.CityDto;
-import com.industry.bank.api.dto.location.CountryDto;
+import com.industry.bank.api.dto.location.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,12 +21,28 @@ public interface LocationApi {
 
     String PATH = "/general/location";
 
+    @Operation(
+            operationId = "getAllNationalities",
+            summary = "${api.getAllNationalities.summary}",
+            description = "${api.getAllNationalities.description}",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @GetMapping(
             value = "/all-nationalities",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     List<NationalityDto> getAllNationalities(@RequestHeader Map<String, Object> headers);
 
+    @Operation(
+            operationId = "getNationality",
+            summary = "${api.getNationality.summary}",
+            description = "${api.getNationality.description}",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @GetMapping(
             value = "/get-nationality",
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -35,12 +50,28 @@ public interface LocationApi {
     NationalityDto getNationality(@RequestHeader Map<String, Object> headers,
                                   @RequestParam String nationalityCode);
 
+    @Operation(
+            operationId = "getAllCountries",
+            summary = "${api.getAllCountries.summary}",
+            description = "${api.getAllCountries.description}",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @GetMapping(
             value = "/all-countries",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     List<CountryDto> getAllCountries(@RequestHeader Map<String, Object> headers);
 
+    @Operation(
+            operationId = "getCountry",
+            summary = "${api.getCountry.summary}",
+            description = "${api.getCountry.description}",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @GetMapping(
             value = "/get-country",
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,12 +79,28 @@ public interface LocationApi {
     CountryDto getCountry(@RequestHeader Map<String, Object> headers,
                           @RequestParam String countryCode);
 
+    @Operation(
+            operationId = "getAllCities",
+            summary = "${api.getAllCities.summary}",
+            description = "${api.getAllCities.description}",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @GetMapping(
             value = "/all-cities",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     List<CityDto> getAllCities(@RequestHeader Map<String, Object> headers);
 
+    @Operation(
+            operationId = "getCountryCities",
+            summary = "${api.getCountryCities.summary}",
+            description = "${api.getCountryCities.description}",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @GetMapping(
             value = "/get-country-cities",
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -61,6 +108,14 @@ public interface LocationApi {
     List<CityDto> getCountryCities(@RequestHeader Map<String, Object> headers,
                                    @RequestParam String countryCode);
 
+    @Operation(
+            operationId = "getCity",
+            summary = "${api.getCity.summary}",
+            description = "${api.getCity.description}",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @GetMapping(
             value = "/get-city",
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -68,6 +123,14 @@ public interface LocationApi {
     CityDto getCity(@RequestHeader Map<String, Object> headers,
                     @RequestParam String cityCode);
 
+    @Operation(
+            operationId = "getAddress",
+            summary = "${api.getAddress.summary}",
+            description = "${api.getAddress.description}",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Successful"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @GetMapping(
             value = "/get-address",
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -75,12 +138,20 @@ public interface LocationApi {
     AddressDto getAddress(@RequestHeader Map<String, Object> headers,
                           @RequestParam String postalCode);
 
+    @Operation(
+            operationId = "addAddress",
+            summary = "${api.addAddress.summary}",
+            description = "${api.addAddress.description}",
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "address is added successfully"),
+                    @ApiResponse(responseCode = "400", description = "Failed")
+            })
     @PostMapping(
             value = "/add-address",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     AddAddressResponseDto addAddress(@RequestHeader Map<String, Object> headers,
-                                     @RequestBody AddressDto addressDto);
+                                     @RequestBody AddAddressRequestDto requestDto);
 
 }

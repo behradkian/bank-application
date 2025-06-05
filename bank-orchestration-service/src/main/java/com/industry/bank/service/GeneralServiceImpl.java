@@ -2,13 +2,11 @@ package com.industry.bank.service;
 
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.general.OccupationDto;
-import com.industry.bank.api.dto.location.AddAddressResponseDto;
-import com.industry.bank.api.dto.location.AddressDto;
-import com.industry.bank.api.dto.location.CityDto;
-import com.industry.bank.api.dto.location.CountryDto;
+import com.industry.bank.api.dto.location.*;
 import com.industry.bank.service.api.GeneralService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -65,8 +63,9 @@ public class GeneralServiceImpl implements GeneralService {
         return null;
     }
 
+    @Transactional
     @Override
-    public AddAddressResponseDto addAddress(AddressDto addressDto) {
+    public AddAddressResponseDto addAddress(AddAddressRequestDto requestDto) {
         return null;
     }
 

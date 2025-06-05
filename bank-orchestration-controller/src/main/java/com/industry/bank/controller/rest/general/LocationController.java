@@ -1,10 +1,7 @@
 package com.industry.bank.controller.rest.general;
 
 import com.industry.bank.api.dto.general.NationalityDto;
-import com.industry.bank.api.dto.location.AddAddressResponseDto;
-import com.industry.bank.api.dto.location.AddressDto;
-import com.industry.bank.api.dto.location.CityDto;
-import com.industry.bank.api.dto.location.CountryDto;
+import com.industry.bank.api.dto.location.*;
 import com.industry.bank.api.facade.general.LocationApi;
 import com.industry.bank.service.api.GeneralService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -19,8 +16,8 @@ import java.util.Map;
  * @author : Pedram Behradkian
  * @date : 2025/06/05
  */
-@AllArgsConstructor
 @RestController
+@AllArgsConstructor
 @Tag(name = "${General.Location.Services}")
 @RequestMapping(path = LocationApi.PATH)
 public class LocationController implements LocationApi {
@@ -67,8 +64,8 @@ public class LocationController implements LocationApi {
     }
 
     @Override
-    public AddAddressResponseDto addAddress(Map<String, Object> headers, AddressDto addressDto) {
-        return generalService.addAddress(addressDto);
+    public AddAddressResponseDto addAddress(Map<String, Object> headers, AddAddressRequestDto requestDto) {
+        return generalService.addAddress(requestDto);
     }
 
 }
