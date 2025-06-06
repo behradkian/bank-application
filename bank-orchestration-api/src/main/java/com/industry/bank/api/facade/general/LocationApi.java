@@ -1,5 +1,6 @@
 package com.industry.bank.api.facade.general;
 
+import com.industry.bank.api.dto.PageResponse;
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.location.*;
 import io.swagger.v3.oas.annotations.Operation;
@@ -10,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,7 +34,9 @@ public interface LocationApi {
             value = "/all-nationalities",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    List<NationalityDto> getAllNationalities(@RequestHeader Map<String, Object> headers);
+    PageResponse<NationalityDto> getAllNationalities(@RequestHeader Map<String, Object> headers,
+                                                     @Parameter(description = "${api.page}") @RequestParam(name = "page", defaultValue = "0") int page,
+                                                     @Parameter(description = "${api.size}") @RequestParam(name = "size", defaultValue = "10") int size);
 
     @Operation(
             operationId = "getNationality",
@@ -63,7 +65,9 @@ public interface LocationApi {
             value = "/all-countries",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    List<CountryDto> getAllCountries(@RequestHeader Map<String, Object> headers);
+    PageResponse<CountryDto> getAllCountries(@RequestHeader Map<String, Object> headers,
+                                             @Parameter(description = "${api.page}") @RequestParam(name = "page", defaultValue = "0") int page,
+                                             @Parameter(description = "${api.size}") @RequestParam(name = "size", defaultValue = "10") int size);
 
     @Operation(
             operationId = "getCountry",
@@ -78,7 +82,7 @@ public interface LocationApi {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     CountryDto getCountry(@RequestHeader Map<String, Object> headers,
-                          @Parameter(description = "${}") @RequestParam("countryCode") String countryCode);
+                          @Parameter(description = "${api.countryCode}") @RequestParam("countryCode") String countryCode);
 
     @Operation(
             operationId = "getAllCities",
@@ -92,7 +96,9 @@ public interface LocationApi {
             value = "/all-cities",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    List<CityDto> getAllCities(@RequestHeader Map<String, Object> headers);
+    PageResponse<CityDto> getAllCities(@RequestHeader Map<String, Object> headers,
+                                       @Parameter(description = "${api.page}") @RequestParam(name = "page", defaultValue = "0") int page,
+                                       @Parameter(description = "${api.size}") @RequestParam(name = "size", defaultValue = "10") int size);
 
     @Operation(
             operationId = "getCountryCities",
@@ -106,8 +112,10 @@ public interface LocationApi {
             value = "/get-country-cities",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    List<CityDto> getCountryCities(@RequestHeader Map<String, Object> headers,
-                                   @Parameter(description = "${}") @RequestParam("countryCode") String countryCode);
+    PageResponse<CityDto> getCountryCities(@RequestHeader Map<String, Object> headers,
+                                           @Parameter(description = "${api.countryCode}") @RequestParam("countryCode") String countryCode,
+                                           @Parameter(description = "${api.page}") @RequestParam(name = "page", defaultValue = "0") int page,
+                                           @Parameter(description = "${api.size}") @RequestParam(name = "size", defaultValue = "10") int size);
 
     @Operation(
             operationId = "getCity",

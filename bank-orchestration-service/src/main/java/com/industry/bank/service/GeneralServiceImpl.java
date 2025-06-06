@@ -1,5 +1,6 @@
 package com.industry.bank.service;
 
+import com.industry.bank.api.dto.PageResponse;
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.*;
@@ -14,8 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 public class GeneralServiceImpl implements GeneralService {
     @Override
-    public List<NationalityDto> getNationalities() {
-        return List.of();
+    public PageResponse<NationalityDto> getNationalities() {
+        return null;
     }
 
     @Override
@@ -24,8 +25,8 @@ public class GeneralServiceImpl implements GeneralService {
     }
 
     @Override
-    public List<CountryDto> getCountries() {
-        return List.of();
+    public PageResponse<CountryDto> getCountries() {
+        return null;
     }
 
     @Override
@@ -34,13 +35,13 @@ public class GeneralServiceImpl implements GeneralService {
     }
 
     @Override
-    public List<CityDto> getCities() {
-        return List.of();
+    public PageResponse<CityDto> getCities() {
+        return null;
     }
 
     @Override
-    public List<CityDto> getCountryCities(String countryCode) {
-        return List.of();
+    public PageResponse<CityDto> getCountryCities(String countryCode) {
+        return null;
     }
 
     @Override
@@ -50,7 +51,7 @@ public class GeneralServiceImpl implements GeneralService {
 
     @Override
     public List<OccupationDto> getOccupations() {
-        return List.of();
+        return null;
     }
 
     @Override

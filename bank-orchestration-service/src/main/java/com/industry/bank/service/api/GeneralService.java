@@ -1,5 +1,6 @@
 package com.industry.bank.service.api;
 
+import com.industry.bank.api.dto.PageResponse;
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.general.OccupationDto;
 import com.industry.bank.api.dto.location.*;
@@ -8,17 +9,17 @@ import java.util.List;
 
 public interface GeneralService {
 
-    List<NationalityDto> getNationalities();
+    PageResponse<NationalityDto> getNationalities();
 
     NationalityDto getNationality(String nationalityCode);
 
-    List<CountryDto> getCountries();
+    PageResponse<CountryDto> getCountries();
 
     CountryDto getCountry(String countryCode);
 
-    List<CityDto> getCities();
+    PageResponse<CityDto> getCities();
 
-    List<CityDto> getCountryCities(String countryCode);
+    PageResponse<CityDto> getCountryCities(String countryCode);
 
     CityDto getCity(String cityCode);
 

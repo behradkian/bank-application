@@ -1,5 +1,6 @@
 package com.industry.bank.controller.rest.general;
 
+import com.industry.bank.api.dto.PageResponse;
 import com.industry.bank.api.dto.general.NationalityDto;
 import com.industry.bank.api.dto.location.*;
 import com.industry.bank.api.facade.general.LocationApi;
@@ -9,7 +10,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,7 +25,7 @@ public class LocationController implements LocationApi {
     private final GeneralService generalService;
 
     @Override
-    public List<NationalityDto> getAllNationalities(Map<String, Object> headers) {
+    public PageResponse<NationalityDto> getAllNationalities(Map<String, Object> headers, int page, int size) {
         return generalService.getNationalities();
     }
 
@@ -35,7 +35,7 @@ public class LocationController implements LocationApi {
     }
 
     @Override
-    public List<CountryDto> getAllCountries(Map<String, Object> headers) {
+    public PageResponse<CountryDto> getAllCountries(Map<String, Object> headers, int page, int size) {
         return generalService.getCountries();
     }
 
@@ -45,12 +45,12 @@ public class LocationController implements LocationApi {
     }
 
     @Override
-    public List<CityDto> getAllCities(Map<String, Object> headers) {
+    public PageResponse<CityDto> getAllCities(Map<String, Object> headers, int page, int size) {
         return generalService.getCities();
     }
 
     @Override
-    public List<CityDto> getCountryCities(Map<String, Object> headers, String countryCode) {
+    public PageResponse<CityDto> getCountryCities(Map<String, Object> headers, String countryCode, int page, int size) {
         return generalService.getCountryCities(countryCode);
     }
 
