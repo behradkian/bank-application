@@ -14,6 +14,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class GeneralServiceImpl implements GeneralService {
+
     @Override
     public PageResponse<NationalityDto> getNationalities() {
         return null;
