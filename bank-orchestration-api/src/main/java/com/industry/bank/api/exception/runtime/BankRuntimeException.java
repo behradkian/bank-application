@@ -15,5 +15,4 @@ public abstract class BankRuntimeException extends RuntimeException {
     protected BankRuntimeException(Throwable cause) {
         super(cause);
     }
-
 }
